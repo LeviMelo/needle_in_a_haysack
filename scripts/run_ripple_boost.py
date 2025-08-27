@@ -25,11 +25,26 @@ def main(args):
     if not prim:
         print("No primaries in theme; nothing to ripple from.")
         return
-    allowed_since = args.since_year
-    res = ripple_expand_from_primaries(prim, allowed_since_year=allowed_since, max_expand=args.max_expand, prefer=args.prefer)
+
+    res = ripple_expand_from_primaries(prim, allowed_since_year=args.since_year,
+                                       max_expand=args.max_expand, prefer=args.prefer)
+
     outdir = pathlib.Path(args.outdir); outdir.mkdir(parents=True, exist_ok=True)
-    jdump(res, outdir / f"ripple_theme{args.theme_id}.json")
-    print(f"✔ wrote {outdir / f'ripple_theme{args.theme_id}.json'} | candidates={len(res['candidates'])}")
+    outpath = outdir / f"ripple_theme{args.theme_id}.json"
+    jdump(res, outpath)
+
+    # terminal stats
+    st = res.get("stats", {})
+    print(f"Seeds: {len(prim)} | prefer={st.get('prefer')} | since>={st.get('allowed_since_year')}")
+    if st:
+        print(f"Pool unique: {st.get('pool_unique')} | after year gate: {st.get('after_year_gate')} | after cap: {st.get('after_cap')}")
+        if st.get("reason_zero"):
+            print("Reason zero candidates:", st["reason_zero"])
+        # per-seed preview (first 5)
+        for row in st.get("seeds", [])[:5]:
+            print(f"  seed {row['seed']}: refs={row['refs']} citers={row['citers']} used={row['used']} pool={row['pool_size']}")
+
+    print(f"✔ wrote {outpath} | candidates={len(res['candidates'])}")
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
@@ -37,7 +52,7 @@ if __name__ == "__main__":
     ap.add_argument("--theme-id", type=int, required=True)
     ap.add_argument("--since-year", type=int, default=None, help="only include items >= year")
     ap.add_argument("--max-expand", type=int, default=300)
-    ap.add_argument("--prefer", choices=["citers","refs","both"], default="citers")
+    ap.add_argument("--prefer", choices=["citers","refs","both"], default="citers")  # keep CLI superset (pipeline ignores 'both')
     ap.add_argument("--outdir", default="runs/ripple")
     args = ap.parse_args()
     main(args)

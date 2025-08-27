@@ -17,7 +17,7 @@ def ripple_expand_from_primaries(seed_pmids: List[str],
                                  prefer: str = "citers") -> Dict[str,Any]:
     """
     Expand around seed primary studies, preferring recent citers (or refs), with a strict cap.
-    Returns fetched docs {pmid->meta} and the ordered candidate list.
+    Returns fetched docs {pmid->meta}, the ordered candidate list, and STATS for auditing.
     """
     ic = ICiteCache()
     have = ic.get_many(seed_pmids, legacy=True)
@@ -28,15 +28,27 @@ def ripple_expand_from_primaries(seed_pmids: List[str],
         for rec in fetched:
             have[str(rec.get("pmid") or rec.get("_id") or "")] = rec
 
+    # gather pool per seed for auditing
+    per_seed = []
     cand: List[int] = []
     for s in seed_pmids:
         refs,citers = extract_refs_and_citers(have.get(s, {}))
         pool = citers if prefer=="citers" else refs
+        per_seed.append({
+            "seed": str(s), 
+            "refs": len(refs), 
+            "citers": len(citers), 
+            "used": "citers" if prefer=="citers" else "refs",
+            "pool_size": len(pool)
+        })
         cand.extend(pool)
-    # unique and filter by year if we can
+
+    # unique and (optional) filter by year
     cand = list(dict.fromkeys(cand))
+    n_before_year = len(cand)
+
+    passed_year = cand
     if allowed_since_year is not None:
-        # fetch years
         have2 = ic.get_many([str(x) for x in cand], legacy=True)
         need2 = [str(x) for x in cand if str(x) not in have2]
         if need2:
@@ -44,11 +56,14 @@ def ripple_expand_from_primaries(seed_pmids: List[str],
             ic.put_many(fetched2, legacy=True)
             for rec in fetched2:
                 have2[str(rec.get("pmid") or rec.get("_id") or "")] = rec
-        cand = [c for c in cand if (have2.get(str(c),{}).get("year") or 0) >= allowed_since_year]
-    cand = cand[:max_expand]
+        passed_year = [c for c in cand if (have2.get(str(c),{}).get("year") or 0) >= allowed_since_year]
+
+    # cap
+    capped = passed_year[:max_expand]
 
     # fetch metadata for candidates
-    meta = efetch_abstracts([str(x) for x in cand])
+    meta = efetch_abstracts([str(x) for x in capped])
+
     # embed (cache)
     cache = EmbCache()
     pid = [str(x) for x in meta.keys()]
@@ -63,4 +78,19 @@ def ripple_expand_from_primaries(seed_pmids: List[str],
         new_vecs = emb.encode(miss_texts, batch_size=32)
         cache.put_many(LMSTUDIO_EMB_MODEL, [(miss_pmids[j], new_vecs[j]) for j in range(len(miss_pmids))])
 
-    return {"meta": meta, "candidates": [str(x) for x in cand]}
+    stats = {
+        "seeds": per_seed,
+        "prefer": prefer,
+        "allowed_since_year": allowed_since_year,
+        "pool_unique": n_before_year,
+        "after_year_gate": len(passed_year),
+        "after_cap": len(capped),
+        "reason_zero": None if len(capped)>0 else (
+            "no-citers-or-refs" if all(s["pool_size"]==0 for s in per_seed) else
+            "year-gate-too-strict" if n_before_year>0 and len(passed_year)==0 else
+            "capped-to-zero" if n_before_year>0 and len(capped)==0 else
+            "unknown"
+        )
+    }
+
+    return {"meta": meta, "candidates": [str(x) for x in capped], "stats": stats}

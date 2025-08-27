@@ -1,7 +1,7 @@
 # scripts/run_universe_build.py
 from __future__ import annotations
-import argparse, pathlib, sys, json, time
-from typing import List, Any, Dict
+import argparse, pathlib, sys, json
+import pandas as pd
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 SRC = ROOT / "src"
@@ -29,10 +29,17 @@ def main(args):
         emb_batch=args.emb_batch
     )
     outdir = pathlib.Path(args.outdir); outdir.mkdir(parents=True, exist_ok=True)
-    jdump(uni, outdir / "universe.json")
-    print(f"✔ wrote {outdir/'universe.json'}  | docs={uni['count']} themes={len(uni['themes'])} method={uni['cluster_method']}")
-    # tiny preview
-    print("Themes:", [t["theme_id"] for t in uni["themes"]])
+    path = outdir / "universe.json"
+    jdump(uni, path)
+
+    df = pd.DataFrame(uni["docs"])
+    print(f"✔ wrote {path}  | docs={uni['count']} themes={len(uni['themes'])} method={uni['cluster_method']}")
+    yrs = pd.to_numeric(df["year"], errors="coerce")
+    if yrs.notna().any():
+        print(f"Years: {int(yrs.min())}–{int(yrs.max())} (med {float(yrs.median()):.1f})")
+    sizes = [(t["theme_id"], t["size"]) for t in uni["themes"]]
+    sizes.sort(key=lambda x: x[1], reverse=True)
+    print("Theme sizes:", ", ".join([f"{tid}:{sz}" for tid,sz in sizes[:8]]))
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()

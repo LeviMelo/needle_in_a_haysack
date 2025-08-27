@@ -47,35 +47,91 @@ def esummary(pmids: Iterable[str]) -> Dict[str, Dict[str,Any]]:
     return out
 
 def efetch_abstracts(pmids: Iterable[str]) -> Dict[str, Dict[str,Any]]:
-    pmids = list(pmids)
+    pmids = [str(p) for p in pmids]
     out: Dict[str,Dict[str,Any]] = {}
+
+    import re
+    import xml.etree.ElementTree as ET
+
+    def _join_itertext(node) -> str:
+        """Safely join text from an Element (including nested tags)."""
+        if node is None:
+            return ""
+        try:
+            return "".join(node.itertext())
+        except AttributeError:
+            # Defensive: if someone accidentally passes a list
+            if isinstance(node, list):
+                parts = []
+                for n in node:
+                    try:
+                        parts.append("".join(n.itertext()))
+                    except Exception:
+                        parts.append((getattr(n, "text", None) or ""))
+                return "".join(parts)
+            return (getattr(node, "text", None) or "")
+
     for i in range(0, len(pmids), 200):
         chunk = pmids[i:i+200]
         params = {
-            "db":"pubmed", "retmode":"xml", "rettype":"abstract", "id": ",".join(chunk),
+            "db": "pubmed",
+            "retmode": "xml",
+            "rettype": "abstract",
+            "id": ",".join(chunk),
             "email": ENTREZ_EMAIL
         }
-        if ENTREZ_API_KEY: params["api_key"] = ENTREZ_API_KEY
-        r = requests.get(f"{EUTILS}/efetch.fcgi", headers={"User-Agent": USER_AGENT}, params=params, timeout=HTTP_TIMEOUT)
+        if ENTREZ_API_KEY:
+            params["api_key"] = ENTREZ_API_KEY
+
+        r = requests.get(f"{EUTILS}/efetch.fcgi",
+                         headers={"User-Agent": USER_AGENT},
+                         params=params,
+                         timeout=HTTP_TIMEOUT)
         r.raise_for_status()
-        # Minimal XML parsing to extract Title, Abstract, PublicationTypes, Year, DOI (if present)
-        import xml.etree.ElementTree as ET
         root = ET.fromstring(r.text)
+
         for art in root.findall(".//PubmedArticle"):
-            pmid = art.findtext(".//PMID")
-            title = art.findtext(".//ArticleTitle") or ""
-            abst = " ".join([n.text or "" for n in art.findall(".//AbstractText")]) or ""
+            pmid = art.findtext(".//PMID") or ""
+
+            # Title (handles inline formatting tags)
+            title_el = art.find(".//ArticleTitle")
+            title = _join_itertext(title_el).strip()
+
+            # Abstract (structured abstracts have multiple <AbstractText> nodes)
+            abs_nodes = art.findall(".//Abstract/AbstractText")
+            abstract = " ".join(_join_itertext(n).strip() for n in abs_nodes) if abs_nodes else ""
+
+            # Year: try several places, grab first 4-digit year
             year = None
-            dp = art.findtext(".//PubDate/Year") or art.findtext(".//PubDate/MedlineDate")
+            for path in (".//ArticleDate/Year",
+                         ".//PubDate/Year",
+                         ".//DateCreated/Year",
+                         ".//PubDate/MedlineDate"):
+                s = art.findtext(path)
+                if s:
+                    m = re.search(r"\d{4}", s)
+                    if m:
+                        year = int(m.group(0))
+                        break
+
             journal = art.findtext(".//Journal/Title") or ""
-            try:
-                year = int(dp[:4]) if dp else None
-            except Exception:
-                year = None
             pubtypes = [pt.text for pt in art.findall(".//PublicationTypeList/PublicationType") if pt.text]
+
+            # DOI
             doi = None
             for idn in art.findall(".//ArticleIdList/ArticleId"):
-                if idn.attrib.get("IdType","").lower() == "doi":
-                    doi = (idn.text or "").lower()
-            out[pmid] = {"pmid": pmid, "title": title, "abstract": abst, "year": year, "pub_types": pubtypes, "doi": doi, "journal": journal}
+                if (idn.attrib.get("IdType","").lower() == "doi") and idn.text:
+                    doi = idn.text.strip().lower()
+
+            out[pmid] = {
+                "pmid": pmid,
+                "title": title,
+                "abstract": abstract,
+                "year": year,
+                "pub_types": pubtypes,
+                "doi": doi,
+                "journal": journal
+            }
+
     return out
+

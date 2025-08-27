@@ -35,34 +35,76 @@ def maybe_llm_label(chat: LMChat, titles: List[str]) -> Dict[str, Any]:
 def main(args):
     uni = json.loads(pathlib.Path(args.universe).read_text(encoding="utf-8"))
     docs_df = pd.DataFrame(uni["docs"])
-    cover_rows = [coverage_for_theme(t, docs_df) for t in uni["themes"]]
+
+    # coverage with details for auditing
+    cover_rows = [coverage_for_theme(t, docs_df, include_docs=True) for t in uni["themes"]]
     now_year = datetime.now(timezone.utc).year
     ranked = rank_gaps(uni, cover_rows, now_year)
 
     # Optional LLM labeling for the top themes
     llm = LMChat() if args.llm_label else None
+    id2members = {t["theme_id"]: t["members_idx"] for t in uni["themes"]}
     if llm:
-        id2members = {t["theme_id"]: t["members_idx"] for t in uni["themes"]}
         for r in ranked[:args.topk]:
             idxs = id2members[r["theme_id"]]
             titles = [docs_df.iloc[i]["title"] for i in idxs][:30]
             r.update(maybe_llm_label(llm, titles))
 
     outdir = pathlib.Path(args.outdir); outdir.mkdir(parents=True, exist_ok=True)
-    jdump({"universe_file": str(args.universe), "coverage": cover_rows, "ranked": ranked}, outdir / "gaps.json")
+    payload = {"universe_file": str(args.universe), "coverage": cover_rows, "ranked": ranked}
+    jdump(payload, outdir / "gaps.json")
 
+    # --- Terminal report (auditable) ---
     print(f"✔ wrote {outdir/'gaps.json'}")
+
     print("\n=== TOP CANDIDATES ===")
     for r in ranked[:args.topk]:
-        print(f"- Theme {r['theme_id']}: GAP={r['gap_score']:.3f} | cov={r['coverage_ratio']:.2f} ({r['coverage_level']}) | E={r['E_size']} | new={r['new_primary_count']} | lastSR={r['last_sr_year']}")
+        tid = r["theme_id"]
+        cov = r["coverage_ratio"]; lvl = r["coverage_level"]
+        E  = r["E"]; S = r["S"]
+        last = r["last_sr_year"]
+        print(f"- Theme {tid}: GAP={r['gap_score']:.3f} | cov={cov:.2f} ({lvl}) | E={len(E)} | new={r['new_primary_count']} | lastSR={last}")
+
         if args.llm_label and "llm_yaml" in r:
             print("  LLM label/questions →")
             print("  " + r["llm_yaml"].replace("\n", "\n  "))
         else:
             if r["questions"]:
                 print("  Q:", r["questions"][0])
-            if r["terms"]:
-                print("  terms:", ", ".join(r["terms"][:8]))
+
+        # semantic + biblio snippets (if present in coverage)
+        cov_row = next(cr for cr in cover_rows if cr["theme_id"] == tid)
+        det = cov_row.get("details", {})
+        semE = det.get("sem", {}).get("E", {})
+        semS = det.get("sem", {}).get("S", {})
+        bibE = det.get("bib", {}).get("E_jaccard_refs", {})
+        if semE.get("n"):
+            print(f"  sem(E): mean={semE['mean']:.3f} median={semE['median']:.3f} n={semE['n']}")
+        if semS.get("n"):
+            print(f"  sem(S): mean={semS['mean']:.3f} median={semS['median']:.3f} n={semS['n']}")
+        if bibE.get("pairs"):
+            print(f"  bib(E Jaccard refs): mean={bibE['mean']:.3f} p90={bibE['p90']:.3f} pairs={bibE['pairs']}")
+
+        # show a few primaries and SRs with titles
+        E_docs = det.get("E_docs", {})
+        S_docs = det.get("S_docs", {})
+        if E_docs:
+            print("  Primaries (top 5):")
+            for pid in list(E_docs.keys())[:5]:
+                d = E_docs[pid]
+                print(f"    - {pid} [{d.get('year')}] {d.get('title')[:120]}")
+        if S_docs:
+            print("  SR/Reviews (top 5):")
+            for pid in list(S_docs.keys())[:5]:
+                d = S_docs[pid]
+                print(f"    - {pid} [{d.get('year')}] {d.get('title')[:120]}")
+
+        # per-SR coverage breakdown (first 3)
+        br = det.get("sr_breakdown", [])[:3]
+        if br:
+            print("  SR breakdown:")
+            for row in br:
+                print(f"    - {row['pmid']} [{row.get('year')}] inc|E={len(row['included_primaries'])}/{len(E)} ({row['coverage_of_E']:.2f})")
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
