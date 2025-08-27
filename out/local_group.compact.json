@@ -1,0 +1,79 @@
+{
+  "timestamp_utc": "2025-08-27T23:28:32Z",
+  "seed": 33591115,
+  "params": {
+    "alpha": 0.15,
+    "eps": 0.0001,
+    "max_nodes": 3000,
+    "theta": {
+      "cit": 1.0,
+      "cocit": 0.5,
+      "bc": 0.5,
+      "sem": 0.3,
+      "time": 0.1,
+      "lambda_time": 0.05
+    },
+    "leiden_resolution": 0.5,
+    "lm_model": "text-embedding-qwen3-embedding-0.6b@f16"
+  },
+  "community": {
+    "size": 2,
+    "n_sr": 1,
+    "n_primary": 2,
+    "conductance_method": "sweep on CIT backbone"
+  },
+  "leiden": {
+    "n_communities": 1,
+    "membership_preview": [
+      {
+        "pmid": 33591115,
+        "comm": 0
+      },
+      {
+        "pmid": 40450020,
+        "comm": 0
+      }
+    ]
+  },
+  "edges_summary": {
+    "n_edges": 1,
+    "cosine_summary": {
+      "n": 1,
+      "mean": 0.8894599624542397,
+      "median": 0.8894599624542397,
+      "min": 0.8894599624542397,
+      "max": 0.8894599624542397,
+      "p25": 0.8894599624542397,
+      "p75": 0.8894599624542397
+    },
+    "correlations": {
+      "pearson_cos_vs_cocit_count": null,
+      "spearman_cos_vs_cocit_count": null,
+      "pearson_cos_vs_bc_count": null,
+      "spearman_cos_vs_bc_count": null
+    }
+  },
+  "coverage": {
+    "n_primaries_in_S": 2,
+    "n_covered": 1,
+    "n_gaps": 1
+  },
+  "gaps": [
+    {
+      "primary_pmid": 40450020,
+      "title": "Preoperative carbohydrate loading reduces length of stay after major elective, non-cardiac surgery when compared to fasting: a systematic review and meta-analysis.",
+      "top_sr_candidates": [
+        {
+          "sr_pmid": 40450020,
+          "cosine": 1.0000000675254683,
+          "cocit_j": 0.0,
+          "bc_j": 1.0,
+          "score": 0.800000040515281
+        }
+      ]
+    }
+  ],
+  "files": {
+    "edges_csv": "out\\local_group.edges.csv"
+  }
+}

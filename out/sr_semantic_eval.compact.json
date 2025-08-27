@@ -1,0 +1,692 @@
+{
+  "seed": {
+    "pmid": 33591115,
+    "title": "Gastric Ultrasound Assessing Gastric Emptying of Preoperative Carbohydrate Drinks: A Randomized Controlled Noninferiority Study.",
+    "refs_count": 32,
+    "citers_count": 27
+  },
+  "model": "text-embedding-qwen3-embedding-0.6b@f16",
+  "universe_size": 108,
+  "srmas": [
+    {
+      "pmid": 40450020,
+      "title": "Preoperative carbohydrate loading reduces length of stay after major elective, non-cardiac surgery when compared to fasting: a systematic review and meta-analysis.",
+      "pub_types": [
+        "Comparative Study",
+        "Journal Article",
+        "Meta-Analysis",
+        "Systematic Review"
+      ],
+      "refs_count": 51,
+      "citers_count": 0,
+      "common_with_seed_count": 2
+    }
+  ],
+  "primary_articles": [
+    {
+      "pmid": 12631049,
+      "title": "Effects of preoperative oral carbohydrates and peptides on postoperative endocrine response, mobilization, nutrition and muscle function in abdominal surgery.",
+      "pub_types": [
+        "Clinical Trial",
+        "Journal Article",
+        "Randomized Controlled Trial",
+        "Research Support, Non-U.S. Gov't"
+      ]
+    },
+    {
+      "pmid": 15681099,
+      "title": "The administration of an oral carbohydrate-containing fluid prior to major elective upper-gastrointestinal surgery preserves skeletal muscle mass postoperatively--a randomised clinical trial.",
+      "pub_types": [
+        "Clinical Trial",
+        "Journal Article",
+        "Randomized Controlled Trial"
+      ]
+    },
+    {
+      "pmid": 15739210,
+      "title": "Randomized clinical trial of the effects of oral preoperative carbohydrates on postoperative nausea and vomiting after laparoscopic cholecystectomy.",
+      "pub_types": [
+        "Clinical Trial",
+        "Journal Article",
+        "Multicenter Study",
+        "Randomized Controlled Trial",
+        "Research Support, Non-U.S. Gov't"
+      ]
+    },
+    {
+      "pmid": 16919107,
+      "title": "Pre-operative oral carbohydrate loading in colorectal surgery: a randomized controlled trial.",
+      "pub_types": [
+        "Journal Article",
+        "Randomized Controlled Trial"
+      ]
+    },
+    {
+      "pmid": 19363695,
+      "title": "Preoperative fasting of 2 hours minimizes insulin resistance and organic response to trauma after video-cholecystectomy: a randomized, controlled, clinical trial.",
+      "pub_types": [
+        "Journal Article",
+        "Randomized Controlled Trial",
+        "Research Support, Non-U.S. Gov't"
+      ]
+    },
+    {
+      "pmid": 20177856,
+      "title": "The impact and safety of preoperative oral or intravenous carbohydrate administration versus fasting in colorectal surgery--a randomized controlled trial.",
+      "pub_types": [
+        "Journal Article",
+        "Randomized Controlled Trial",
+        "Research Support, Non-U.S. Gov't"
+      ]
+    },
+    {
+      "pmid": 20205227,
+      "title": "Randomized controlled trial of preoperative oral carbohydrate treatment in major abdominal surgery.",
+      "pub_types": [
+        "Journal Article",
+        "Multicenter Study",
+        "Randomized Controlled Trial",
+        "Research Support, Non-U.S. Gov't"
+      ]
+    },
+    {
+      "pmid": 23547623,
+      "title": "Oral carbohydrate supplementation reduces preoperative discomfort in laparoscopic cholecystectomy.",
+      "pub_types": [
+        "Journal Article",
+        "Randomized Controlled Trial"
+      ]
+    },
+    {
+      "pmid": 24548571,
+      "title": "The Hartung-Knapp-Sidik-Jonkman method for random effects meta-analysis is straightforward and considerably outperforms the standard DerSimonian-Laird method.",
+      "pub_types": [
+        "Comparative Study",
+        "Journal Article"
+      ]
+    },
+    {
+      "pmid": 25364300,
+      "title": "A randomized trial of preoperative oral carbohydrates in abdominal surgery.",
+      "pub_types": [
+        "Journal Article",
+        "Randomized Controlled Trial"
+      ]
+    },
+    {
+      "pmid": 26495916,
+      "title": "Randomized Clinical Trial To Compare The Effects Of Preoperative Oral Carbohydrate Loading Versus Placebo On Insulin Resistance And Cortisol Level After Laparoscopic Cholecystectomy.",
+      "pub_types": [
+        "Journal Article",
+        "Randomized Controlled Trial",
+        "Research Support, Non-U.S. Gov't"
+      ]
+    },
+    {
+      "pmid": 28073036,
+      "title": "Does preoperative oral carbohydrate treatment reduce the postoperative surgical stress response in lumbar disc surgery?",
+      "pub_types": [
+        "Journal Article",
+        "Randomized Controlled Trial"
+      ]
+    },
+    {
+      "pmid": 28582271,
+      "title": "Preoperative Oral Carbohydrate Load Versus Placebo in Major Elective Abdominal Surgery (PROCY): A Randomized, Placebo-controlled, Multicenter, Phase III Trial.",
+      "pub_types": [
+        "Clinical Trial, Phase III",
+        "Journal Article",
+        "Multicenter Study",
+        "Randomized Controlled Trial",
+        "Research Support, Non-U.S. Gov't"
+      ]
+    },
+    {
+      "pmid": 29157765,
+      "title": "The Effect of Preoperative Oral Carbohydrate Solution Intake on Patient Comfort: A Randomized Controlled Study.",
+      "pub_types": [
+        "Journal Article",
+        "Randomized Controlled Trial"
+      ]
+    },
+    {
+      "pmid": 29273446,
+      "title": "Stress hyperglycemia in general surgery: Why should we care?",
+      "pub_types": [
+        "Journal Article",
+        "Observational Study",
+        "Research Support, N.I.H., Extramural",
+        "Research Support, Non-U.S. Gov't"
+      ]
+    },
+    {
+      "pmid": 29915986,
+      "title": "The impact of preoperative carbohydrate loading on intraoperative body temperature: a randomized controlled clinical trial.",
+      "pub_types": [
+        "Journal Article",
+        "Randomized Controlled Trial"
+      ]
+    },
+    {
+      "pmid": 29915988,
+      "title": "Effects of Preoperative Oral Carbohydrates on Quality of Recovery in Laparoscopic Cholecystectomy: A Randomized, Double Blind, Placebo-Controlled Trial.",
+      "pub_types": [
+        "Journal Article",
+        "Randomized Controlled Trial"
+      ]
+    },
+    {
+      "pmid": 30401602,
+      "title": "The Effect of Preoperative Oral Carbohydrate Administration on Insulin Resistance and Comfort Level in Patients Undergoing Surgery.",
+      "pub_types": [
+        "Journal Article",
+        "Randomized Controlled Trial"
+      ]
+    },
+    {
+      "pmid": 30497695,
+      "title": "A randomized controlled study of preoperative oral carbohydrate loading versus fasting in patients undergoing elective craniotomy.",
+      "pub_types": [
+        "Journal Article",
+        "Randomized Controlled Trial",
+        "Research Support, Non-U.S. Gov't"
+      ]
+    },
+    {
+      "pmid": 31096498,
+      "title": "Effects of preoperative oral carbohydrates on patients undergoing ESD surgery under general anesthesia: A randomized control study.",
+      "pub_types": [
+        "Journal Article",
+        "Randomized Controlled Trial"
+      ]
+    },
+    {
+      "pmid": 31309323,
+      "title": "A randomised controlled study of preoperative oral carbohydrate loading versus fasting in patients undergoing colorectal surgery.",
+      "pub_types": [
+        "Comparative Study",
+        "Journal Article",
+        "Randomized Controlled Trial"
+      ]
+    },
+    {
+      "pmid": 31356274,
+      "title": "Simple Versus Complex Preoperative Carbohydrate Drink to Preserve Perioperative Insulin Sensitivity in Laparoscopic Colectomy: A Randomized Controlled Trial.",
+      "pub_types": [
+        "Journal Article",
+        "Randomized Controlled Trial"
+      ]
+    },
+    {
+      "pmid": 32155622,
+      "title": "Preoperative Oral Carbohydrate Reduces Postoperative Insulin Resistance by Activating AMP-Activated Protein Kinase after Colorectal Surgery.",
+      "pub_types": [
+        "Journal Article",
+        "Randomized Controlled Trial"
+      ]
+    },
+    {
+      "pmid": 33310170,
+      "title": "Preoperative Oral Carbohydrate Loading in Laparoscopic Gynecologic Surgery: A Randomized Controlled Trial.",
+      "pub_types": [
+        "Journal Article",
+        "Randomized Controlled Trial",
+        "Research Support, Non-U.S. Gov't"
+      ]
+    },
+    {
+      "pmid": 33591115,
+      "title": "Gastric Ultrasound Assessing Gastric Emptying of Preoperative Carbohydrate Drinks: A Randomized Controlled Noninferiority Study.",
+      "pub_types": [
+        "Equivalence Trial",
+        "Journal Article"
+      ]
+    },
+    {
+      "pmid": 34869555,
+      "title": "Effects of Preoperative Carbohydrate Intake on Inflammatory Markers and Clinical Outcomes in Elderly Patients Undergoing Radical Prostatectomy: A Single-Centre, Double-Blind Randomised Controlled Trial.",
+      "pub_types": [
+        "Case Reports",
+        "Journal Article"
+      ]
+    },
+    {
+      "pmid": 34995804,
+      "title": "Preoperative carbohydrate loading with individualized supplemental insulin in diabetic patients undergoing gastrointestinal surgery: A randomized trial.",
+      "pub_types": [
+        "Journal Article",
+        "Randomized Controlled Trial"
+      ]
+    },
+    {
+      "pmid": 35288009,
+      "title": "Preoperative oral carbohydrates in elderly patients undergoing free flap surgery for oral cancer: randomized controlled trial.",
+      "pub_types": [
+        "Journal Article",
+        "Randomized Controlled Trial"
+      ]
+    },
+    {
+      "pmid": 35718790,
+      "title": "Efficacy of the Oral Administration of Maltodextrin Fructose Before Major Abdominal Surgery: A Prospective, Multicenter Clinical Study.",
+      "pub_types": [
+        "Journal Article",
+        "Multicenter Study",
+        "Randomized Controlled Trial",
+        "Research Support, Non-U.S. Gov't"
+      ]
+    },
+    {
+      "pmid": 35811226,
+      "title": "Effect of Preoperative Oral Carbohydrate on Patients Undergoing Gynecological Laparoscopic Surgery With Different Fasting Times: A Randomized Control Study.",
+      "pub_types": [
+        "Randomized Controlled Trial",
+        "Journal Article"
+      ]
+    },
+    {
+      "pmid": 35949825,
+      "title": "Impact of preoperative carbohydrate loading on gastric volume in patients with type 2 diabetes.",
+      "pub_types": [
+        "Clinical Trial",
+        "Journal Article"
+      ]
+    },
+    {
+      "pmid": 36732123,
+      "title": "Effects of Preoperative Oral Carbohydrate Electrolyte Drinks on Preoperative Hypokalemia Incidence in Patients Scheduled for Laparoscopic Colorectal Resection: A Three-Arm Randomized Clinical Trial.",
+      "pub_types": [
+        "Randomized Controlled Trial",
+        "Journal Article",
+        "Research Support, Non-U.S. Gov't"
+      ]
+    },
+    {
+      "pmid": 36782111,
+      "title": "Effects of preoperative oral enzyme-hydrolyzed rice flour solution on gastric emptying and insulin resistance in patients undergoing laparoscopic cholecystectomy: a prospective randomized controlled trial.",
+      "pub_types": [
+        "Randomized Controlled Trial",
+        "Journal Article",
+        "Research Support, Non-U.S. Gov't"
+      ]
+    },
+    {
+      "pmid": 36940663,
+      "title": "Effects of Preoperative Oral Carbohydrate Loading on Neutrophil/Lymphocyte Ratio and Postoperative Complications following Colorectal Cancer Surgery: A Randomized Controlled Study.",
+      "pub_types": [
+        "Randomized Controlled Trial",
+        "Journal Article"
+      ]
+    },
+    {
+      "pmid": 39142436,
+      "title": "Effect of preoperative oral carbohydrate loading on postoperative insulin resistance, patient-perceived well-being, and surgical outcomes in elective colorectal surgery: a randomized controlled trial.",
+      "pub_types": [
+        "Journal Article",
+        "Randomized Controlled Trial"
+      ]
+    },
+    {
+      "pmid": 39293701,
+      "title": "Effect of Preoperative Carbohydrate Loading on Postoperative Recovery of Individuals Who Have Type 2 Diabetes After Total Knee Arthroplasty: A Randomized Controlled Trial.",
+      "pub_types": [
+        "Journal Article",
+        "Randomized Controlled Trial"
+      ]
+    }
+  ],
+  "similarities": [
+    {
+      "sr_pmid": 40450020,
+      "primary_pmid": 16919107,
+      "primary_title": "Pre-operative oral carbohydrate loading in colorectal surgery: a randomized controlled trial.",
+      "cosine": 1.0,
+      "in_common_with_seed": false
+    },
+    {
+      "sr_pmid": 40450020,
+      "primary_pmid": 35288009,
+      "primary_title": "Preoperative oral carbohydrates in elderly patients undergoing free flap surgery for oral cancer: randomized controlled trial.",
+      "cosine": 1.0,
+      "in_common_with_seed": false
+    },
+    {
+      "sr_pmid": 40450020,
+      "primary_pmid": 33310170,
+      "primary_title": "Preoperative Oral Carbohydrate Loading in Laparoscopic Gynecologic Surgery: A Randomized Controlled Trial.",
+      "cosine": 1.0,
+      "in_common_with_seed": false
+    },
+    {
+      "sr_pmid": 40450020,
+      "primary_pmid": 32155622,
+      "primary_title": "Preoperative Oral Carbohydrate Reduces Postoperative Insulin Resistance by Activating AMP-Activated Protein Kinase after Colorectal Surgery.",
+      "cosine": 1.0,
+      "in_common_with_seed": false
+    },
+    {
+      "sr_pmid": 40450020,
+      "primary_pmid": 19363695,
+      "primary_title": "Preoperative fasting of 2 hours minimizes insulin resistance and organic response to trauma after video-cholecystectomy: a randomized, controlled, clinical trial.",
+      "cosine": 0.999979,
+      "in_common_with_seed": false
+    },
+    {
+      "sr_pmid": 40450020,
+      "primary_pmid": 28582271,
+      "primary_title": "Preoperative Oral Carbohydrate Load Versus Placebo in Major Elective Abdominal Surgery (PROCY): A Randomized, Placebo-controlled, Multicenter, Phase III Trial.",
+      "cosine": 0.999979,
+      "in_common_with_seed": false
+    },
+    {
+      "sr_pmid": 40450020,
+      "primary_pmid": 34995804,
+      "primary_title": "Preoperative carbohydrate loading with individualized supplemental insulin in diabetic patients undergoing gastrointestinal surgery: A randomized trial.",
+      "cosine": 0.999971,
+      "in_common_with_seed": false
+    },
+    {
+      "sr_pmid": 40450020,
+      "primary_pmid": 23547623,
+      "primary_title": "Oral carbohydrate supplementation reduces preoperative discomfort in laparoscopic cholecystectomy.",
+      "cosine": 0.954563,
+      "in_common_with_seed": false
+    },
+    {
+      "sr_pmid": 40450020,
+      "primary_pmid": 20205227,
+      "primary_title": "Randomized controlled trial of preoperative oral carbohydrate treatment in major abdominal surgery.",
+      "cosine": 0.94982,
+      "in_common_with_seed": false
+    },
+    {
+      "sr_pmid": 40450020,
+      "primary_pmid": 26495916,
+      "primary_title": "Randomized Clinical Trial To Compare The Effects Of Preoperative Oral Carbohydrate Loading Versus Placebo On Insulin Resistance And Cortisol Level After Laparoscopic Cholecystectomy.",
+      "cosine": 0.94982,
+      "in_common_with_seed": false
+    },
+    {
+      "sr_pmid": 40450020,
+      "primary_pmid": 15739210,
+      "primary_title": "Randomized clinical trial of the effects of oral preoperative carbohydrates on postoperative nausea and vomiting after laparoscopic cholecystectomy.",
+      "cosine": 0.94982,
+      "in_common_with_seed": false
+    },
+    {
+      "sr_pmid": 40450020,
+      "primary_pmid": 31356274,
+      "primary_title": "Simple Versus Complex Preoperative Carbohydrate Drink to Preserve Perioperative Insulin Sensitivity in Laparoscopic Colectomy: A Randomized Controlled Trial.",
+      "cosine": 0.94977,
+      "in_common_with_seed": false
+    },
+    {
+      "sr_pmid": 40450020,
+      "primary_pmid": 31309323,
+      "primary_title": "A randomised controlled study of preoperative oral carbohydrate loading versus fasting in patients undergoing colorectal surgery.",
+      "cosine": 0.946219,
+      "in_common_with_seed": false
+    },
+    {
+      "sr_pmid": 40450020,
+      "primary_pmid": 30497695,
+      "primary_title": "A randomized controlled study of preoperative oral carbohydrate loading versus fasting in patients undergoing elective craniotomy.",
+      "cosine": 0.946219,
+      "in_common_with_seed": false
+    },
+    {
+      "sr_pmid": 40450020,
+      "primary_pmid": 25364300,
+      "primary_title": "A randomized trial of preoperative oral carbohydrates in abdominal surgery.",
+      "cosine": 0.946081,
+      "in_common_with_seed": false
+    },
+    {
+      "sr_pmid": 40450020,
+      "primary_pmid": 29273446,
+      "primary_title": "Stress hyperglycemia in general surgery: Why should we care?",
+      "cosine": 0.919645,
+      "in_common_with_seed": false
+    },
+    {
+      "sr_pmid": 40450020,
+      "primary_pmid": 35949825,
+      "primary_title": "Impact of preoperative carbohydrate loading on gastric volume in patients with type 2 diabetes.",
+      "cosine": 0.912672,
+      "in_common_with_seed": false
+    },
+    {
+      "sr_pmid": 40450020,
+      "primary_pmid": 35718790,
+      "primary_title": "Efficacy of the Oral Administration of Maltodextrin Fructose Before Major Abdominal Surgery: A Prospective, Multicenter Clinical Study.",
+      "cosine": 0.910496,
+      "in_common_with_seed": false
+    },
+    {
+      "sr_pmid": 40450020,
+      "primary_pmid": 35811226,
+      "primary_title": "Effect of Preoperative Oral Carbohydrate on Patients Undergoing Gynecological Laparoscopic Surgery With Different Fasting Times: A Randomized Control Study.",
+      "cosine": 0.895123,
+      "in_common_with_seed": false
+    },
+    {
+      "sr_pmid": 40450020,
+      "primary_pmid": 39142436,
+      "primary_title": "Effect of preoperative oral carbohydrate loading on postoperative insulin resistance, patient-perceived well-being, and surgical outcomes in elective colorectal surgery: a randomized controlled trial.",
+      "cosine": 0.894866,
+      "in_common_with_seed": false
+    },
+    {
+      "sr_pmid": 40450020,
+      "primary_pmid": 39293701,
+      "primary_title": "Effect of Preoperative Carbohydrate Loading on Postoperative Recovery of Individuals Who Have Type 2 Diabetes After Total Knee Arthroplasty: A Randomized Controlled Trial.",
+      "cosine": 0.894726,
+      "in_common_with_seed": false
+    },
+    {
+      "sr_pmid": 40450020,
+      "primary_pmid": 28073036,
+      "primary_title": "Does preoperative oral carbohydrate treatment reduce the postoperative surgical stress response in lumbar disc surgery?",
+      "cosine": 0.893666,
+      "in_common_with_seed": false
+    },
+    {
+      "sr_pmid": 40450020,
+      "primary_pmid": 33591115,
+      "primary_title": "Gastric Ultrasound Assessing Gastric Emptying of Preoperative Carbohydrate Drinks: A Randomized Controlled Noninferiority Study.",
+      "cosine": 0.88946,
+      "in_common_with_seed": false
+    },
+    {
+      "sr_pmid": 40450020,
+      "primary_pmid": 36782111,
+      "primary_title": "Effects of preoperative oral enzyme-hydrolyzed rice flour solution on gastric emptying and insulin resistance in patients undergoing laparoscopic cholecystectomy: a prospective randomized controlled trial.",
+      "cosine": 0.889026,
+      "in_common_with_seed": false
+    },
+    {
+      "sr_pmid": 40450020,
+      "primary_pmid": 29915988,
+      "primary_title": "Effects of Preoperative Oral Carbohydrates on Quality of Recovery in Laparoscopic Cholecystectomy: A Randomized, Double Blind, Placebo-Controlled Trial.",
+      "cosine": 0.889026,
+      "in_common_with_seed": false
+    },
+    {
+      "sr_pmid": 40450020,
+      "primary_pmid": 36732123,
+      "primary_title": "Effects of Preoperative Oral Carbohydrate Electrolyte Drinks on Preoperative Hypokalemia Incidence in Patients Scheduled for Laparoscopic Colorectal Resection: A Three-Arm Randomized Clinical Trial.",
+      "cosine": 0.889026,
+      "in_common_with_seed": false
+    },
+    {
+      "sr_pmid": 40450020,
+      "primary_pmid": 36940663,
+      "primary_title": "Effects of Preoperative Oral Carbohydrate Loading on Neutrophil/Lymphocyte Ratio and Postoperative Complications following Colorectal Cancer Surgery: A Randomized Controlled Study.",
+      "cosine": 0.889026,
+      "in_common_with_seed": false
+    },
+    {
+      "sr_pmid": 40450020,
+      "primary_pmid": 31096498,
+      "primary_title": "Effects of preoperative oral carbohydrates on patients undergoing ESD surgery under general anesthesia: A randomized control study.",
+      "cosine": 0.888867,
+      "in_common_with_seed": true
+    },
+    {
+      "sr_pmid": 40450020,
+      "primary_pmid": 12631049,
+      "primary_title": "Effects of preoperative oral carbohydrates and peptides on postoperative endocrine response, mobilization, nutrition and muscle function in abdominal surgery.",
+      "cosine": 0.888669,
+      "in_common_with_seed": false
+    },
+    {
+      "sr_pmid": 40450020,
+      "primary_pmid": 34869555,
+      "primary_title": "Effects of Preoperative Carbohydrate Intake on Inflammatory Markers and Clinical Outcomes in Elderly Patients Undergoing Radical Prostatectomy: A Single-Centre, Double-Blind Randomised Controlled Trial.",
+      "cosine": 0.887188,
+      "in_common_with_seed": false
+    },
+    {
+      "sr_pmid": 40450020,
+      "primary_pmid": 29157765,
+      "primary_title": "The Effect of Preoperative Oral Carbohydrate Solution Intake on Patient Comfort: A Randomized Controlled Study.",
+      "cosine": 0.86567,
+      "in_common_with_seed": false
+    },
+    {
+      "sr_pmid": 40450020,
+      "primary_pmid": 30401602,
+      "primary_title": "The Effect of Preoperative Oral Carbohydrate Administration on Insulin Resistance and Comfort Level in Patients Undergoing Surgery.",
+      "cosine": 0.86567,
+      "in_common_with_seed": false
+    },
+    {
+      "sr_pmid": 40450020,
+      "primary_pmid": 15681099,
+      "primary_title": "The administration of an oral carbohydrate-containing fluid prior to major elective upper-gastrointestinal surgery preserves skeletal muscle mass postoperatively--a randomised clinical trial.",
+      "cosine": 0.865535,
+      "in_common_with_seed": false
+    },
+    {
+      "sr_pmid": 40450020,
+      "primary_pmid": 20177856,
+      "primary_title": "The impact and safety of preoperative oral or intravenous carbohydrate administration versus fasting in colorectal surgery--a randomized controlled trial.",
+      "cosine": 0.864979,
+      "in_common_with_seed": true
+    },
+    {
+      "sr_pmid": 40450020,
+      "primary_pmid": 24548571,
+      "primary_title": "The Hartung-Knapp-Sidik-Jonkman method for random effects meta-analysis is straightforward and considerably outperforms the standard DerSimonian-Laird method.",
+      "cosine": 0.864979,
+      "in_common_with_seed": false
+    },
+    {
+      "sr_pmid": 40450020,
+      "primary_pmid": 29915986,
+      "primary_title": "The impact of preoperative carbohydrate loading on intraoperative body temperature: a randomized controlled clinical trial.",
+      "cosine": 0.862941,
+      "in_common_with_seed": false
+    }
+  ],
+  "metrics": {
+    "overall": {
+      "n": 36,
+      "mean": 0.923,
+      "median": 0.903,
+      "p10": 0.866,
+      "p25": 0.889,
+      "p75": 0.95,
+      "p90": 1.0,
+      "min": 0.863,
+      "max": 1.0
+    },
+    "by_sr": {
+      "40450020": {
+        "n": 36,
+        "mean": 0.923,
+        "median": 0.903,
+        "p10": 0.866,
+        "p25": 0.889,
+        "p75": 0.95,
+        "p90": 1.0,
+        "min": 0.863,
+        "max": 1.0
+      }
+    },
+    "top5_pairs": [
+      {
+        "sr_pmid": 40450020,
+        "primary_pmid": 16919107,
+        "primary_title": "Pre-operative oral carbohydrate loading in colorectal surgery: a randomized controlled trial.",
+        "cosine": 1.0,
+        "in_common_with_seed": false
+      },
+      {
+        "sr_pmid": 40450020,
+        "primary_pmid": 35288009,
+        "primary_title": "Preoperative oral carbohydrates in elderly patients undergoing free flap surgery for oral cancer: randomized controlled trial.",
+        "cosine": 1.0,
+        "in_common_with_seed": false
+      },
+      {
+        "sr_pmid": 40450020,
+        "primary_pmid": 33310170,
+        "primary_title": "Preoperative Oral Carbohydrate Loading in Laparoscopic Gynecologic Surgery: A Randomized Controlled Trial.",
+        "cosine": 1.0,
+        "in_common_with_seed": false
+      },
+      {
+        "sr_pmid": 40450020,
+        "primary_pmid": 32155622,
+        "primary_title": "Preoperative Oral Carbohydrate Reduces Postoperative Insulin Resistance by Activating AMP-Activated Protein Kinase after Colorectal Surgery.",
+        "cosine": 1.0,
+        "in_common_with_seed": false
+      },
+      {
+        "sr_pmid": 40450020,
+        "primary_pmid": 19363695,
+        "primary_title": "Preoperative fasting of 2 hours minimizes insulin resistance and organic response to trauma after video-cholecystectomy: a randomized, controlled, clinical trial.",
+        "cosine": 0.999979,
+        "in_common_with_seed": false
+      }
+    ],
+    "bottom5_pairs": [
+      {
+        "sr_pmid": 40450020,
+        "primary_pmid": 29915986,
+        "primary_title": "The impact of preoperative carbohydrate loading on intraoperative body temperature: a randomized controlled clinical trial.",
+        "cosine": 0.862941,
+        "in_common_with_seed": false
+      },
+      {
+        "sr_pmid": 40450020,
+        "primary_pmid": 24548571,
+        "primary_title": "The Hartung-Knapp-Sidik-Jonkman method for random effects meta-analysis is straightforward and considerably outperforms the standard DerSimonian-Laird method.",
+        "cosine": 0.864979,
+        "in_common_with_seed": false
+      },
+      {
+        "sr_pmid": 40450020,
+        "primary_pmid": 20177856,
+        "primary_title": "The impact and safety of preoperative oral or intravenous carbohydrate administration versus fasting in colorectal surgery--a randomized controlled trial.",
+        "cosine": 0.864979,
+        "in_common_with_seed": true
+      },
+      {
+        "sr_pmid": 40450020,
+        "primary_pmid": 15681099,
+        "primary_title": "The administration of an oral carbohydrate-containing fluid prior to major elective upper-gastrointestinal surgery preserves skeletal muscle mass postoperatively--a randomised clinical trial.",
+        "cosine": 0.865535,
+        "in_common_with_seed": false
+      },
+      {
+        "sr_pmid": 40450020,
+        "primary_pmid": 30401602,
+        "primary_title": "The Effect of Preoperative Oral Carbohydrate Administration on Insulin Resistance and Comfort Level in Patients Undergoing Surgery.",
+        "cosine": 0.86567,
+        "in_common_with_seed": false
+      }
+    ]
+  }
+}
