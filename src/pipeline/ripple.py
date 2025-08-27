@@ -33,12 +33,19 @@ def ripple_expand_from_primaries(seed_pmids: List[str],
     cand: List[int] = []
     for s in seed_pmids:
         refs,citers = extract_refs_and_citers(have.get(s, {}))
+        used = prefer
         pool = citers if prefer=="citers" else refs
+        if not pool:
+            # auto fallback per-seed
+            alt = refs if prefer=="citers" else citers
+            if alt:
+                pool = alt
+                used = f"{prefer}->" + ("refs" if prefer=="citers" else "citers")
         per_seed.append({
             "seed": str(s), 
             "refs": len(refs), 
             "citers": len(citers), 
-            "used": "citers" if prefer=="citers" else "refs",
+            "used": used,
             "pool_size": len(pool)
         })
         cand.extend(pool)

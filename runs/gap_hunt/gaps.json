@@ -3,190 +3,1578 @@
   "coverage": [
     {
       "theme_id": 0,
-      "E_size": 20,
-      "S_count": 6,
-      "coverage_ratio": 0.0,
-      "covered": [],
+      "E_size": 24,
+      "S_count": 10,
+      "coverage_ratio": 0.125,
+      "covered": [
+        "36800808",
+        "37466909",
+        "38290374"
+      ],
       "sr_map": {
-        "40807216": [],
-        "39443044": [],
-        "39701415": [],
-        "34686835": [],
-        "40378603": [],
-        "34011038": []
+        "34011038": [],
+        "38390901": [],
+        "38644241": [],
+        "38663304": [],
+        "39443044": [
+          "36800808",
+          "37466909"
+        ],
+        "39443186": [
+          "36800808"
+        ],
+        "39536942": [],
+        "40162381": [],
+        "40207561": [
+          "36800808",
+          "38290374"
+        ],
+        "40807216": []
       },
       "new_primary_count": 0,
       "last_sr_year": 2025,
       "coverage_level": "NONE",
       "E": [
         "33591115",
+        "33753294",
+        "34045064",
         "34312921",
         "34324937",
-        "34540991",
+        "34890858",
         "35021988",
-        "35840712",
+        "35881513",
         "35949825",
         "36800808",
         "37386267",
         "37401538",
+        "37466909",
         "37587543",
-        "38323713",
-        "38433227",
+        "38282500",
+        "38290374",
         "38615661",
-        "38849566",
+        "39116006",
         "39423510",
-        "39764617",
-        "40101040",
+        "39435967",
+        "39834981",
         "40247383",
+        "40324318",
         "40399137"
       ],
       "S": [
         "34011038",
-        "34686835",
+        "38390901",
+        "38644241",
+        "38663304",
         "39443044",
-        "39701415",
-        "40378603",
+        "39443186",
+        "39536942",
+        "40162381",
+        "40207561",
         "40807216"
-      ]
+      ],
+      "details": {
+        "E_docs": {
+          "33591115": {
+            "pmid": "33591115",
+            "title": "Gastric Ultrasound Assessing Gastric Emptying of Preoperative Carbohydrate Drinks: A Randomized Controlled Noninferiority Study.",
+            "abstract": "Tools for the evaluation of gastric emptying have evolved over time. The purpose of this study was to show that the risk of pulmonary aspiration is not increased with carbohydrate drink, by demonstrating that the gastric antral cross-sectional area (CSA) of the NO-NPO group is either equivalent to or less than that of the NPO (nil per os) group. Sixty-four patients scheduled for elective laparoscopic benign gynecolog…",
+            "year": 2021,
+            "doi": "10.1213/ane.0000000000005411",
+            "journal": "Anesthesia and analgesia",
+            "pub_types": [
+              "Equivalence Trial",
+              "Journal Article"
+            ]
+          },
+          "33753294": {
+            "pmid": "33753294",
+            "title": "Anaesthesiologists' clinical judgment accuracy regarding preoperative full stomach: Diagnostic study in urgent surgical adult patients.",
+            "abstract": "In urgent situations, preoperative full stomach assessment mostly relies on clinical judgment. Our primary objective was to assess the diagnostic performance of clinical judgment for the preoperative assessment of full stomach in urgent patients compared to gastric point-of-care ultrasound (PoCUS). Our secondary objective was to identify risk factors associated with PoCUS full stomach in urgent patients. We led a pro…",
+            "year": 2021,
+            "doi": "10.1016/j.accpm.2021.100836",
+            "journal": "Anaesthesia, critical care & pain medicine",
+            "pub_types": [
+              "Journal Article",
+              "Observational Study"
+            ]
+          },
+          "34045064": {
+            "pmid": "34045064",
+            "title": "Prediction of gastric fluid volume by ultrasonography in infants undergoing general anaesthesia.",
+            "abstract": "Point-of-care ultrasonography can estimate gastric contents and volume to assess the risk of pulmonary aspiration; however, its use in infants has not been well validated. We aimed to develop a predictive model for estimating gastric fluid volume using ultrasonography in infants. This prospective observational study enrolled 200 infants (≤12 months) undergoing general anaesthesia. After anaesthetic induction, while p…",
+            "year": 2021,
+            "doi": "10.1016/j.bja.2021.03.039",
+            "journal": "British journal of anaesthesia",
+            "pub_types": [
+              "Journal Article",
+              "Observational Study"
+            ]
+          },
+          "34312921": {
+            "pmid": "34312921",
+            "title": "Gastric emptying time of two different quantities of clear fluids in children: A double-blinded randomized controlled study.",
+            "abstract": "Perioperative pulmonary aspiration risk increases with increased preoperative gastric volume; hence traditionally, healthy children are kept fasted overnight before surgery. Current guidelines recommend 2-h clear fluids fasting prior to anesthesia. However, emerging evidence favors allowing 3 ml/kg clear fluids up to 1-h before anesthesia. We compared the gastric volume and gastric emptying time after ingestion of 3 …",
+            "year": 2021,
+            "doi": "10.1111/pan.14261",
+            "journal": "Paediatric anaesthesia",
+            "pub_types": [
+              "Journal Article",
+              "Randomized Controlled Trial"
+            ]
+          },
+          "34324937": {
+            "pmid": "34324937",
+            "title": "Reinforcing the valuable role of gastric ultrasound for volume and content assessment: an observational study.",
+            "abstract": "Pulmonary aspiration is one of the most important complications in anesthesiology. Assessment of gastric content by ultrasound is a good method to quantify gastric volume and to determine the risk of intraoperative pulmonary aspiration. The aim of this study is to determine the accuracy of the gastric ultrasonography in the qualitative analysis of gastric content, mainly in the analysis of small amounts of liquid con…",
+            "year": 2021,
+            "doi": "10.1016/j.bjane.2021.07.008",
+            "journal": "Brazilian journal of anesthesiology (Elsevier)",
+            "pub_types": [
+              "Observational Study",
+              "Journal Article"
+            ]
+          },
+          "34890858": {
+            "pmid": "34890858",
+            "title": "Ultrasound assessment of gastric contents prior to placental delivery: A prospective multicentre cohort study.",
+            "abstract": "There is ongoing debate regarding the optimal general anaesthetic technique for manual removal of the placenta after vaginal delivery. Using ultrasound examination of the gastric antrum, this study aimed to assess the change in gastric contents during vaginal delivery and to determine the prevalence of stomach at risk for pulmonary aspiration in the immediate postpartum period before placental delivery. In this prosp…",
+            "year": 2021,
+            "doi": "10.1016/j.accpm.2021.100993",
+            "journal": "Anaesthesia, critical care & pain medicine",
+            "pub_types": [
+              "Journal Article",
+              "Multicenter Study"
+            ]
+          },
+          "35021988": {
+            "pmid": "35021988",
+            "title": "Ultrasonographic assessment of preoperative gastric volume in patients with dyspepsia: a prospective observational study.",
+            "abstract": "Patients undergoing gastroenteroscopy during sedation are prone to aspiration, and most patients with dyspepsia have delayed gastric emptying. This study aimed to investigate the feasibility of measuring the gastric antrum cross-sectional area (CSA) to supply a novel clinical diagnostic reference value in patients with dyspepsia. Patients with dyspepsia undergoing elective gastroscopy were included. The Perlas qualit…",
+            "year": 2022,
+            "doi": "10.1016/j.bja.2021.01.028",
+            "journal": "BMC anesthesiology",
+            "pub_types": [
+              "Journal Article",
+              "Observational Study",
+              "Research Support, Non-U.S. Gov't"
+            ]
+          },
+          "35881513": {
+            "pmid": "35881513",
+            "title": "Ultrasound Assessment of Gastric Fluid Volume in Children Scheduled for Elective Surgery After Clear Fluid Fasting for 1 Versus 2 Hours: A Randomized Controlled Trial.",
+            "abstract": "This study aimed to compare the gastric fluid volume (GFV) in children who fasted 1 versus 2 hours using ultrasound, after ingestion of a defined volume of clear fluid. Children scheduled for elective surgery were enrolled in this randomized, double-blinded, controlled trial. After receiving 3 mL kg -1 clear fluid, participants were randomized to have a gastric ultrasound after fasting for either 1 hour (1-hour group…",
+            "year": 2022,
+            "doi": "10.1213/ane.0000000000006157",
+            "journal": "Anesthesia and analgesia",
+            "pub_types": [
+              "Randomized Controlled Trial",
+              "Journal Article"
+            ]
+          },
+          "35949825": {
+            "pmid": "35949825",
+            "title": "Impact of preoperative carbohydrate loading on gastric volume in patients with type 2 diabetes.",
+            "abstract": "Enhanced recovery after surgery advocates that consuming carbohydrates two hours before anesthesia is beneficial to the patient's recovery. Patients with diabetes are prone to delayed gastric emptying. Different guidelines for preoperative carbohydrate consumption in patients with diabetes remain controversial due to concerns about the risk of regurgitation, aspiration and hyperglycemia. Ultrasonic gastric volume (GV…",
+            "year": 2022,
+            "doi": "10.12998/wjcc.v10.i18.6082",
+            "journal": "World journal of clinical cases",
+            "pub_types": [
+              "Clinical Trial",
+              "Journal Article"
+            ]
+          },
+          "36800808": {
+            "pmid": "36800808",
+            "title": "Ultrasonographic assessment of metoclopramide effect on gastric volume in parturients females undergoing Caesarean section: a randomized double blind study.",
+            "abstract": "The prokinetic effect of metoclopramide promotes gastric emptying and decreases stomach capacity. The aim of the present study was to assess the efficacy of metoclopramide in reducing gastric contents and volume using gastric point-of-care ultrasonography (PoCUS) in parturients females prepared for elective Cesarean section under general anesthesia. A total of 111 parturient females were randomly allocated to one of …",
+            "year": 2023,
+            "doi": "10.23736/s0375-9393.22.16913-0",
+            "journal": "Minerva anestesiologica",
+            "pub_types": [
+              "Randomized Controlled Trial",
+              "Journal Article"
+            ]
+          },
+          "37386267": {
+            "pmid": "37386267",
+            "title": "Determining residual gastric volume in healthy children using ultrasound.",
+            "abstract": "Fasting guidelines for children recommend restricting clear fluids for one or two hours before a procedure to reduce pulmonary aspiration. Gastric volumes < 1.5 mL·kg-1 do not seem to present an increased risk of pulmonary aspiration. Our aim was to quantify the time to achieve a gastric volume < 1.5 mL·kg-1 after clear fluid ingestion in children. We conducted a prospective observational study in healthy volunteers …",
+            "year": 2023,
+            "doi": "10.1016/j.bja.2017.11.080",
+            "journal": "Canadian journal of anaesthesia = Journal canadien d'anesthesie",
+            "pub_types": [
+              "Observational Study",
+              "Journal Article"
+            ]
+          },
+          "37401538": {
+            "pmid": "37401538",
+            "title": "Feasibility and Utility of Routine Point-of-Care Gastric Ultrasonography in Patients Undergoing Upper Gastrointestinal Endoscopy Procedures: A Prospective Cohort Study.",
+            "abstract": "Previous studies have indicated that point-of-care ultrasonography (POCUS) of the gastric antrum can predict the adequacy of fasting before surgery and anesthesia. The aim of this study was to evaluate the utility of gastric POCUS in patients undergoing upper gastrointestinal (GI) endoscopy procedures. We performed a single-center cohort study in patients undergoing upper GI endoscopy. Consenting patient's gastric an…",
+            "year": 2023,
+            "doi": "10.1002/jum.16299",
+            "journal": "Journal of ultrasound in medicine : official journal of the American Institute of Ultrasound in Medicine",
+            "pub_types": [
+              "Journal Article"
+            ]
+          },
+          "37466909": {
+            "pmid": "37466909",
+            "title": "Influence of semaglutide use on the presence of residual gastric solids on gastric ultrasound: a prospective observational study in volunteers without obesity recently started on semaglutide.",
+            "abstract": "Glucagon-like peptide-1 (GLP-1) receptor agonists (GLP-1RAs) have become increasingly popular as both diabetic and weight loss therapies. One effect of this class of medication is delayed gastric emptying, which may impact the risk of aspiration during anesthesia delivery. In this prospective study, we used gastric ultrasound to evaluate the presence of solid gastric contents in both supine and lateral positions afte…",
+            "year": 2023,
+            "doi": "10.1016/j.bjae.2020.07.003",
+            "journal": "Canadian journal of anaesthesia = Journal canadien d'anesthesie",
+            "pub_types": [
+              "Observational Study",
+              "Journal Article"
+            ]
+          },
+          "37587543": {
+            "pmid": "37587543",
+            "title": "Pre-operative gastric ultrasound in patients at risk of pulmonary aspiration: a prospective observational cohort study.",
+            "abstract": "Point-of-care gastric sonography offers an objective approach to assessing individual pulmonary aspiration risk before induction of general anaesthesia. We aimed to evaluate the potential impact of routine pre-operative gastric ultrasound on peri-operative management in a cohort of adult patients undergoing elective or emergency surgery at a single centre. According to pre-operative gastric ultrasound results, patien…",
+            "year": 2023,
+            "doi": "10.1111/anae.16117",
+            "journal": "Anaesthesia",
+            "pub_types": [
+              "Journal Article"
+            ]
+          },
+          "38282500": {
+            "pmid": "38282500",
+            "title": "Impact of preoperative oral domperidone on gastric residual volume after clear fluid ingestion in patients scheduled for elective surgery: a randomized controlled trial.",
+            "abstract": "Oral domperidone is a prokinetic drug that enhances gastric emptying, which has a positive effect in decreasing gastric residual volume (GRV), subsequently decreasing the risk of pulmonary aspiration. This study aimed to assess the effect of preoperative oral domperidone on gastric residual volume, detected by ultrasound for patients undergoing elective surgery under general anesthesia. This randomized double-blinded…",
+            "year": 2023,
+            "doi": "10.1111/j.1365-2125.1982.tb01435.x",
+            "journal": "Anaesthesiology intensive therapy",
+            "pub_types": [
+              "Randomized Controlled Trial",
+              "Journal Article"
+            ]
+          },
+          "38290374": {
+            "pmid": "38290374",
+            "title": "Diagnostic accuracy of a simple qualitative ultrasound assessment for the diagnosis of high-risk gastric contents in the parturient. A prospective observational cohort study.",
+            "abstract": "Interpretation of gastric ultrasound relies on the use of a clinical algorithm that combines qualitative analysis of the gastric antrum contents with the calculation of the volume of fluid contents. This reference method may be difficult to apply in the parturient. We therefore aimed to assess the diagnostic accuracy of a simple qualitative assessment in the supine position for the diagnosis of high-risk gastric cont…",
+            "year": 2024,
+            "doi": "10.1016/j.jclinane.2024.111404",
+            "journal": "Journal of clinical anesthesia",
+            "pub_types": [
+              "Observational Study",
+              "Journal Article"
+            ]
+          },
+          "38615661": {
+            "pmid": "38615661",
+            "title": "The Effect of Oral Fluid Administration 1 Hour before Surgery on Preoperative Anxiety and Gastric Volume in Pediatric Patients.",
+            "abstract": "Today, preoperative fasting guidelines have changed, allowing clear liquid intake up to 1 h before surgery. However, concerns remain regarding the risk of aspiration associated with clear liquid intake. This study aimed to investigate the impact of clear fluid given 1 h before surgery on child anxiety and gastric volumes. A prospective, randomized, controlled study included 90 patients aged 5-12 years. The patients w…",
+            "year": 2024,
+            "doi": "10.1159/000538842",
+            "journal": "European surgical research. Europaische chirurgische Forschung. Recherches chirurgicales europeennes",
+            "pub_types": [
+              "Journal Article",
+              "Randomized Controlled Trial"
+            ]
+          },
+          "39116006": {
+            "pmid": "39116006",
+            "title": "Assessing Full Stomach Prevalence with Ultrasound Following Preoperative Fasting in Diabetic Patients with Dysautonomia: A Comparative Observational Study.",
+            "abstract": "Traditionally, diabetics have been considered patients with a high risk of aspiration due to having delayed gastric emptying; However, the evidence concerning residual gastric volume (GV) in fasting diabetic patients is inconsistent. This study aimed to compare the fasting GV of diabetic patients with or without dysautonomia with control patients scheduled for elective surgery using gastric ultrasound. This bicentric…",
+            "year": 2024,
+            "doi": "10.1213/ane.0000000000007110",
+            "journal": "Anesthesia and analgesia",
+            "pub_types": [
+              "Journal Article",
+              "Observational Study",
+              "Comparative Study",
+              "Multicenter Study"
+            ]
+          },
+          "39423510": {
+            "pmid": "39423510",
+            "title": "Gastric insufflation with and without an inserted gastric tube in second-generation laryngeal mask airways: A randomized controlled cross-over trial.",
+            "abstract": "Second-generation laryngeal mask airways are equipped with an additional lumen for a gastric tube, with the intention to reduce the risk of aspiration by draining gastric content. However, the effect of an inserted gastric tube through the gastric channel on gastric insufflation, a substantial part of the pathomechanism of aspiration, during positive-pressure ventilation is not clear. We hypothesized, that an inserte…",
+            "year": 2024,
+            "doi": "10.1016/j.jclinane.2024.111653",
+            "journal": "Journal of clinical anesthesia",
+            "pub_types": [
+              "Journal Article",
+              "Randomized Controlled Trial"
+            ]
+          },
+          "39435967": {
+            "pmid": "39435967",
+            "title": "Relationship between residual gastric content and peri-operative semaglutide use assessed by gastric ultrasound: a prospective observational study.",
+            "abstract": "Semaglutide is a long-acting glucagon-like peptide-1 receptor agonist known to delay gastric emptying. Despite a growing body of evidence, its peri-operative safety profile remains uncertain, particularly with regard to the risk of increased residual gastric content and aspiration of gastric contents during anaesthesia. We hypothesised that semaglutide interruption of ≤ 10 days before elective surgical procedures is …",
+            "year": 2024,
+            "doi": "10.1111/anae.16454",
+            "journal": "Anaesthesia",
+            "pub_types": [
+              "Journal Article",
+              "Observational Study"
+            ]
+          },
+          "39834981": {
+            "pmid": "39834981",
+            "title": "Preoperative Ultrasonographic Assessment of the Gastric Antrum in Diabetic Patients Before Elective Surgery: A Prospective Observational Comparative Cohort Study.",
+            "abstract": "Diabetic patients may have neuropathy-induced gastroparesis predisposing them to aspiration. Point-of-care gastric ultrasonography (GUSG) is useful in the qualitative assessment of the antrum and quantitative prediction of gastric volume (GV) in diabetic patients. In this study, we compared the GUSG findings between fasting diabetic and non-diabetic patients in the elective preoperative setting. A total of 220 patien…",
+            "year": 2024,
+            "doi": "10.7759/cureus.76014",
+            "journal": "Cureus",
+            "pub_types": [
+              "Journal Article"
+            ]
+          },
+          "40247383": {
+            "pmid": "40247383",
+            "title": "Point-of-care ultrasound estimation of gastric residual volume in preterm infants: development of a calculation model.",
+            "abstract": "The aspiration of gastric residual volume through the gastric tube increases the risk of feed interruption episodes, prolongs the time needed to achieve full enteral feeding and regain birth weight, and may potentially damage the gastric mucous. This study aimed to develop a point-of-care ultrasound-based model to calculate gastric residual volume in preterm infants. This observational study enrolled 100 preterm infa…",
+            "year": 2025,
+            "doi": "10.1186/s13052-025-01953-5",
+            "journal": "Italian journal of pediatrics",
+            "pub_types": [
+              "Journal Article",
+              "Observational Study"
+            ]
+          },
+          "40324318": {
+            "pmid": "40324318",
+            "title": "Ultrasound assessment of preoperative gastric volume in fasted diabetic surgical patients: A prospective observational cohort study on the effects of glucagon-like peptide-1 agonists on gastric emptying.",
+            "abstract": "Preoperative gastric ultrasound allows non-invasive qualitative and quantitative assessment of gastric contents aiding in preoperative risk assessment. We hypothesized that appropriately fasted diabetic surgical patients taking GLP-1 agonists would have higher gastric volumes than those not taking GLP-1 agonists. This prospective, observational cohort study enrolled diabetic patients undergoing elective surgery, comp…",
+            "year": 2025,
+            "doi": "10.1016/j.jclinane.2025.111853",
+            "journal": "Journal of clinical anesthesia",
+            "pub_types": [
+              "Journal Article",
+              "Observational Study"
+            ]
+          },
+          "40399137": {
+            "pmid": "40399137",
+            "title": "Comparison of gastric volumes using ultrasound in term pregnant women with and without gestational diabetes before elective cesarean delivery: an observational cohort study.",
+            "abstract": "This study aimed to evaluate the impact of gestational diabetes mellitus (GDM) on gastric volume and content using gastric ultrasonography in term pregnant women undergoing elective cesarean delivery. Given the increased aspiration risk in pregnant patients due to physiological changes, GDM-related gastric motility alterations may further complicate anesthetic management. A prospective observational cohort study incl…",
+            "year": 2025,
+            "doi": "10.1080/14767058.2025.2508267",
+            "journal": "The journal of maternal-fetal & neonatal medicine : the official journal of the European Association of Perinatal Medicine, the Federation of Asia and Oceania Perinatal Societies, the International Society of Perinatal Obstetricians",
+            "pub_types": [
+              "Journal Article",
+              "Observational Study",
+              "Comparative Study"
+            ]
+          }
+        },
+        "S_docs": {
+          "34011038": {
+            "pmid": "34011038",
+            "title": "An extremely atypical presentation of esophageal squamous cell carcinoma with pancreatic and hepatic metastases: A case report and overview of the literature.",
+            "abstract": "Esophageal carcinoma is an aggressive cancer with extremely poor therapeutic outcomes due to its high metastatic potential and a significant risk of recurrence after radical resection. Liver is the most common metastatic target organ of esophageal carcinoma, followed by the lungs, bones, and brain. Few cases of solitary pancreatic and hepatic metastases of esophageal carcinoma have been reported. We report the case o…",
+            "year": 2021,
+            "doi": "10.1097/md.0000000000025785",
+            "journal": "Medicine",
+            "pub_types": [
+              "Case Reports",
+              "Journal Article",
+              "Review"
+            ]
+          },
+          "38390901": {
+            "pmid": "38390901",
+            "title": "Anesthetic recommendations for maternal and fetal safety in nonobstetric surgery: a balancing act.",
+            "abstract": "Nonobstetric surgery during pregnancy is associated with maternal and fetal risks. Several physiologic changes create unique challenges for anesthesiologists. This review highlights physiologic changes of pregnancy and presents clinical recommendations based on recent literature to guide anesthetic management for the pregnant patient undergoing nonobstetric surgery. Nearly every anesthetic technique has been safely u…",
+            "year": 2024,
+            "doi": "10.1097/aco.0000000000001363",
+            "journal": "Current opinion in anaesthesiology",
+            "pub_types": [
+              "Journal Article",
+              "Review"
+            ]
+          },
+          "38644241": {
+            "pmid": "38644241",
+            "title": "[Endoscopic response evaluation in gastrointestinal cancers after neoadjuvant chemora- diotherapy].",
+            "abstract": "Neoadjuvant chemoradiotherapy has emerged as the standard treatment for locally advanced rectal cancer, esophageal cancer and gastroesophageal junction cancer which can not only improve the rate of local control but also induce pathological complete response in some patients. For patients who have achieved clinical complete response after neoadjuvant therapy, the watch & wait strategy and organ preservation could red…",
+            "year": 2024,
+            "doi": "10.3760/cma.j.cn441530-20231227-00231",
+            "journal": "Zhonghua wei chang wai ke za zhi = Chinese journal of gastrointestinal surgery",
+            "pub_types": [
+              "Review",
+              "English Abstract",
+              "Journal Article"
+            ]
+          },
+          "38663304": {
+            "pmid": "38663304",
+            "title": "Trauma in pregnancy: A narrative review of the current literature.",
+            "abstract": "Trauma accounts for nearly half of all deaths of pregnant women. Pregnant women have distinct physiologic and anatomic characteristics which complicate their management following major trauma. This paper comprises a narrative review of the most recent literature informing the management of pregnant trauma patients. The incidence of trauma during pregnancy is 6-8%. The focus of clinical assessment must be on the mothe…",
+            "year": 2024,
+            "doi": "10.1016/j.ajem.2024.04.029",
+            "journal": "The American journal of emergency medicine",
+            "pub_types": [
+              "Journal Article",
+              "Review"
+            ]
+          },
+          "39443044": {
+            "pmid": "39443044",
+            "title": "Perioperative Considerations for Patients on GLP1 Agonists.",
+            "abstract": "GlP-1 receptor agonists are a class of medications that are becoming increasingly popular. Large trials have shown that their use provides reliable weight loss in obese patients and improved glycemic control in diabetic patients. Its use also has broader implications for overall metabolic health and has been shown to improve cardiovascular outcomes in high-risk populations. Glucagon-like peptide 1 receptors cause mul…",
+            "year": 2024,
+            "doi": "10.1016/j.aan.2024.07.002",
+            "journal": "Advances in anesthesia",
+            "pub_types": [
+              "Journal Article",
+              "Review"
+            ]
+          },
+          "39443186": {
+            "pmid": "39443186",
+            "title": "Gastric emptying in pregnancy and its clinical implications: a narrative review.",
+            "abstract": "Delayed gastric emptying increases the risk of pulmonary aspiration during anaesthesia for Caesarean delivery. Our aim in conducting this narrative review was to consider the effect of pregnancy on gastric emptying. The indices of gastric emptying after liquids, solids, or both and when fasted in the various trimesters of pregnancy, at the time of Caesarean delivery, in labour, and the postpartum period were assessed…",
+            "year": 2024,
+            "doi": "10.1016/j.bja.2024.09.005",
+            "journal": "British journal of anaesthesia",
+            "pub_types": [
+              "Journal Article",
+              "Review"
+            ]
+          },
+          "39536942": {
+            "pmid": "39536942",
+            "title": "Imaging of Aspiration: When to Suspect Based on Imaging of Bacterial Aspiration, Chemical Aspiration, and Foreign Body Aspiration.",
+            "abstract": "Aspiration-related syndromes comprise a broad spectrum of diseases affecting the airways and lung parenchyma resulting from inadvertent entry of oropharyngeal or gastric contents into the respiratory tract. The diagnosis can be challenging given lack of self-reported symptoms and unwitnessed or silent aspiration events. Aspiration is a common finding in healthy individuals suggesting that host defenses play a critica…",
+            "year": 2024,
+            "doi": "10.1055/s-0044-1791740",
+            "journal": "Seminars in respiratory and critical care medicine",
+            "pub_types": [
+              "Journal Article",
+              "Review"
+            ]
+          },
+          "40162381": {
+            "pmid": "40162381",
+            "title": "Advances in management strategies for enteral nutrition-related gastric retention in adult patients with nasogastric tubes.",
+            "abstract": "Gastric retention is a common complication in individuals receiving enteral nutrition (EN) via a nasogastric tube, increasing the risk of aspiration pneumonia and causing unnecessary interruptions in nutritional support. Given its clinical significance, establishing effective, evidence-based, and standardized management strategies is essential for bettering patient outcomes and mitigating complications. This review s…",
+            "year": 2025,
+            "doi": "10.4240/wjgs.v17.i3.101751",
+            "journal": "World journal of gastrointestinal surgery",
+            "pub_types": [
+              "Journal Article",
+              "Review"
+            ]
+          },
+          "40207561": {
+            "pmid": "40207561",
+            "title": "Point-of-care ultrasound in obstetric anesthesia clinical practice.",
+            "abstract": "Point-of-care ultrasound (POCUS) is increasingly recognized as a valuable tool in obstetric anesthesia. This review synthesizes key studies and reviews published within the last 2 years on its application in clinical practice with relevant supporting literature. Handheld ultrasound-assisted neuraxial block placement modestly reduces periprocedure time compared with landmark-based techniques. Devices with integrated t…",
+            "year": 2025,
+            "doi": "10.1097/aco.0000000000001501",
+            "journal": "Current opinion in anaesthesiology",
+            "pub_types": [
+              "Journal Article",
+              "Review"
+            ]
+          },
+          "40807216": {
+            "pmid": "40807216",
+            "title": "GLP-1 Receptor Agonists and Gastrointestinal Endoscopy: A Narrative Review of Risks, Management Strategies, and the Need for Clinical Consensus.",
+            "abstract": "Background/Objectives: Glucagon-like peptide-1 receptor agonists (GLP-1 RAs) have transformed the management of type 2 diabetes mellitus and obesity. However, their sustained effect on delaying gastric emptying raises new challenges in gastrointestinal endoscopy performed under sedation. This narrative review aims to summarize current evidence on the impact of GLP-1 RAs on gastric motility and to propose clinical str…",
+            "year": 2025,
+            "doi": "10.1186/s13063-021-05192-x",
+            "journal": "Journal of clinical medicine",
+            "pub_types": [
+              "Journal Article",
+              "Review"
+            ]
+          }
+        },
+        "sem": {
+          "E": {
+            "per_doc": {
+              "33591115": 0.9741284251213074,
+              "33753294": 0.8325063586235046,
+              "34045064": 0.9698305130004883,
+              "34312921": 0.9741284251213074,
+              "34324937": 0.9871402978897095,
+              "34890858": 0.9684489965438843,
+              "35021988": 0.9622485637664795,
+              "35881513": 0.9683647751808167,
+              "35949825": 0.970623254776001,
+              "36800808": 0.9622487425804138,
+              "37386267": 0.9832540154457092,
+              "37401538": 0.9544368386268616,
+              "37466909": 0.9377323389053345,
+              "37587543": 0.8224571943283081,
+              "38282500": 0.970623254776001,
+              "38290374": 0.9736012816429138,
+              "38615661": 0.9234229922294617,
+              "39116006": 0.9640322327613831,
+              "39423510": 0.9741284251213074,
+              "39435967": 0.9634504318237305,
+              "39834981": 0.8221534490585327,
+              "40247383": 0.970674455165863,
+              "40324318": 0.9683647751808167,
+              "40399137": 0.932170033454895
+            },
+            "mean": 0.9470904469490051,
+            "median": 0.9683647751808167,
+            "n": 24
+          },
+          "S": {
+            "per_doc": {
+              "34011038": 0.964923083782196,
+              "38390901": 0.9649232625961304,
+              "38644241": 0.9471539855003357,
+              "38663304": 0.8209296464920044,
+              "39443044": 0.979492723941803,
+              "39443186": 0.9741466641426086,
+              "39536942": 0.9729380011558533,
+              "40162381": 0.9812137484550476,
+              "40207561": 0.9701593518257141,
+              "40807216": 0.9737290740013123
+            },
+            "mean": 0.9549609422683716,
+            "median": 0.9715486764907837,
+            "n": 10
+          }
+        },
+        "bib": {
+          "E_jaccard_refs": {
+            "pairs": 276,
+            "mean": 0.04977061226963997,
+            "p90": 0.10940171033143997
+          }
+        },
+        "sr_breakdown": [
+          {
+            "pmid": "34011038",
+            "year": 2021,
+            "title": "An extremely atypical presentation of esophageal squamous cell carcinoma with pancreatic and hepatic metastases: A case report and overview of the literature.",
+            "included_primaries": [],
+            "coverage_of_E": 0.0
+          },
+          {
+            "pmid": "38390901",
+            "year": 2024,
+            "title": "Anesthetic recommendations for maternal and fetal safety in nonobstetric surgery: a balancing act.",
+            "included_primaries": [],
+            "coverage_of_E": 0.0
+          },
+          {
+            "pmid": "38644241",
+            "year": 2024,
+            "title": "[Endoscopic response evaluation in gastrointestinal cancers after neoadjuvant chemora- diotherapy].",
+            "included_primaries": [],
+            "coverage_of_E": 0.0
+          },
+          {
+            "pmid": "38663304",
+            "year": 2024,
+            "title": "Trauma in pregnancy: A narrative review of the current literature.",
+            "included_primaries": [],
+            "coverage_of_E": 0.0
+          },
+          {
+            "pmid": "39443044",
+            "year": 2024,
+            "title": "Perioperative Considerations for Patients on GLP1 Agonists.",
+            "included_primaries": [
+              "36800808",
+              "37466909"
+            ],
+            "coverage_of_E": 0.08333333333333333
+          },
+          {
+            "pmid": "39443186",
+            "year": 2024,
+            "title": "Gastric emptying in pregnancy and its clinical implications: a narrative review.",
+            "included_primaries": [
+              "36800808"
+            ],
+            "coverage_of_E": 0.041666666666666664
+          },
+          {
+            "pmid": "39536942",
+            "year": 2024,
+            "title": "Imaging of Aspiration: When to Suspect Based on Imaging of Bacterial Aspiration, Chemical Aspiration, and Foreign Body Aspiration.",
+            "included_primaries": [],
+            "coverage_of_E": 0.0
+          },
+          {
+            "pmid": "40162381",
+            "year": 2025,
+            "title": "Advances in management strategies for enteral nutrition-related gastric retention in adult patients with nasogastric tubes.",
+            "included_primaries": [],
+            "coverage_of_E": 0.0
+          },
+          {
+            "pmid": "40207561",
+            "year": 2025,
+            "title": "Point-of-care ultrasound in obstetric anesthesia clinical practice.",
+            "included_primaries": [
+              "36800808",
+              "38290374"
+            ],
+            "coverage_of_E": 0.08333333333333333
+          },
+          {
+            "pmid": "40807216",
+            "year": 2025,
+            "title": "GLP-1 Receptor Agonists and Gastrointestinal Endoscopy: A Narrative Review of Risks, Management Strategies, and the Need for Clinical Consensus.",
+            "included_primaries": [],
+            "coverage_of_E": 0.0
+          }
+        ]
+      }
     },
     {
       "theme_id": 1,
-      "E_size": 14,
-      "S_count": 13,
-      "coverage_ratio": 0.0,
-      "covered": [],
+      "E_size": 13,
+      "S_count": 8,
+      "coverage_ratio": 0.15384615384615385,
+      "covered": [
+        "37735359",
+        "38433227"
+      ],
       "sr_map": {
         "34163567": [],
-        "38515947": [],
-        "38390901": [],
-        "39180137": [],
-        "38663304": [],
-        "40207561": [],
-        "39280520": [],
-        "39518332": [],
-        "39187641": [],
-        "39861067": [],
-        "39536942": [],
-        "39443186": [],
-        "34102227": []
-      },
-      "new_primary_count": 0,
-      "last_sr_year": 2025,
-      "coverage_level": "NONE",
-      "E": [
-        "33501904",
-        "33964867",
-        "34045064",
-        "34801888",
-        "34890858",
-        "35881513",
-        "36620740",
-        "36801927",
-        "37083808",
-        "37735359",
-        "38282500",
-        "38290374",
-        "39435967",
-        "39681806"
-      ],
-      "S": [
-        "34102227",
-        "34163567",
-        "38390901",
-        "38515947",
-        "38663304",
-        "39180137",
-        "39187641",
-        "39280520",
-        "39443186",
-        "39518332",
-        "39536942",
-        "39861067",
-        "40207561"
-      ]
-    },
-    {
-      "theme_id": 2,
-      "E_size": 10,
-      "S_count": 4,
-      "coverage_ratio": 0.0,
-      "covered": [],
-      "sr_map": {
-        "40241295": [],
-        "40162381": [],
         "38134485": [],
-        "40156058": []
+        "38515947": [],
+        "38536581": [],
+        "39280520": [],
+        "39701415": [
+          "37735359",
+          "38433227"
+        ],
+        "40156058": [],
+        "40378603": []
       },
       "new_primary_count": 0,
       "last_sr_year": 2025,
       "coverage_level": "NONE",
       "E": [
         "35971064",
-        "36266449",
-        "37477770",
+        "36620740",
+        "36801927",
+        "37735359",
+        "38323713",
+        "38377764",
+        "38433227",
         "38442934",
         "38764216",
-        "39116006",
-        "39491733",
+        "38849566",
         "39711127",
-        "39834981",
-        "40324318"
+        "39764617",
+        "40101040"
       ],
       "S": [
+        "34163567",
         "38134485",
+        "38515947",
+        "38536581",
+        "39280520",
+        "39701415",
         "40156058",
-        "40162381",
+        "40378603"
+      ],
+      "details": {
+        "E_docs": {
+          "35971064": {
+            "pmid": "35971064",
+            "title": "Ultrasound-guided esophageal compression during mask ventilation in small children: a prospective observational study.",
+            "abstract": "The use of cricoid compression to prevent insufflation remains controversial, and its use in children is limited. This study aimed to examine the effect of real-time ultrasound-guided esophageal compression on the prevention of gastric insufflation. This prospective observational study was conducted with fifty children aged < 2 years undergoing general anesthesia. Patients were excluded if they were at an increased r…",
+            "year": 2022,
+            "doi": "10.1111/anae.13518",
+            "journal": "BMC anesthesiology",
+            "pub_types": [
+              "Journal Article",
+              "Observational Study",
+              "Research Support, Non-U.S. Gov't"
+            ]
+          },
+          "36620740": {
+            "pmid": "36620740",
+            "title": "The Effect of Intravenous Metoclopramide on Gastric Emptying of Opium-dependent Patients based on Ultrasonographic Criteria; a Case-control Study.",
+            "abstract": "Induction of anesthesia for emergency procedures, without prior gastric preparation and incomplete fasting, is associated with the risk of reflux of stomach contents and aspiration. This study aimed to evaluate the effect of intravenous (IV) metoclopramide administration on gastric emptying in opium users, candidate for procedural sedation and analgesia (PSA). In the present case-control study, opium-dependent (case)…",
+            "year": 2023,
+            "doi": "10.22037/aaem.v11i1.1892",
+            "journal": "Archives of academic emergency medicine",
+            "pub_types": [
+              "Journal Article"
+            ]
+          },
+          "36801927": {
+            "pmid": "36801927",
+            "title": "Ultrasound assessment of gastric contents and volume in patients undergoing endoscopic endonasal transsphenoidal surgery: a prospective observational study.",
+            "abstract": "Intraoperative ingestion of blood, cerebrospinal fluid, and irrigation fluid can lead to an increase in gastric volume, resulting in the potential risk of aspiration in patients after endoscopic endonasal transsphenoidal surgery (EETS). In this prospective observational study, we aimed to assess the volume of gastric contents in patients undergoing this neurosurgical procedure using ultrasound, and to determine the f…",
+            "year": 2023,
+            "doi": "10.1016/j.ijom.2021.07.011",
+            "journal": "Scientific reports",
+            "pub_types": [
+              "Observational Study",
+              "Journal Article",
+              "Research Support, Non-U.S. Gov't"
+            ]
+          },
+          "37735359": {
+            "pmid": "37735359",
+            "title": "Point of care gastric ultrasound to predict aspiration in patients undergoing urgent endotracheal intubation in the emergency medicine department.",
+            "abstract": "One significant cause of morbidity and mortality in patients undergoing endotracheal intubation is the aspiration of gastric contents. Its prevalence is more in the emergency than in elective settings. Point-of-care gastric ultrasound (GUS) is a non-invasive bedside ultrasonogram that provides both qualitative and quantitative information about the stomach contents. The diagnostic accuracy of GUS in terms of gastric …",
+            "year": 2023,
+            "doi": "10.1097/aln.0b013e31823da398",
+            "journal": "BMC emergency medicine",
+            "pub_types": [
+              "Observational Study",
+              "Journal Article"
+            ]
+          },
+          "38323713": {
+            "pmid": "38323713",
+            "title": "Comparison of gastric emptying time between breast-fed and formula milk-fed infants less than 6 months old, using gastric ultrasound-An observational study.",
+            "abstract": "Fasting before elective anesthesia care is a standardized practice worldwide. The aim is to decrease the risk of aspiration leading to pulmonary complications such as aspiration pneumonitis during anesthesia care. There are different guidelines for elective preoperative fasting in children. However, there is insufficient literature measuring gastric emptying time after breast milk or formula milk feeding in infants. …",
+            "year": 2024,
+            "doi": "10.1111/pan.14841",
+            "journal": "Paediatric anaesthesia",
+            "pub_types": [
+              "Observational Study",
+              "Journal Article"
+            ]
+          },
+          "38377764": {
+            "pmid": "38377764",
+            "title": "Ultrasound evaluation of gastric residual volume in fasting end-stage renal failure patients.",
+            "abstract": "To evaluate the gastric contents and gastric residual volume in patient with end-stage renal failure by gastric ultrasound. Prospective observational study. Tertiary care teaching hospital. Adults of either gender with BMI < 40 kg/m2 with end-stage renal failure scheduled to undergo arteriovenous graft or fistula. The cross-sectional area of the gastric antrum was measured by gastric ultrasound with patient in both s…",
+            "year": 2024,
+            "doi": "10.1016/j.jclinane.2024.111414",
+            "journal": "Journal of clinical anesthesia",
+            "pub_types": [
+              "Observational Study",
+              "Journal Article"
+            ]
+          },
+          "38433227": {
+            "pmid": "38433227",
+            "title": "Gastric point-of-care ultrasonography in patients undergoing radical gastrointestinal surgery before anesthetic induction: an observational cohort study.",
+            "abstract": "Pulmonary aspiration of gastric contents is a serious perioperative complication. Patients with gastric cancer may experience delayed gastric emptying. However, the role of qualitative and quantitative gastric ultrasound assessments in this patient population before anesthesia induction has not yet been determined. Adult patients with gastrointestinal cancer were recruited and examined using gastric point-of-care ult…",
+            "year": 2024,
+            "doi": "10.1016/j.bja.2021.04.008",
+            "journal": "BMC anesthesiology",
+            "pub_types": [
+              "Observational Study",
+              "Journal Article",
+              "Research Support, Non-U.S. Gov't"
+            ]
+          },
+          "38442934": {
+            "pmid": "38442934",
+            "title": "[The dynamic monitoring of gastric residual volume by ultrasound was used to guide the early nutritional treatment of patients with severe mechanical ventilation to gradually achieve the standard].",
+            "abstract": "To explore the application value of dynamic monitoring of gastric residual volume (GRV) in achieving different target energy in severe mechanical ventilation patients. A prospective randomized controlled study was conducted. Forty-two patients with mechanical ventilation admitted to the department of critical care medicine of General Hospital of Ningxia Medical University from July to December 2022 were enrolled. Acc…",
+            "year": 2024,
+            "doi": "10.3760/cma.j.cn121430-20231008-00849",
+            "journal": "Zhonghua wei zhong bing ji jiu yi xue",
+            "pub_types": [
+              "Randomized Controlled Trial",
+              "English Abstract",
+              "Journal Article"
+            ]
+          },
+          "38764216": {
+            "pmid": "38764216",
+            "title": "An observational study of gastric contents in pediatric patients with long bone fracture using gastric ultrasound.",
+            "abstract": "The retention of gastric contents at surgery presentation is a risk factor for perioperative aspiration. A preoperative fasting (nil per os; NPO) interval is widely used to reduce this risk, but this approach is based on assumptions about the prevalence of typical gastric emptying rates. We assessed NPO guidelines' reliability with ultrasound (US) imaging and suction in pediatric patients presenting for single long-b…",
+            "year": 2024,
+            "doi": "10.1111/pan.14923",
+            "journal": "Paediatric anaesthesia",
+            "pub_types": [
+              "Journal Article",
+              "Observational Study"
+            ]
+          },
+          "38849566": {
+            "pmid": "38849566",
+            "title": "A comparative study using gastric ultrasound to evaluate the safety of shortening the fasting time before pediatric echocardiography: a randomized controlled non-inferiority study.",
+            "abstract": "The objective of this study was to demonstrate that the gastric cross-sectional area (CSA) in the right lateral decubitus position (RLDP) during a 2-h fasting period is not larger than that during a conventional 4-h fasting period prior to pediatric echocardiography. 93 patients aged under 3 years scheduled for echocardiography under sedation were enrolled and randomly allocated into two groups; 2-h fasting vs 4-h fa…",
+            "year": 2024,
+            "doi": "10.1017/s1047951121002493",
+            "journal": "Journal of anesthesia",
+            "pub_types": [
+              "Journal Article",
+              "Randomized Controlled Trial",
+              "Comparative Study"
+            ]
+          },
+          "39711127": {
+            "pmid": "39711127",
+            "title": "Gastric ultrasound assessment of two preoperative fasting regimens in pediatric patients: A randomized clinical trial.",
+            "abstract": "Preoperative fasting aims to reduce the risk of pulmonary aspiration. Our aim was to compare the incidence of increased gastric content after preoperative liberal versus a standard fasting in children. Two hundred children, presented for elective surgeries, were instructed to follow either 6-4-2 (standard group) or 6-4-0 (liberal group) preoperative fasting regimens. Preoperative ultrasound was used to evaluate gastr…",
+            "year": 2025,
+            "doi": "10.1111/aas.14566",
+            "journal": "Acta anaesthesiologica Scandinavica",
+            "pub_types": [
+              "Journal Article",
+              "Randomized Controlled Trial"
+            ]
+          },
+          "39764617": {
+            "pmid": "39764617",
+            "title": "Diagnostic accuracy of qualitative gastric ultrasound assessment for detecting high gastric fluid volume in children: a prospective randomised study.",
+            "abstract": "The diagnostic accuracy of gastric ultrasound in children has not been assessed thoroughly. We aimed to determine the sensitivity and specificity in children of a qualitative ultrasound examination of the gastric antrum in the supine 45° semi-recumbent position and a clinical algorithm for detecting a gastric fluid volume > 1.25 ml.kg-1, reported to represent an 'at-risk stomach' for pulmonary aspiration. We conducte…",
+            "year": 2025,
+            "doi": "10.1111/anae.16539",
+            "journal": "Anaesthesia",
+            "pub_types": [
+              "Journal Article",
+              "Randomized Controlled Trial"
+            ]
+          },
+          "40101040": {
+            "pmid": "40101040",
+            "title": "Effect of preoperative carbohydrate intake on gastric residual volume and pH in gynecologic laparoscopic surgery: A randomized controlled trial.",
+            "abstract": "Prolonged fasting before surgery is commonly practiced reducing the risk of pulmonary aspiration during anesthesia induction, but it can cause discomfort and negative recovery process. Preoperative carbohydrate intake, particularly maltodextrin solutions, has emerged as a strategy to enhance recovery while addressing these challenges. This randomized controlled trial evaluated the safety and effectiveness of preopera…",
+            "year": 2025,
+            "doi": "10.1097/md.0000000000041865",
+            "journal": "Medicine",
+            "pub_types": [
+              "Journal Article",
+              "Randomized Controlled Trial"
+            ]
+          }
+        },
+        "S_docs": {
+          "34163567": {
+            "pmid": "34163567",
+            "title": "Efficacy and safety of endoscopic resection in treatment of small gastric stromal tumors: A state-of-the-art review.",
+            "abstract": "Gastrointestinal stromal tumors can occur in any part of the gastrointestinal tract, but gastric stromal tumors (GSTs) are the most common. All GSTs have the potential to become malignant, and these can be divided into four different grades by risk from low to high: Very low risk, low risk, medium risk, and high risk. Current guidelines all recommend early complete excision of GSTs larger than 2 cm in diameter. Howev…",
+            "year": 2021,
+            "doi": "10.4251/wjgo.v13.i6.462",
+            "journal": "World journal of gastrointestinal oncology",
+            "pub_types": [
+              "Journal Article",
+              "Review"
+            ]
+          },
+          "38134485": {
+            "pmid": "38134485",
+            "title": "Preoperative ultrasound assessment of gastric content in patients with diabetes: A meta-analysis based on a systematic review of the current literature.",
+            "abstract": "To conduct a systematic literature review of the current evidence on the effect of diabetes mellitus on gastric volume observed during a preoperative ultrasound examination. Using the results of this systematic literature review, a meta-analysis was performed to investigate whether there was an association between diabetes mellitus and an increased risk of presenting with a high-risk stomach (gastric volume associate…",
+            "year": 2023,
+            "doi": "10.1016/j.jclinane.2023.111365",
+            "journal": "Journal of clinical anesthesia",
+            "pub_types": [
+              "Systematic Review",
+              "Meta-Analysis",
+              "Journal Article"
+            ]
+          },
+          "38515947": {
+            "pmid": "38515947",
+            "title": "Diagnostic and therapeutic role of endoscopic ultrasound in liver diseases: A systematic review and meta-analysis.",
+            "abstract": "In hepatology, the clinical use of endoscopic ultrasound (EUS) has experienced a notable increase in recent times. These applications range from the diagnosis to the treatment of various liver diseases. Therefore, this systematic review summarizes the evidence for the diagnostic and therapeutic roles of EUS in liver diseases. To examine and summarize the current available evidence of the possible roles of the EUS in …",
+            "year": 2024,
+            "doi": "10.3748/wjg.v30.i7.742",
+            "journal": "World journal of gastroenterology",
+            "pub_types": [
+              "Meta-Analysis",
+              "Systematic Review",
+              "Journal Article"
+            ]
+          },
+          "38536581": {
+            "pmid": "38536581",
+            "title": "Diagnostic performance of ultrasound in the assessment of gastric contents: a meta-analysis and systematic review.",
+            "abstract": "To systematically analyze the accuracy of ultrasonic techniques in assessing the nature of gastric contents and their volume. English-language articles that used ultrasonic techniques to assess the nature of gastric contents and their volume in patients were selected. In eligible studies, data were recalculated and analyzed for forest plots and subject summary curves of operating characteristics (SROC). Study quality…",
+            "year": 2024,
+            "doi": "10.1111/anae.14131",
+            "journal": "Insights into imaging",
+            "pub_types": [
+              "Journal Article",
+              "Review"
+            ]
+          },
+          "39280520": {
+            "pmid": "39280520",
+            "title": "Point-of-Care Ultrasound: A Vital Tool for Anesthesiologists in the Perioperative and Critical Care Settings.",
+            "abstract": "Point-of-care ultrasound (POCUS) is an essential skill in various specialties like anesthesiology, critical care, and emergency medicine. Anesthesiologists utilize POCUS for quick diagnosis and procedural guidance in perioperative and critical care settings. Key applications include vascular ultrasound for challenging venous and arterial catheter placements, gastric ultrasound for aspiration risk assessment, airway u…",
+            "year": 2024,
+            "doi": "10.7759/cureus.66908",
+            "journal": "Cureus",
+            "pub_types": [
+              "Journal Article",
+              "Review"
+            ]
+          },
+          "39701415": {
+            "pmid": "39701415",
+            "title": "Gastric POCUS, an emergent tool in the assessment of perioperative fasting: Narrative review.",
+            "abstract": "Pulmonary aspiration during anaesthesia induction is a serious adverse event that can lead to catastrophic consequences for the patient, including death. Preoperative fasting has so been assessed on the basis of the clinical history and fasting schedules recommended by clinical guidelines. This assessment is not objective, since the presence or absence of gastric contents cannot be guaranteed. Gastric point of care u…",
+            "year": 2024,
+            "doi": "10.1016/j.redare.2024.501655",
+            "journal": "Revista espanola de anestesiologia y reanimacion",
+            "pub_types": [
+              "Journal Article",
+              "Review"
+            ]
+          },
+          "40156058": {
+            "pmid": "40156058",
+            "title": "A narrative review of glucagon-like peptide-1 receptor agonists prior to deep sedation or general anesthesia.",
+            "abstract": "Glucagon-like peptide-1 receptor agonists are a class of drugs that mimic a natural incretin hormone released by the intestine after meals, and they are well-suited for treating type 2 diabetes. Glucagon-like peptide-1 receptor agonists also lead to satiety and appetite reduction through action on the brain's appetite regulation centers, leading to weight loss in obese patients. However, because glucagon-like peptide…",
+            "year": 2025,
+            "doi": "10.1053/j.gastro.2024.03.015",
+            "journal": "Journal of anesthesia, analgesia and critical care",
+            "pub_types": [
+              "Journal Article",
+              "Review"
+            ]
+          },
+          "40378603": {
+            "pmid": "40378603",
+            "title": "Perioperative management of patients on GLP-1 receptor agonists: Risks, recommendations, and future directions-A narrative review.",
+            "abstract": "Glucagon-like peptide-1 receptor agonists (GLP-1RAs) are increasingly being used for glycemic control and weight management. One of their key mechanisms of action is thought to be delaying gastric emptying. This review explores the perioperative risks associated with GLP-1RAs use, particularly the increased risk of gastric content retention and pulmonary aspiration. Current evidence suggests that patients on GLP-1RAs…",
+            "year": 2025,
+            "doi": "10.1016/j.jclinane.2025.111871",
+            "journal": "Journal of clinical anesthesia",
+            "pub_types": [
+              "Journal Article",
+              "Review"
+            ]
+          }
+        },
+        "sem": {
+          "E": {
+            "per_doc": {
+              "35971064": 0.9756933450698853,
+              "36620740": 0.9406001567840576,
+              "36801927": 0.9756933450698853,
+              "37735359": 0.9748448133468628,
+              "38323713": 0.9353255033493042,
+              "38377764": 0.9756523966789246,
+              "38433227": 0.9686317443847656,
+              "38442934": 0.9415972828865051,
+              "38764216": 0.9723585247993469,
+              "38849566": 0.9821448922157288,
+              "39711127": 0.9686353802680969,
+              "39764617": 0.9781475067138672,
+              "40101040": 0.9613751769065857
+            },
+            "mean": 0.9654385447502136,
+            "median": 0.9723585247993469,
+            "n": 13
+          },
+          "S": {
+            "per_doc": {
+              "34163567": 0.9504155516624451,
+              "38134485": 0.8207674026489258,
+              "38515947": 0.9783239960670471,
+              "38536581": 0.9783239960670471,
+              "39280520": 0.9752267599105835,
+              "39701415": 0.9686353802680969,
+              "40156058": 0.9821448922157288,
+              "40378603": 0.9784244894981384
+            },
+            "mean": 0.9540327787399292,
+            "median": 0.9767754077911377,
+            "n": 8
+          }
+        },
+        "bib": {
+          "E_jaccard_refs": {
+            "pairs": 78,
+            "mean": 0.030035696923732758,
+            "p90": 0.08908788859844208
+          }
+        },
+        "sr_breakdown": [
+          {
+            "pmid": "34163567",
+            "year": 2021,
+            "title": "Efficacy and safety of endoscopic resection in treatment of small gastric stromal tumors: A state-of-the-art review.",
+            "included_primaries": [],
+            "coverage_of_E": 0.0
+          },
+          {
+            "pmid": "38134485",
+            "year": 2023,
+            "title": "Preoperative ultrasound assessment of gastric content in patients with diabetes: A meta-analysis based on a systematic review of the current literature.",
+            "included_primaries": [],
+            "coverage_of_E": 0.0
+          },
+          {
+            "pmid": "38515947",
+            "year": 2024,
+            "title": "Diagnostic and therapeutic role of endoscopic ultrasound in liver diseases: A systematic review and meta-analysis.",
+            "included_primaries": [],
+            "coverage_of_E": 0.0
+          },
+          {
+            "pmid": "38536581",
+            "year": 2024,
+            "title": "Diagnostic performance of ultrasound in the assessment of gastric contents: a meta-analysis and systematic review.",
+            "included_primaries": [],
+            "coverage_of_E": 0.0
+          },
+          {
+            "pmid": "39280520",
+            "year": 2024,
+            "title": "Point-of-Care Ultrasound: A Vital Tool for Anesthesiologists in the Perioperative and Critical Care Settings.",
+            "included_primaries": [],
+            "coverage_of_E": 0.0
+          },
+          {
+            "pmid": "39701415",
+            "year": 2024,
+            "title": "Gastric POCUS, an emergent tool in the assessment of perioperative fasting: Narrative review.",
+            "included_primaries": [
+              "37735359",
+              "38433227"
+            ],
+            "coverage_of_E": 0.15384615384615385
+          },
+          {
+            "pmid": "40156058",
+            "year": 2025,
+            "title": "A narrative review of glucagon-like peptide-1 receptor agonists prior to deep sedation or general anesthesia.",
+            "included_primaries": [],
+            "coverage_of_E": 0.0
+          },
+          {
+            "pmid": "40378603",
+            "year": 2025,
+            "title": "Perioperative management of patients on GLP-1 receptor agonists: Risks, recommendations, and future directions-A narrative review.",
+            "included_primaries": [],
+            "coverage_of_E": 0.0
+          }
+        ]
+      }
+    },
+    {
+      "theme_id": 2,
+      "E_size": 6,
+      "S_count": 5,
+      "coverage_ratio": 0.0,
+      "covered": [],
+      "sr_map": {
+        "34686835": [],
+        "39180137": [],
+        "39518332": [],
+        "39861067": [],
+        "40241295": []
+      },
+      "new_primary_count": 0,
+      "last_sr_year": 2025,
+      "coverage_level": "NONE",
+      "E": [
+        "34540991",
+        "36266449",
+        "37477770",
+        "39491733",
+        "39681806",
+        "40379098"
+      ],
+      "S": [
+        "34686835",
+        "39180137",
+        "39518332",
+        "39861067",
         "40241295"
-      ]
+      ],
+      "details": {
+        "E_docs": {
+          "34540991": {
+            "pmid": "34540991",
+            "title": "Effects of Preoperative Oral Carbohydrate on Cirrhotic Patients under Endoscopic Therapy with Anesthesia: A Randomized Controlled Trial.",
+            "abstract": "Preoperative fasting causes significant perioperative discomfort in patients. Preoperative oral carbohydrate (POC) is an important element of the enhanced recovery after surgery protocol, but its effect on cirrhotic patients who tend to have abnormal gastric emptying remains unclarified. We investigated the influence of POC on gastric emptying and preprocedural well-being in cirrhotic patients. A prospective, randomi…",
+            "year": 2021,
+            "doi": "10.21203/rs.3.rs-31402/v1",
+            "journal": "BioMed research international",
+            "pub_types": [
+              "Journal Article",
+              "Randomized Controlled Trial"
+            ]
+          },
+          "36266449": {
+            "pmid": "36266449",
+            "title": "Effect of pre-operative carbohydrate loading on aspiration risk evaluated with ultrasonography in type 2 diabetes patients: a prospective observational pilot study.",
+            "abstract": "Owing to concerns about delayed gastric emptying or hyperglycemia, evidence is lacking regarding whether pre-operative carbohydrate loading can be routinely administered to patients with type 2 diabetes. The objective of this study was to determine the aspiration risk and gastric volume after pre-operative carbohydrate loading in patients with type 2 diabetes. A prospective, single-center, observational cohort study.…",
+            "year": 2022,
+            "doi": "10.1007/s00268-009-0010-x",
+            "journal": "Scientific reports",
+            "pub_types": [
+              "Observational Study",
+              "Journal Article"
+            ]
+          },
+          "37477770": {
+            "pmid": "37477770",
+            "title": "Ultrasound assessment of gastric residual volume in patients over 60 years of age undergoing gastroscopy under sedation: a prospective cohort study.",
+            "abstract": "We aimed to assess the accuracy of ultrasonographic measurement of the antral cross-sectional area (CSA) in the preprocedural evaluation of gastric contents and volume in fasted patients > 60 yr of age scheduled for gastroscopy under sedation. We included n = 81 patients > 60 yr of age and n = 79 younger controls scheduled to undergo elective gastroscopy in a prospective cohort study. A gastric ultrasound examination…",
+            "year": 2023,
+            "doi": "10.1097/aln.0b013e31820dee48",
+            "journal": "Canadian journal of anaesthesia = Journal canadien d'anesthesie",
+            "pub_types": [
+              "Journal Article"
+            ]
+          },
+          "39491733": {
+            "pmid": "39491733",
+            "title": "EUS-guided gastroenterostomy for malignant gastric outlet obstruction: impact of clinical and demographic factors on outcomes.",
+            "abstract": "EUS-guided gastroenterostomy (EUS-GE) has emerged as an alternative to surgical gastrojejunostomy and endoluminal stenting for malignant gastric outlet obstruction (MGOO). Studies regarding factors associated with the EUS-GE outcomes are limited. A retrospective observational study was conducted with consecutive patients who underwent EUS-GE for MGOO from January 2016 to November 2023. Primary outcomes were technical…",
+            "year": 2024,
+            "doi": "10.1055/a-1392-4546",
+            "journal": "Gastrointestinal endoscopy",
+            "pub_types": [
+              "Journal Article",
+              "Observational Study"
+            ]
+          },
+          "39681806": {
+            "pmid": "39681806",
+            "title": "Assessment of residual gastric volume by ultrasound prior to upper endoscopy: a prospective cohort study.",
+            "abstract": "Pulmonary aspiration is an adverse event with high morbidity and mortality. Despite fasting for > 8 hr, some patients still have residual gastric volume and are thus at risk of aspiration. We aimed to determine the accuracy of gastric ultrasound in assessing residual gastric content in patients undergoing upper gastrointestinal endoscopy. In a prospective cohort study, we performed gastric ultrasound immediately befo…",
+            "year": 2024,
+            "doi": "10.1177/0310057x1804600612",
+            "journal": "Canadian journal of anaesthesia = Journal canadien d'anesthesie",
+            "pub_types": [
+              "Journal Article"
+            ]
+          },
+          "40379098": {
+            "pmid": "40379098",
+            "title": "Impact of erythromycin and metoclopramide on gastric emptying of solids in term pregnant women scheduled for elective cesarean delivery: A randomized controlled trial.",
+            "abstract": "We hypothesized that the preoperative administration of oral erythromycin and metoclopramide would reduce the risk of high gastric volume and contents, evaluated by bedside gastric ultrasonography in non-laboring pregnant subjects preparing for elective cesarean delivery. This randomized double-blinded study included 150 parturients undergoing elective cesarean delivery. They received flavored water with oral erythro…",
+            "year": 2025,
+            "doi": "10.1016/j.accpm.2025.101544",
+            "journal": "Anaesthesia, critical care & pain medicine",
+            "pub_types": [
+              "Journal Article",
+              "Randomized Controlled Trial"
+            ]
+          }
+        },
+        "S_docs": {
+          "34686835": {
+            "pmid": "34686835",
+            "title": "Nasoenteric tube doppler guided insertion. A case report and review of literature.",
+            "abstract": "Nasoenteric tube placement is needed in patients with gastric enteral feeding intolerance or high risk of aspiration. Several techniques are described. Ultrasound is used more commonly for gastric tube placement, but also is described in enteral tube feeding placement. Doppler technique with cold water injection is not described in the literature. We describe a new and easy to realize technique. A case of a 65 years …",
+            "year": 2021,
+            "doi": "10.1093/milmed/usz124",
+            "journal": "European journal of clinical nutrition",
+            "pub_types": [
+              "Case Reports",
+              "Journal Article",
+              "Review"
+            ]
+          },
+          "39180137": {
+            "pmid": "39180137",
+            "title": "Benign pyloric adenomyoma presented as gastric outlet obstruction: a case report and review of the literature.",
+            "abstract": "Gastric adenomyoma is a rare benign tumor composed of glandular structures and smooth muscle fibers. While some classify gastric adenomyoma as a hamartoma, others view it as an abortive form of heterotopic pancreas. Despite its benign nature, there is a risk of malignant transformation. Predominantly found in the antrum, gastric adenomyoma affects all ages but is most common in adults aged 40-60 years. Symptoms are n…",
+            "year": 2024,
+            "doi": "10.1097/md.0000000000006233",
+            "journal": "Journal of medical case reports",
+            "pub_types": [
+              "Case Reports",
+              "Journal Article",
+              "Review"
+            ]
+          },
+          "39518332": {
+            "pmid": "39518332",
+            "title": "Role of Point-of-Care Gastric Ultrasound in Advancing Perioperative Fasting Guidelines.",
+            "abstract": "Pulmonary aspiration in the perioperative period carries the risk of significant morbidity and mortality. As such, guidelines have been developed with the hopes of minimizing this risk by recommending fasting from solids and liquids over a specified amount of time. Point-of-care ultrasound has altered the landscape of perioperative medicine; specifically, gastric ultrasound plays a pivotal role in perioperative asses…",
+            "year": 2024,
+            "doi": "10.1111/pan.13948",
+            "journal": "Diagnostics (Basel, Switzerland)",
+            "pub_types": [
+              "Journal Article",
+              "Review"
+            ]
+          },
+          "39861067": {
+            "pmid": "39861067",
+            "title": "Glucose-Lowering Agents Developed in the Last Two Decades and Their Perioperative Implications.",
+            "abstract": "The last two decades have provided far more options f both patients and their physicians in the treatment of diabetes mellitus. While dipeptidyl peptidase-4 inhibitors (DPP-4is) and glucagon-like peptide 1 receptor agonists (GLP-1RAs) have been approved for nearly two decades, sodium-glucose cotransporter 2 inhibitors (SGLT-2is) are relatively new. Of interest to perioperative physicians, these drugs present specific…",
+            "year": 2024,
+            "doi": "10.1016/j.eprac.2023.11.004",
+            "journal": "Pharmaceuticals (Basel, Switzerland)",
+            "pub_types": [
+              "Journal Article",
+              "Review"
+            ]
+          },
+          "40241295": {
+            "pmid": "40241295",
+            "title": "Aspiration risk and strategic approach for patients receiving GLP-1 receptor agonists undergoing elective surgery.",
+            "abstract": "Perioperative management of patients receiving a glucagon-like peptide-1 receptor agonist (GLP-1 RA) remains challenging for the anesthesiologist. Despite the approval of GLP-1 RAs 2 decades ago, the recent reports of aspiration and postoperative pulmonary complications drew attention to this group of medications and resulted in multiple societal guidelines that would provide recommendations for anesthesiologists and…",
+            "year": 2025,
+            "doi": "10.1080/03007995.2025.2494646",
+            "journal": "Current medical research and opinion",
+            "pub_types": [
+              "Journal Article",
+              "Review"
+            ]
+          }
+        },
+        "sem": {
+          "E": {
+            "per_doc": {
+              "34540991": 0.9663930535316467,
+              "36266449": 0.9707177877426147,
+              "37477770": 0.9703058004379272,
+              "39491733": 0.9440198540687561,
+              "39681806": 0.9573627710342407,
+              "40379098": 0.9782717227935791
+            },
+            "mean": 0.9645118713378906,
+            "median": 0.9683494567871094,
+            "n": 6
+          },
+          "S": {
+            "per_doc": {
+              "34686835": 0.966099739074707,
+              "39180137": 0.9791615605354309,
+              "39518332": 0.9649852514266968,
+              "39861067": 0.8051806688308716,
+              "40241295": 0.9685558676719666
+            },
+            "mean": 0.9367965459823608,
+            "median": 0.966099739074707,
+            "n": 5
+          }
+        },
+        "bib": {
+          "E_jaccard_refs": {
+            "pairs": 15,
+            "mean": 0.02331259474158287,
+            "p90": 0.05547226220369339
+          }
+        },
+        "sr_breakdown": [
+          {
+            "pmid": "34686835",
+            "year": 2021,
+            "title": "Nasoenteric tube doppler guided insertion. A case report and review of literature.",
+            "included_primaries": [],
+            "coverage_of_E": 0.0
+          },
+          {
+            "pmid": "39180137",
+            "year": 2024,
+            "title": "Benign pyloric adenomyoma presented as gastric outlet obstruction: a case report and review of the literature.",
+            "included_primaries": [],
+            "coverage_of_E": 0.0
+          },
+          {
+            "pmid": "39518332",
+            "year": 2024,
+            "title": "Role of Point-of-Care Gastric Ultrasound in Advancing Perioperative Fasting Guidelines.",
+            "included_primaries": [],
+            "coverage_of_E": 0.0
+          },
+          {
+            "pmid": "39861067",
+            "year": 2024,
+            "title": "Glucose-Lowering Agents Developed in the Last Two Decades and Their Perioperative Implications.",
+            "included_primaries": [],
+            "coverage_of_E": 0.0
+          },
+          {
+            "pmid": "40241295",
+            "year": 2025,
+            "title": "Aspiration risk and strategic approach for patients receiving GLP-1 receptor agonists undergoing elective surgery.",
+            "included_primaries": [],
+            "coverage_of_E": 0.0
+          }
+        ]
+      }
     },
     {
       "theme_id": 3,
-      "E_size": 7,
+      "E_size": 8,
       "S_count": 3,
       "coverage_ratio": 0.0,
       "covered": [],
       "sr_map": {
-        "38536581": [],
+        "34102227": [],
         "38552036": [],
-        "38644241": []
+        "39187641": []
       },
-      "new_primary_count": 1,
+      "new_primary_count": 0,
       "last_sr_year": 2024,
       "coverage_level": "NONE",
       "E": [
-        "33753294",
+        "33501904",
+        "33964867",
         "34081034",
-        "37466909",
-        "38377764",
+        "34801888",
+        "35840712",
+        "37083808",
         "38919423",
-        "39025325",
-        "40379098"
+        "39025325"
       ],
       "S": [
-        "38536581",
+        "34102227",
         "38552036",
-        "38644241"
-      ]
+        "39187641"
+      ],
+      "details": {
+        "E_docs": {
+          "33501904": {
+            "pmid": "33501904",
+            "title": "Sensitivity and Specificity of Gastric Ultrasonography in Determination of Gastric Contents.",
+            "abstract": "Perioperative pulmonary aspiration (PPA) is a major cause of morbidity and mortality. During anesthesia, airway reflexes become depressed, placing patients at risk of PPA. Gastric ultrasonography (GUS) can be used to qualitatively differentiate between solids, liquids, and empty gastric contents. The purpose of this study was to determine the sensitivity and specificity of GUS in identifying gastric contents after pa…",
+            "year": 2021,
+            "doi": null,
+            "journal": "AANA journal",
+            "pub_types": [
+              "Journal Article",
+              "Randomized Controlled Trial"
+            ]
+          },
+          "33964867": {
+            "pmid": "33964867",
+            "title": "Routine point-of-care ultrasound (POCUS) assessment of gastric antral content in traumatic emergency surgical patients for prevention of aspiration pneumonitis: an observational clinical trial.",
+            "abstract": "Polytrauma patients are at a higher risk of delayed gastric emptying. To assess the gastric volume, a reliable diagnostic tool is needed to prevent the occurrence of aspiration pneumonia, which remains a serious complication associated with anesthesia. Gastric antral ultrasound can provide reliable information about the size of the gastric antrum in traumatized patients undergoing emergency surgery. A prospective obs…",
+            "year": 2021,
+            "doi": "10.23736/s0375-9393.17.12305-9",
+            "journal": "BMC anesthesiology",
+            "pub_types": [
+              "Journal Article",
+              "Observational Study",
+              "Retracted Publication"
+            ]
+          },
+          "34081034": {
+            "pmid": "34081034",
+            "title": "Effect of Paratracheal Pressure on the Glottic View During Direct Laryngoscopy: A Randomized Double-Blind, Noninferiority Trial.",
+            "abstract": "Cricoid pressure has been used as a component of the rapid sequence induction and intubation technique. However, concerns have been raised regarding the effectiveness and safety of cricoid pressure. Paratracheal pressure, a potential alternative to cricoid pressure to prevent regurgitation of gastric contents or aspiration, has been studied to be more effective to cricoid pressure in preventing gastric insufflation d…",
+            "year": 2021,
+            "doi": "10.1213/ane.0000000000005620",
+            "journal": "Anesthesia and analgesia",
+            "pub_types": [
+              "Comparative Study",
+              "Equivalence Trial",
+              "Journal Article"
+            ]
+          },
+          "34801888": {
+            "pmid": "34801888",
+            "title": "Assessing gastric contents in children before general anesthesia for acute extremity fracture: An ultrasound observational cohort study.",
+            "abstract": "Children with acute extremity fractures are commonly considered to be at risk of pulmonary aspiration of gastric contents during the induction of anesthesia. This study aimed to evaluate the proportion of such children with high-risk gastric contents using preoperative gastric ultrasound. Prospective observational cohort study. Specialist pediatric center over a 30-month period. Children undergoing surgery within 24 …",
+            "year": 2021,
+            "doi": "10.1016/j.jclinane.2021.110598",
+            "journal": "Journal of clinical anesthesia",
+            "pub_types": [
+              "Journal Article",
+              "Observational Study"
+            ]
+          },
+          "35840712": {
+            "pmid": "35840712",
+            "title": "Negligible procedure-related dissemination risk of mucosal incision-assisted biopsy for gastrointestinal stromal tumors versus endoscopic ultrasound-guided fine-needle aspiration/biopsy.",
+            "abstract": "Mucosal incision-assisted biopsy (MIAB) is a valuable alternative to endoscopic ultrasound-guided fine-needle aspiration/biopsy (EUS-FNAB) for sampling gastric subepithelial lesions (SELs). This study aimed to evaluate the potential risk of dissemination and impact on postoperative prognosis associated with MIAB, which has not yet been investigated. Study 1: A prospective observational study was conducted to examine …",
+            "year": 2022,
+            "doi": "10.20524/aog.2019.0413",
+            "journal": "Surgical endoscopy",
+            "pub_types": [
+              "Observational Study",
+              "Journal Article"
+            ]
+          },
+          "37083808": {
+            "pmid": "37083808",
+            "title": "Differences in preoperative gastric ultrasound findings in elderly compared to the mid-aged surgical patients: A retrospective observational study.",
+            "abstract": "This study aimed to compare gastric ultrasound assessments between young and elderly patients, to determine whether the cross-section area (CSA) cutoff values for elderly and young patients should be different, and to suggest CSA cutoff values for elderly patients. This study evaluated the data of 120 patients who underwent elective surgery under general anesthesia between July 2019 and August 2020. Demographic and g…",
+            "year": 2023,
+            "doi": "10.1097/md.0000000000033595",
+            "journal": "Medicine",
+            "pub_types": [
+              "Observational Study",
+              "Journal Article"
+            ]
+          },
+          "38919423": {
+            "pmid": "38919423",
+            "title": "Comparison of ultrasonographic measurement of gastric antral volume and pH with or without pharmacological acid aspiration prophylaxis in low-risk surgical patients - A randomized clinical trial.",
+            "abstract": "The role of preoperative pharmacological prophylaxis in preventing aspiration pneumonitis under general anesthesia (GA) in patients at low risk of aspiration pneumonitis is still under debate. We addressed the need for routine pharmacological aspiration prophylaxis in at-risk population by assessing the change in gastric volume using ultrasound with and without pharmacological acid aspiration prophylaxis. A single-ce…",
+            "year": 2024,
+            "doi": "10.4103/joacp.joacp_412_22",
+            "journal": "Journal of anaesthesiology, clinical pharmacology",
+            "pub_types": [
+              "Journal Article"
+            ]
+          },
+          "39025325": {
+            "pmid": "39025325",
+            "title": "Preoperative gastric volume assessment using ultrasound in cerebral palsy pediatric patients: a prospective observational study.",
+            "abstract": "Although cerebral palsy is a risk factor for aspiration, there is insufficient research on residual gastric volume after preoperative fasting in children with cerebral palsy. We evaluated the incidence of a full stomach by ultrasound assessment of the gastric volume in children with cerebral palsy who underwent orthopedic surgery after preoperative fasting. The patients fasted for 8 h for solid foods and 2 h for clea…",
+            "year": 2024,
+            "doi": "10.1016/j.bjane.2024.844541",
+            "journal": "Brazilian journal of anesthesiology (Elsevier)",
+            "pub_types": [
+              "Journal Article",
+              "Observational Study"
+            ]
+          }
+        },
+        "S_docs": {
+          "34102227": {
+            "pmid": "34102227",
+            "title": "A way forward in pulmonary aspiration incidence reduction: ultrasound, mathematics, and worldwide data collection.",
+            "abstract": "Aspiration of gastric contents during induction of general anesthesia remains a significant cause of mortality and morbidity in anesthesia. Recent data show that pulmonary aspiration still accounts for many cases with implications on mortality despite technical and technological evolution. Practical, ethical, and methodological issues prevent high-quality research in the setting of aspiration and rapid sequence induc…",
+            "year": 2021,
+            "doi": "10.1016/j.bjane.2021.05.004",
+            "journal": "Brazilian journal of anesthesiology (Elsevier)",
+            "pub_types": [
+              "Journal Article",
+              "Review"
+            ]
+          },
+          "38552036": {
+            "pmid": "38552036",
+            "title": "Gastritis cystica profunda in an unoperated stomach mimicking a pyloric submucosal tumor and causing anorexia: A case report and literature review.",
+            "abstract": "Gastritis cystica profunda (GCP), commonly observed in remnant gastric anastomosis, is associated with developing gastric cancer. This case report describes a patient with GCP in a previously unoperated stomach that mimicked a pyloric submucosal tumor and caused anorexia, which is rare in clinical practice. A 72-year-old woman presented with loss of appetite and weight. Gastroscopy detected a 20 mm diameter submucosa…",
+            "year": 2024,
+            "doi": "10.1097/md.0000000000037652",
+            "journal": "Medicine",
+            "pub_types": [
+              "Review",
+              "Case Reports",
+              "Journal Article"
+            ]
+          },
+          "39187641": {
+            "pmid": "39187641",
+            "title": "Comparison of societal guidance on perioperative management of glucagon-like peptide-1 receptor agonists: implications for clinical practice and future investigations.",
+            "abstract": "The use of glucagon-like peptide-1 (GLP-1) receptor agonists (RAs) by patients undergoing surgery and procedures requiring anesthesia has become a topic of significant concern for perioperative providers because of the potential increased risk of aspiration resulting from the medication's effect of delaying gastric emptying. There is currently a lack of high-quality data regarding the safety of GLP-1 RAs in patients …",
+            "year": 2024,
+            "doi": "10.3121/cmr.2020.1546",
+            "journal": "Canadian journal of anaesthesia = Journal canadien d'anesthesie",
+            "pub_types": [
+              "Journal Article",
+              "Comparative Study",
+              "Review"
+            ]
+          }
+        },
+        "sem": {
+          "E": {
+            "per_doc": {
+              "33501904": 0.9512221217155457,
+              "33964867": 0.9784204959869385,
+              "34081034": 0.9668559432029724,
+              "34801888": 0.9582721590995789,
+              "35840712": 0.9838008284568787,
+              "37083808": 0.7992492914199829,
+              "38919423": 0.9312344193458557,
+              "39025325": 0.8331516981124878
+            },
+            "mean": 0.9252758622169495,
+            "median": 0.9547471404075623,
+            "n": 8
+          },
+          "S": {
+            "per_doc": {
+              "34102227": 0.9722433686256409,
+              "38552036": 0.969377338886261,
+              "39187641": 0.9312343597412109
+            },
+            "mean": 0.9576184153556824,
+            "median": 0.969377338886261,
+            "n": 3
+          }
+        },
+        "bib": {
+          "E_jaccard_refs": {
+            "pairs": 28,
+            "mean": 0.026946697384119034,
+            "p90": 0.11196807026863098
+          }
+        },
+        "sr_breakdown": [
+          {
+            "pmid": "34102227",
+            "year": 2021,
+            "title": "A way forward in pulmonary aspiration incidence reduction: ultrasound, mathematics, and worldwide data collection.",
+            "included_primaries": [],
+            "coverage_of_E": 0.0
+          },
+          {
+            "pmid": "38552036",
+            "year": 2024,
+            "title": "Gastritis cystica profunda in an unoperated stomach mimicking a pyloric submucosal tumor and causing anorexia: A case report and literature review.",
+            "included_primaries": [],
+            "coverage_of_E": 0.0
+          },
+          {
+            "pmid": "39187641",
+            "year": 2024,
+            "title": "Comparison of societal guidance on perioperative management of glucagon-like peptide-1 receptor agonists: implications for clinical practice and future investigations.",
+            "included_primaries": [],
+            "coverage_of_E": 0.0
+          }
+        ]
+      }
     }
   ],
   "ranked": [
     {
       "theme_id": 3,
-      "gap_score": 0.5761858319118344,
+      "gap_score": 0.5593853779168836,
       "coverage_ratio": 0.0,
       "coverage_level": "NONE",
-      "E_size": 7,
-      "new_primary_count": 1,
+      "E_size": 8,
+      "new_primary_count": 0,
       "last_sr_year": 2024,
       "terms": [
         "gastric",
         "ultrasound",
         "patients",
+        "aspiration",
+        "risk",
+        "study",
+        "clinical",
+        "observational"
+      ],
+      "questions": [
+        "In gastric patients, does ultrasound improve outcomes vs standard care?",
+        "Does gastric ultrasound reduce patients compared with usual practice?",
+        "What is the effect of gastric ultrasound on patients in aspiration settings?"
+      ],
+      "E": [
+        "33501904",
+        "33964867",
+        "34081034",
+        "34801888",
+        "35840712",
+        "37083808",
+        "38919423",
+        "39025325"
+      ],
+      "S": [
+        "34102227",
+        "38552036",
+        "39187641"
+      ],
+      "llm_yaml": "```yaml\nlabel: Gastric Ultrasound & GI Tumors\nquestions:\n  - How does preoperative gastric ultrasound volume correlate with surgical outcomes in pediatric patients?\n  - What is the role of point-of-care ultrasound in preventing aspiration pneumonitis in trauma patients undergoing surgery?\n  - Can ultrasonography differentiate between benign and malignant features in gastrointestinal stromal tumors?\n```"
+    },
+    {
+      "theme_id": 2,
+      "gap_score": 0.5197375320224904,
+      "coverage_ratio": 0.0,
+      "coverage_level": "NONE",
+      "E_size": 6,
+      "new_primary_count": 0,
+      "last_sr_year": 2025,
+      "terms": [
+        "gastric",
+        "ultrasound",
+        "patients",
         "case",
-        "assessment",
+        "study",
         "volume",
-        "preoperative",
-        "gastrointestinal"
+        "elective",
+        "report"
       ],
       "questions": [
         "In gastric patients, does ultrasound improve outcomes vs standard care?",
@@ -194,174 +1582,134 @@
         "What is the effect of gastric ultrasound on patients in case settings?"
       ],
       "E": [
-        "33753294",
-        "34081034",
-        "37466909",
-        "38377764",
-        "38919423",
-        "39025325",
+        "34540991",
+        "36266449",
+        "37477770",
+        "39491733",
+        "39681806",
         "40379098"
       ],
       "S": [
-        "38536581",
-        "38552036",
-        "38644241"
+        "34686835",
+        "39180137",
+        "39518332",
+        "39861067",
+        "40241295"
       ],
-      "llm_yaml": "```yaml\nlabel: Gastric Ultrasound & GI Physiology\nquestions:\n  - How does point-of-care gastric ultrasound impact preoperative assessment in surgical patients?\n  - What are the clinical implications of semaglutide use on gastric contents and aspiration risk?\n  - Can gastric ultrasound improve postoperative gastrointestinal function in patients with delayed recovery?\n```"
+      "llm_yaml": "```yaml\nlabel: Gastric Ultrasound & Perioperative Management\nquestions:\n  - How can point-of-care gastric ultrasound improve perioperative fasting guidelines in diverse patient populations?\n  - What is the impact of GLP-1 receptor agonists on gastric contents and aspiration risk during elective surgery, and how can this be mitigated?\n  - Can ultrasound-guided residual gastric volume measurement accurately predict outcomes in critically ill patients and inform extubation strategies?\n```"
     },
     {
       "theme_id": 0,
-      "gap_score": 0.558278294534791,
-      "coverage_ratio": 0.0,
+      "gap_score": 0.5039036770267848,
+      "coverage_ratio": 0.125,
       "coverage_level": "NONE",
-      "E_size": 20,
+      "E_size": 24,
       "new_primary_count": 0,
       "last_sr_year": 2025,
       "terms": [
         "gastric",
         "patients",
+        "study",
         "ultrasound",
         "volume",
-        "study",
-        "case",
+        "assessment",
         "aspiration",
-        "residual"
+        "preoperative"
       ],
       "questions": [
         "In gastric patients, does patients improve outcomes vs standard care?",
-        "Does gastric patients reduce ultrasound compared with usual practice?",
-        "What is the effect of gastric patients on ultrasound in volume settings?"
+        "Does gastric patients reduce study compared with usual practice?",
+        "What is the effect of gastric patients on study in ultrasound settings?"
       ],
       "E": [
         "33591115",
+        "33753294",
+        "34045064",
         "34312921",
         "34324937",
-        "34540991",
+        "34890858",
         "35021988",
-        "35840712",
+        "35881513",
         "35949825",
         "36800808",
         "37386267",
         "37401538",
+        "37466909",
         "37587543",
-        "38323713",
-        "38433227",
+        "38282500",
+        "38290374",
         "38615661",
-        "38849566",
+        "39116006",
         "39423510",
-        "39764617",
-        "40101040",
+        "39435967",
+        "39834981",
         "40247383",
+        "40324318",
         "40399137"
       ],
       "S": [
         "34011038",
-        "34686835",
+        "38390901",
+        "38644241",
+        "38663304",
         "39443044",
-        "39701415",
-        "40378603",
+        "39443186",
+        "39536942",
+        "40162381",
+        "40207561",
         "40807216"
       ],
-      "llm_yaml": "```yaml\nlabel: Gastric Ultrasound & GLP-1 Agonists\nquestions:\n  - How does gastric ultrasound aid in assessing gastric volume and emptying in various surgical and medical scenarios?\n  - What are the perioperative considerations for patients receiving GLP-1 receptor agonists, particularly concerning gastric contents?\n  - Can point-of-care ultrasonography effectively evaluate residual gastric volume in adult patients undergoing elective surgery?\n```\n"
+      "llm_yaml": "```yaml\nlabel: GLP-1 Agonists & Gastric Emptying\nquestions:\n  - How do GLP-1 agonists impact gastric emptying before surgery?\n  - What is the role of preoperative gastric ultrasound in patients on GLP-1 agonists?\n  - Can point-of-care ultrasound improve risk assessment for aspiration in patients with GLP-1 agonists?\n```\n"
     },
     {
       "theme_id": 1,
-      "gap_score": 0.543550211391548,
-      "coverage_ratio": 0.0,
+      "gap_score": 0.4638872486003556,
+      "coverage_ratio": 0.15384615384615385,
       "coverage_level": "NONE",
-      "E_size": 14,
+      "E_size": 13,
       "new_primary_count": 0,
       "last_sr_year": 2025,
       "terms": [
         "gastric",
         "ultrasound",
-        "study",
         "patients",
-        "volume",
-        "aspiration",
         "assessment",
-        "care"
+        "study",
+        "volume",
+        "case",
+        "review"
       ],
       "questions": [
         "In gastric patients, does ultrasound improve outcomes vs standard care?",
-        "Does gastric ultrasound reduce study compared with usual practice?",
-        "What is the effect of gastric ultrasound on study in patients settings?"
-      ],
-      "E": [
-        "33501904",
-        "33964867",
-        "34045064",
-        "34801888",
-        "34890858",
-        "35881513",
-        "36620740",
-        "36801927",
-        "37083808",
-        "37735359",
-        "38282500",
-        "38290374",
-        "39435967",
-        "39681806"
-      ],
-      "S": [
-        "34102227",
-        "34163567",
-        "38390901",
-        "38515947",
-        "38663304",
-        "39180137",
-        "39187641",
-        "39280520",
-        "39443186",
-        "39518332",
-        "39536942",
-        "39861067",
-        "40207561"
-      ],
-      "llm_yaml": "```yaml\nlabel: Gastric Ultrasound in Surgical and Obstetrical Settings\nquestions:\n  - How can point-of-care gastric ultrasound improve aspiration risk prediction during urgent intubation?\n  - What is the optimal fasting duration for accurate gastric volume assessment prior to elective surgery?\n  - Can preoperative gastric ultrasound accurately predict residual gastric content in patients on GLP-1 receptor agonists?\n```"
-    },
-    {
-      "theme_id": 2,
-      "gap_score": 0.5321512737531634,
-      "coverage_ratio": 0.0,
-      "coverage_level": "NONE",
-      "E_size": 10,
-      "new_primary_count": 0,
-      "last_sr_year": 2025,
-      "terms": [
-        "gastric",
-        "patients",
-        "ultrasound",
-        "study",
-        "preoperative",
-        "observational",
-        "assessment",
-        "prospective"
-      ],
-      "questions": [
-        "In gastric patients, does patients improve outcomes vs standard care?",
-        "Does gastric patients reduce ultrasound compared with usual practice?",
-        "What is the effect of gastric patients on ultrasound in study settings?"
+        "Does gastric ultrasound reduce patients compared with usual practice?",
+        "What is the effect of gastric ultrasound on patients in assessment settings?"
       ],
       "E": [
         "35971064",
-        "36266449",
-        "37477770",
+        "36620740",
+        "36801927",
+        "37735359",
+        "38323713",
+        "38377764",
+        "38433227",
         "38442934",
         "38764216",
-        "39116006",
-        "39491733",
+        "38849566",
         "39711127",
-        "39834981",
-        "40324318"
+        "39764617",
+        "40101040"
       ],
       "S": [
+        "34163567",
         "38134485",
+        "38515947",
+        "38536581",
+        "39280520",
+        "39701415",
         "40156058",
-        "40162381",
-        "40241295"
+        "40378603"
       ],
-      "llm_yaml": "```yaml\nlabel: Gastric Residual Volume & GLP-1RA in Surgery\nquestions:\n  - How does preoperative gastric content impact aspiration risk in diabetic patients undergoing elective surgery?\n  - What are the optimal strategies for managing gastric retention in adult patients with nasogastric tubes during surgery?\n  - Can point-of-care ultrasound (POCUS) effectively assess gastric volume and guide nutritional support in critically ill patients?\n```"
+      "llm_yaml": "```yaml\nlabel: Gastric Ultrasound in Clinical Practice\nquestions:\n  - How does point-of-care gastric ultrasound impact surgical outcomes in pediatric patients?\n  - What are the independent risk factors associated with malignancy in pancreatic tumors diagnosed via EUS-FNA/FNB?\n  - Can gastric ultrasound effectively predict aspiration risk in patients undergoing urgent intubation?\n```"
     }
   ]
 }
