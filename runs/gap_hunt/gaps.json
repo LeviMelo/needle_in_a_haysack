@@ -1,0 +1,367 @@
+{
+  "universe_file": "runs/universe/universe.json",
+  "coverage": [
+    {
+      "theme_id": 0,
+      "E_size": 20,
+      "S_count": 6,
+      "coverage_ratio": 0.0,
+      "covered": [],
+      "sr_map": {
+        "40807216": [],
+        "39443044": [],
+        "39701415": [],
+        "34686835": [],
+        "40378603": [],
+        "34011038": []
+      },
+      "new_primary_count": 0,
+      "last_sr_year": 2025,
+      "coverage_level": "NONE",
+      "E": [
+        "33591115",
+        "34312921",
+        "34324937",
+        "34540991",
+        "35021988",
+        "35840712",
+        "35949825",
+        "36800808",
+        "37386267",
+        "37401538",
+        "37587543",
+        "38323713",
+        "38433227",
+        "38615661",
+        "38849566",
+        "39423510",
+        "39764617",
+        "40101040",
+        "40247383",
+        "40399137"
+      ],
+      "S": [
+        "34011038",
+        "34686835",
+        "39443044",
+        "39701415",
+        "40378603",
+        "40807216"
+      ]
+    },
+    {
+      "theme_id": 1,
+      "E_size": 14,
+      "S_count": 13,
+      "coverage_ratio": 0.0,
+      "covered": [],
+      "sr_map": {
+        "34163567": [],
+        "38515947": [],
+        "38390901": [],
+        "39180137": [],
+        "38663304": [],
+        "40207561": [],
+        "39280520": [],
+        "39518332": [],
+        "39187641": [],
+        "39861067": [],
+        "39536942": [],
+        "39443186": [],
+        "34102227": []
+      },
+      "new_primary_count": 0,
+      "last_sr_year": 2025,
+      "coverage_level": "NONE",
+      "E": [
+        "33501904",
+        "33964867",
+        "34045064",
+        "34801888",
+        "34890858",
+        "35881513",
+        "36620740",
+        "36801927",
+        "37083808",
+        "37735359",
+        "38282500",
+        "38290374",
+        "39435967",
+        "39681806"
+      ],
+      "S": [
+        "34102227",
+        "34163567",
+        "38390901",
+        "38515947",
+        "38663304",
+        "39180137",
+        "39187641",
+        "39280520",
+        "39443186",
+        "39518332",
+        "39536942",
+        "39861067",
+        "40207561"
+      ]
+    },
+    {
+      "theme_id": 2,
+      "E_size": 10,
+      "S_count": 4,
+      "coverage_ratio": 0.0,
+      "covered": [],
+      "sr_map": {
+        "40241295": [],
+        "40162381": [],
+        "38134485": [],
+        "40156058": []
+      },
+      "new_primary_count": 0,
+      "last_sr_year": 2025,
+      "coverage_level": "NONE",
+      "E": [
+        "35971064",
+        "36266449",
+        "37477770",
+        "38442934",
+        "38764216",
+        "39116006",
+        "39491733",
+        "39711127",
+        "39834981",
+        "40324318"
+      ],
+      "S": [
+        "38134485",
+        "40156058",
+        "40162381",
+        "40241295"
+      ]
+    },
+    {
+      "theme_id": 3,
+      "E_size": 7,
+      "S_count": 3,
+      "coverage_ratio": 0.0,
+      "covered": [],
+      "sr_map": {
+        "38536581": [],
+        "38552036": [],
+        "38644241": []
+      },
+      "new_primary_count": 1,
+      "last_sr_year": 2024,
+      "coverage_level": "NONE",
+      "E": [
+        "33753294",
+        "34081034",
+        "37466909",
+        "38377764",
+        "38919423",
+        "39025325",
+        "40379098"
+      ],
+      "S": [
+        "38536581",
+        "38552036",
+        "38644241"
+      ]
+    }
+  ],
+  "ranked": [
+    {
+      "theme_id": 3,
+      "gap_score": 0.5761858319118344,
+      "coverage_ratio": 0.0,
+      "coverage_level": "NONE",
+      "E_size": 7,
+      "new_primary_count": 1,
+      "last_sr_year": 2024,
+      "terms": [
+        "gastric",
+        "ultrasound",
+        "patients",
+        "case",
+        "assessment",
+        "volume",
+        "preoperative",
+        "gastrointestinal"
+      ],
+      "questions": [
+        "In gastric patients, does ultrasound improve outcomes vs standard care?",
+        "Does gastric ultrasound reduce patients compared with usual practice?",
+        "What is the effect of gastric ultrasound on patients in case settings?"
+      ],
+      "E": [
+        "33753294",
+        "34081034",
+        "37466909",
+        "38377764",
+        "38919423",
+        "39025325",
+        "40379098"
+      ],
+      "S": [
+        "38536581",
+        "38552036",
+        "38644241"
+      ],
+      "llm_yaml": "```yaml\nlabel: Gastric Ultrasound & GI Physiology\nquestions:\n  - How does point-of-care gastric ultrasound impact preoperative assessment in surgical patients?\n  - What are the clinical implications of semaglutide use on gastric contents and aspiration risk?\n  - Can gastric ultrasound improve postoperative gastrointestinal function in patients with delayed recovery?\n```"
+    },
+    {
+      "theme_id": 0,
+      "gap_score": 0.558278294534791,
+      "coverage_ratio": 0.0,
+      "coverage_level": "NONE",
+      "E_size": 20,
+      "new_primary_count": 0,
+      "last_sr_year": 2025,
+      "terms": [
+        "gastric",
+        "patients",
+        "ultrasound",
+        "volume",
+        "study",
+        "case",
+        "aspiration",
+        "residual"
+      ],
+      "questions": [
+        "In gastric patients, does patients improve outcomes vs standard care?",
+        "Does gastric patients reduce ultrasound compared with usual practice?",
+        "What is the effect of gastric patients on ultrasound in volume settings?"
+      ],
+      "E": [
+        "33591115",
+        "34312921",
+        "34324937",
+        "34540991",
+        "35021988",
+        "35840712",
+        "35949825",
+        "36800808",
+        "37386267",
+        "37401538",
+        "37587543",
+        "38323713",
+        "38433227",
+        "38615661",
+        "38849566",
+        "39423510",
+        "39764617",
+        "40101040",
+        "40247383",
+        "40399137"
+      ],
+      "S": [
+        "34011038",
+        "34686835",
+        "39443044",
+        "39701415",
+        "40378603",
+        "40807216"
+      ],
+      "llm_yaml": "```yaml\nlabel: Gastric Ultrasound & GLP-1 Agonists\nquestions:\n  - How does gastric ultrasound aid in assessing gastric volume and emptying in various surgical and medical scenarios?\n  - What are the perioperative considerations for patients receiving GLP-1 receptor agonists, particularly concerning gastric contents?\n  - Can point-of-care ultrasonography effectively evaluate residual gastric volume in adult patients undergoing elective surgery?\n```\n"
+    },
+    {
+      "theme_id": 1,
+      "gap_score": 0.543550211391548,
+      "coverage_ratio": 0.0,
+      "coverage_level": "NONE",
+      "E_size": 14,
+      "new_primary_count": 0,
+      "last_sr_year": 2025,
+      "terms": [
+        "gastric",
+        "ultrasound",
+        "study",
+        "patients",
+        "volume",
+        "aspiration",
+        "assessment",
+        "care"
+      ],
+      "questions": [
+        "In gastric patients, does ultrasound improve outcomes vs standard care?",
+        "Does gastric ultrasound reduce study compared with usual practice?",
+        "What is the effect of gastric ultrasound on study in patients settings?"
+      ],
+      "E": [
+        "33501904",
+        "33964867",
+        "34045064",
+        "34801888",
+        "34890858",
+        "35881513",
+        "36620740",
+        "36801927",
+        "37083808",
+        "37735359",
+        "38282500",
+        "38290374",
+        "39435967",
+        "39681806"
+      ],
+      "S": [
+        "34102227",
+        "34163567",
+        "38390901",
+        "38515947",
+        "38663304",
+        "39180137",
+        "39187641",
+        "39280520",
+        "39443186",
+        "39518332",
+        "39536942",
+        "39861067",
+        "40207561"
+      ],
+      "llm_yaml": "```yaml\nlabel: Gastric Ultrasound in Surgical and Obstetrical Settings\nquestions:\n  - How can point-of-care gastric ultrasound improve aspiration risk prediction during urgent intubation?\n  - What is the optimal fasting duration for accurate gastric volume assessment prior to elective surgery?\n  - Can preoperative gastric ultrasound accurately predict residual gastric content in patients on GLP-1 receptor agonists?\n```"
+    },
+    {
+      "theme_id": 2,
+      "gap_score": 0.5321512737531634,
+      "coverage_ratio": 0.0,
+      "coverage_level": "NONE",
+      "E_size": 10,
+      "new_primary_count": 0,
+      "last_sr_year": 2025,
+      "terms": [
+        "gastric",
+        "patients",
+        "ultrasound",
+        "study",
+        "preoperative",
+        "observational",
+        "assessment",
+        "prospective"
+      ],
+      "questions": [
+        "In gastric patients, does patients improve outcomes vs standard care?",
+        "Does gastric patients reduce ultrasound compared with usual practice?",
+        "What is the effect of gastric patients on ultrasound in study settings?"
+      ],
+      "E": [
+        "35971064",
+        "36266449",
+        "37477770",
+        "38442934",
+        "38764216",
+        "39116006",
+        "39491733",
+        "39711127",
+        "39834981",
+        "40324318"
+      ],
+      "S": [
+        "38134485",
+        "40156058",
+        "40162381",
+        "40241295"
+      ],
+      "llm_yaml": "```yaml\nlabel: Gastric Residual Volume & GLP-1RA in Surgery\nquestions:\n  - How does preoperative gastric content impact aspiration risk in diabetic patients undergoing elective surgery?\n  - What are the optimal strategies for managing gastric retention in adult patients with nasogastric tubes during surgery?\n  - Can point-of-care ultrasound (POCUS) effectively assess gastric volume and guide nutritional support in critically ill patients?\n```"
+    }
+  ]
+}

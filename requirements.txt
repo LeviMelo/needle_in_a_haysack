@@ -1,0 +1,12 @@
+requests>=2.31.0
+orjson>=3.9.15
+numpy>=1.26.0
+pandas>=2.2.2
+scikit-learn>=1.4.0
+networkx>=3.2.1
+tqdm>=4.66.4
+rapidfuzz>=3.6.1
+# Optional (used if available; safe to skip)
+hdbscan>=0.8.38 ; platform_system != "Windows" or python_version >= "3.9"
+leidenalg>=0.10.2 ; platform_system != "Windows" # requires igraph; optional
+python-igraph>=0.11.6 ; platform_system != "Windows"

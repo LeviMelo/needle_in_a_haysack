@@ -1,0 +1,1532 @@
+Project structure for '/c/Users/Galaxy/LEVI/projects/Python/research_agent/needle_in_a_haysack':
+===============================================================================
+  .env
+  data/cache/embeddings.sqlite3
+  requirements.txt
+  runs/theme_build/themes.json
+  scripts/__init__.py
+  scripts/run_gap_hunt.py
+  scripts/run_ripple_boost.py
+  scripts/run_theme_build.py
+  scripts/run_universe_build.py
+  src/__init__.py
+  src/__pycache__/config.cpython-312.pyc
+  src/cache/__init__.py
+  src/cache/__pycache__/__init__.cpython-312.pyc
+  src/cache/__pycache__/emb.cpython-312.pyc
+  src/cache/emb.py
+  src/clients/__init__.py
+  src/clients/__pycache__/__init__.cpython-312.pyc
+  src/clients/__pycache__/entrez.cpython-312.pyc
+  src/clients/__pycache__/icite.cpython-312.pyc
+  src/clients/__pycache__/lmstudio.cpython-312.pyc
+  src/clients/entrez.py
+  src/clients/icite.py
+  src/clients/lmstudio.py
+  src/config.py
+  src/pipeline/__pycache__/universe.cpython-312.pyc
+  src/pipeline/coverage.py
+  src/pipeline/evidence.py
+  src/pipeline/gap.py
+  src/pipeline/ripple.py
+  src/pipeline/universe.py
+  src/themes/__init__.py
+  src/themes/__pycache__/__init__.cpython-312.pyc
+  src/themes/__pycache__/hybrid_graph.cpython-312.pyc
+  src/themes/__pycache__/themes.cpython-312.pyc
+  src/themes/hybrid_graph.py
+  src/themes/themes.py
+  src/utils/__init__.py
+  src/utils/__pycache__/__init__.cpython-312.pyc
+  src/utils/__pycache__/io.cpython-312.pyc
+  src/utils/io.py
+
+
+
+###############################################################################
+### FILE: .env
+###############################################################################
+PYTHONPATH=./src
+
+
+
+###############################################################################
+### FILE: requirements.txt
+###############################################################################
+requests>=2.31.0
+orjson>=3.9.15
+numpy>=1.26.0
+pandas>=2.2.2
+scikit-learn>=1.4.0
+networkx>=3.2.1
+tqdm>=4.66.4
+rapidfuzz>=3.6.1
+# Optional (used if available; safe to skip)
+hdbscan>=0.8.38 ; platform_system != "Windows" or python_version >= "3.9"
+leidenalg>=0.10.2 ; platform_system != "Windows" # requires igraph; optional
+python-igraph>=0.11.6 ; platform_system != "Windows"
+
+
+
+###############################################################################
+### FILE: runs/theme_build/themes.json
+###############################################################################
+
+###############################################################################
+### FILE: scripts/run_gap_hunt.py
+###############################################################################
+# scripts/run_gap_hunt.py
+from __future__ import annotations
+import argparse, pathlib, sys, json
+from typing import Dict, Any, List
+import pandas as pd
+from datetime import datetime, timezone
+
+ROOT = pathlib.Path(__file__).resolve().parents[1]
+SRC = ROOT / "src"
+if str(ROOT) not in sys.path: sys.path.insert(0, str(ROOT))
+if str(SRC)  not in sys.path: sys.path.insert(0, str(SRC))
+
+from utils.io import jdump
+from pipeline.coverage import coverage_for_theme
+from pipeline.gap import rank_gaps, top_terms
+from clients.lmstudio import LMChat
+
+LABEL_SYS = "You summarize biomedical literature themes. Be concise and precise."
+LABEL_TMPL = """Given these paper titles (newline separated), return:
+1) A short theme label (≤7 words, no punctuation noise)
+2) 2–3 candidate research questions (1 sentence each), neutral and specific.
+
+Titles:
+{titles}
+
+Return YAML with keys: label, questions"""
+
+def maybe_llm_label(chat: LMChat, titles: List[str]) -> Dict[str, Any]:
+    try:
+        resp = chat.chat(LABEL_SYS, LABEL_TMPL.format(titles="\n".join(titles)), temperature=0.2, max_tokens=400)
+        return {"llm_yaml": resp}
+    except Exception as e:
+        return {"llm_error": str(e)}
+
+def main(args):
+    uni = json.loads(pathlib.Path(args.universe).read_text(encoding="utf-8"))
+    docs_df = pd.DataFrame(uni["docs"])
+    cover_rows = [coverage_for_theme(t, docs_df) for t in uni["themes"]]
+    now_year = datetime.now(timezone.utc).year
+    ranked = rank_gaps(uni, cover_rows, now_year)
+
+    # Optional LLM labeling for the top themes
+    llm = LMChat() if args.llm_label else None
+    if llm:
+        id2members = {t["theme_id"]: t["members_idx"] for t in uni["themes"]}
+        for r in ranked[:args.topk]:
+            idxs = id2members[r["theme_id"]]
+            titles = [docs_df.iloc[i]["title"] for i in idxs][:30]
+            r.update(maybe_llm_label(llm, titles))
+
+    outdir = pathlib.Path(args.outdir); outdir.mkdir(parents=True, exist_ok=True)
+    jdump({"universe_file": str(args.universe), "coverage": cover_rows, "ranked": ranked}, outdir / "gaps.json")
+
+    print(f"✔ wrote {outdir/'gaps.json'}")
+    print("\n=== TOP CANDIDATES ===")
+    for r in ranked[:args.topk]:
+        print(f"- Theme {r['theme_id']}: GAP={r['gap_score']:.3f} | cov={r['coverage_ratio']:.2f} ({r['coverage_level']}) | E={r['E_size']} | new={r['new_primary_count']} | lastSR={r['last_sr_year']}")
+        if args.llm_label and "llm_yaml" in r:
+            print("  LLM label/questions →")
+            print("  " + r["llm_yaml"].replace("\n", "\n  "))
+        else:
+            if r["questions"]:
+                print("  Q:", r["questions"][0])
+            if r["terms"]:
+                print("  terms:", ", ".join(r["terms"][:8]))
+
+if __name__ == "__main__":
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--universe", required=True)
+    ap.add_argument("--outdir", default="runs/gap_hunt")
+    ap.add_argument("--topk", type=int, default=6)
+    ap.add_argument("--llm-label", action="store_true", help="use local LLM (LM Studio) to label themes and draft questions")
+    args = ap.parse_args()
+    main(args)
+
+
+
+###############################################################################
+### FILE: scripts/run_ripple_boost.py
+###############################################################################
+# scripts/run_ripple_boost.py
+from __future__ import annotations
+import argparse, pathlib, sys, json
+import pandas as pd
+
+ROOT = pathlib.Path(__file__).resolve().parents[1]
+SRC = ROOT / "src"
+if str(ROOT) not in sys.path: sys.path.insert(0, str(ROOT))
+if str(SRC)  not in sys.path: sys.path.insert(0, str(SRC))
+
+from pipeline.ripple import ripple_expand_from_primaries
+from pipeline.evidence import split_by_kind
+from utils.io import jdump
+
+def main(args):
+    uni = json.loads(pathlib.Path(args.universe).read_text(encoding="utf-8"))
+    docs_df = pd.DataFrame(uni["docs"]).copy()
+    t = next((x for x in uni["themes"] if int(x["theme_id"])==int(args.theme_id)), None)
+    if not t:
+        print(f"Theme {args.theme_id} not found.")
+        return
+    members = set(t["members_pmids"])
+    sub = docs_df[docs_df["pmid"].astype(str).isin(members)].copy()
+    prim, sr, _ = split_by_kind(sub.to_dict(orient="records"))
+    if not prim:
+        print("No primaries in theme; nothing to ripple from.")
+        return
+    allowed_since = args.since_year
+    res = ripple_expand_from_primaries(prim, allowed_since_year=allowed_since, max_expand=args.max_expand, prefer=args.prefer)
+    outdir = pathlib.Path(args.outdir); outdir.mkdir(parents=True, exist_ok=True)
+    jdump(res, outdir / f"ripple_theme{args.theme_id}.json")
+    print(f"✔ wrote {outdir / f'ripple_theme{args.theme_id}.json'} | candidates={len(res['candidates'])}")
+
+if __name__ == "__main__":
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--universe", required=True)
+    ap.add_argument("--theme-id", type=int, required=True)
+    ap.add_argument("--since-year", type=int, default=None, help="only include items >= year")
+    ap.add_argument("--max-expand", type=int, default=300)
+    ap.add_argument("--prefer", choices=["citers","refs"], default="citers")
+    ap.add_argument("--outdir", default="runs/ripple")
+    args = ap.parse_args()
+    main(args)
+
+
+
+###############################################################################
+### FILE: scripts/run_theme_build.py
+###############################################################################
+# scripts/run_theme_build.py
+from __future__ import annotations
+
+import argparse, pathlib, sys, re, time
+from typing import List, Dict, Any
+import numpy as np, pandas as pd, networkx as nx
+from tqdm import tqdm
+from sklearn.feature_extraction.text import ENGLISH_STOP_WORDS
+
+
+# --- Make both project root and src/ importable ---
+ROOT = pathlib.Path(__file__).resolve().parents[1]
+SRC = ROOT / "src"
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+if str(SRC) not in sys.path:
+    sys.path.insert(0, str(SRC))
+
+# --- Local imports ---
+from config import KNN_K, HYBRID_ALPHA, HYBRID_BETA, LMSTUDIO_EMB_MODEL
+from cache.emb import EmbCache
+from utils.io import jdump
+from clients.entrez import esearch, efetch_abstracts
+from clients.icite import get_pubs, extract_refs_and_citers
+from clients.lmstudio import LMEmbeddings
+from themes.hybrid_graph import cosine_sim_matrix, build_knn, hybrid_weights
+from themes.themes import soft_membership
+
+TOKEN_RE = re.compile(r"[A-Za-zÀ-ÿ0-9_]+")
+
+PRIM_HINT = {"Randomized Controlled Trial","Clinical Trial","Cohort","Case-Control"}
+SR_HINT   = {"Systematic Review","Meta-Analysis","Review"}
+
+def summarize_pubtypes(pt_lists):
+    prim=sr=other=0
+    for pts in pt_lists:
+        s=set(pts or [])
+        if s & PRIM_HINT: prim+=1
+        elif s & SR_HINT: sr+=1
+        else: other+=1
+    return prim, sr, other
+
+STOP = ENGLISH_STOP_WORDS
+
+def top_keywords(texts, topn: int = 8):
+    tf = {}
+    for t in texts:
+        for tok in TOKEN_RE.findall((t or "").lower()):
+            if len(tok) < 4 or tok in STOP:
+                continue
+            tf[tok] = tf.get(tok, 0) + 1
+    return [w for w,_ in sorted(tf.items(), key=lambda x: x[1], reverse=True)[:topn]]
+
+def nearest_to_centroid(vecs: np.ndarray, idxs: List[int], centroid: np.ndarray, k: int = 3) -> List[int]:
+    # return indices (within idxs) of the k closest docs to centroid
+    sub = vecs[idxs]
+    sims = (sub @ centroid) / (np.linalg.norm(sub, axis=1) + 1e-12)
+    order = np.argsort(-sims)[:k]
+    return [idxs[i] for i in order]
+
+def build(args):
+    outdir = pathlib.Path(args.outdir); outdir.mkdir(parents=True, exist_ok=True)
+    t0 = time.perf_counter()
+
+    # 1) PubMed search → PMIDs
+    pmids = esearch(args.query, retmax=args.retmax, mindate=args.year_min, maxdate=args.year_max, sort="date")
+    print(f"PubMed IDs: {len(pmids)}")
+    if not pmids:
+        print("Nothing found for this query/time window.")
+        return
+
+    # 2) Fetch metadata (title, abstract, year, pub types, doi)
+    meta = efetch_abstracts(pmids)
+    if not meta:
+        print("efetch returned no metadata.")
+        return
+    df = pd.DataFrame.from_records(list(meta.values()))
+    df = df.dropna(subset=["title"]).reset_index(drop=True)
+    n = len(df)
+    print(f"Fetched metadata for {n} items")
+
+    # 3) Embeddings (cached)
+    cache = EmbCache()
+    pmid_list = [str(x) for x in df["pmid"].tolist()]
+    texts = (df["title"].fillna("") + "\n" + df["abstract"].fillna("")).tolist()
+
+    tE = time.perf_counter()
+    cached = cache.get_many(LMSTUDIO_EMB_MODEL, pmid_list)
+    hits = len(cached); miss = len(pmid_list) - hits
+    print(f"Embedding cache: hits={hits} miss={miss}")
+
+    vecs = np.zeros((len(pmid_list), 0), dtype="float32")  # placeholder for shape
+    miss_idx, miss_texts, miss_pmids = [], [], []
+    for i, pmid in enumerate(pmid_list):
+        if pmid in cached:
+            continue
+        miss_idx.append(i); miss_texts.append(texts[i]); miss_pmids.append(pmid)
+
+    if miss_texts:
+        emb = LMEmbeddings()
+        new_vecs = emb.encode(miss_texts, batch_size=args.emb_batch)
+        # persist
+        cache.put_many(LMSTUDIO_EMB_MODEL, [(pmid, new_vecs[j]) for j, pmid in enumerate(miss_pmids)])
+    else:
+        new_vecs = np.empty((0, 0), dtype="float32")
+
+    # build full matrix in original order
+    # first, obtain dim from either cached or new_vecs
+    if hits > 0:
+        any_vec = next(iter(cached.values()))
+        dim = any_vec.size
+    elif miss > 0:
+        dim = new_vecs.shape[1]
+    else:
+        raise RuntimeError("No documents to embed.")
+    vecs = np.zeros((len(pmid_list), dim), dtype="float32")
+
+    # fill from cache
+    for i, pmid in enumerate(pmid_list):
+        if pmid in cached:
+            vecs[i] = cached[pmid]
+    # fill newly computed
+    for pos, j in enumerate(miss_idx):
+        vecs[j] = new_vecs[pos]
+
+    # L2-normalize (safety)
+    vecs /= (np.linalg.norm(vecs, axis=1, keepdims=True) + 1e-12)
+    tE = time.perf_counter() - tE
+    n_dim = int(vecs.shape[1]) if vecs.ndim == 2 else -1
+    print(f"Embeddings: shape={vecs.shape}, batch={args.emb_batch}, time={tE:.2f}s")
+
+
+    # 4) iCite references/citers for coupling
+    pubs = get_pubs(df["pmid"].tolist(), fields=["pmid","cited_by","references","doi","year"], legacy=True)
+    ref_sets: dict[str, set[int]] = {}
+    for rec in pubs:
+        refs, citers = extract_refs_and_citers(rec)
+        pmid = str(rec.get("pmid") or rec.get("_id") or "")
+        ref_sets[pmid] = set(refs)
+
+    # 5) Cosine similarity (semantic)
+    cos = cosine_sim_matrix(vecs)
+
+    # 6) Bibliographic coupling (Jaccard) on kNN pairs
+    knn_idx_cos, knn_cos = build_knn(cos, k=args.knn_k or KNN_K)
+    bc_knn = np.zeros_like(knn_cos, dtype="float32")
+    tC = time.perf_counter()
+    for i in range(n):
+        Ri = ref_sets.get(str(df.iloc[i]["pmid"]), set())
+        if not Ri:
+            continue
+        for t, j in enumerate(knn_idx_cos[i]):
+            Rj = ref_sets.get(str(df.iloc[j]["pmid"]), set())
+            if not Rj:
+                continue
+            inter = len(Ri & Rj)
+            if inter:
+                uni = len(Ri | Rj) or 1
+                bc_knn[i, t] = inter / uni
+    tC = time.perf_counter() - tC
+    print(f"Coupling (kNN pairs): n={n}, k={knn_idx_cos.shape[1]}, time={tC:.2f}s")
+
+    # 7) Hybrid weights for the kNN graph
+    hyb = hybrid_weights(knn_cos, bc_knn, alpha=args.alpha or HYBRID_ALPHA, beta=args.beta or HYBRID_BETA)
+
+    # 8) Build weighted kNN graph
+    G = nx.Graph()
+    for i in range(n):
+        for t, j in enumerate(knn_idx_cos[i]):
+            w = float(hyb[i, t])
+            if w <= 0:
+                continue
+            if G.has_edge(i, j):
+                if G[i][j]["weight"] < w:
+                    G[i][j]["weight"] = w
+            else:
+                G.add_edge(i, j, weight=w)
+
+    # 9) Cluster: Leiden → HDBSCAN → thresholded components
+    labels = None
+    method = None
+    try:
+        import igraph as ig  # type: ignore
+        import leidenalg as la  # type: ignore
+        mapping = {n:i for i,n in enumerate(G.nodes())}
+        edges = [(mapping[u], mapping[v]) for u,v in G.edges()]
+        weights = [G[u][v].get("weight", 1.0) for u,v in G.edges()]
+        g = ig.Graph(n=len(mapping), edges=edges)
+        g.es["weight"] = weights
+        part = la.find_partition(g, la.RBConfigurationVertexPartition, weights="weight", resolution_parameter=args.resolution)
+        labels_ig = np.zeros(len(mapping), dtype=int)
+        for comm_id, members in enumerate(part):
+            for v in members:
+                labels_ig[v] = comm_id
+        labels = labels_ig
+        method = "leiden"
+    except Exception:
+        try:
+            import importlib.util
+            if importlib.util.find_spec("hdbscan") is None:
+                raise ImportError("hdbscan not installed")
+            import hdbscan  # type: ignore
+            labels = hdbscan.HDBSCAN(min_cluster_size=max(10, n // 50), metric="euclidean").fit_predict(vecs)
+            method = "hdbscan"
+        except Exception:
+            TH = float(args.threshold or 0.4)
+            H = nx.Graph((u,v,d) for u,v,d in G.edges(data=True) if d.get("weight",0.0) >= TH)
+            labels = -1 * np.ones(n, dtype=int)
+            cid = 0
+            for comp in nx.connected_components(H):
+                for i in comp:
+                    labels[i] = cid
+                cid += 1
+            method = f"components@{TH}"
+
+    # 10) Soft membership (top-2 themes per doc)
+    unique, W = soft_membership(vecs, labels, knn_idx_cos, hyb, topm=2, lam=0.5)
+
+    # 11) Persist artifacts
+    themes = []
+    for t in unique:
+        members = np.where(labels == t)[0].tolist()
+        if not members:
+            continue
+        cent = vecs[members].mean(axis=0)
+        cent = cent / (np.linalg.norm(cent) + 1e-12)
+        yrs = pd.to_numeric(df.iloc[members]["year"], errors="coerce")
+        theme = {
+            "theme_id": int(t),
+            "size": len(members),
+            "members_idx": members,
+            "members_pmids": [str(df.iloc[i]["pmid"]) for i in members],
+            "centroid": cent.tolist(),
+            "year_stats": {
+                "min": int(yrs.min()) if yrs.notna().any() else None,
+                "max": int(yrs.max()) if yrs.notna().any() else None,
+                "median": float(yrs.median()) if yrs.notna().any() else None,
+            },
+        }
+        themes.append(theme)
+
+    out = {
+        "query": args.query,
+        "count": n,
+        "cluster_method": method,
+        "themes": themes,
+        "docs": df.to_dict(orient="records"),
+    }
+    jdump(out, outdir / "themes.json")
+
+    # 12) HUMAN-FRIENDLY TERMINAL SUMMARY
+    print("\n=== RUN SUMMARY ===")
+    print(f"Query: {args.query}")
+    print(f"Window: {args.year_min}–{args.year_max}  | retmax={args.retmax}")
+    print(f"Docs: {n} | Embedding dim: {n_dim} | kNN-k={args.knn_k} | alpha={args.alpha} beta={args.beta}")
+    print(f"Cluster method: {method} | Themes: {len(themes)}")
+    # quick global stats
+    yrs_all = pd.to_numeric(df["year"], errors="coerce")
+    if yrs_all.notna().any():
+        print(f"Year range (all docs): {int(yrs_all.min())}–{int(yrs_all.max())}  median={float(yrs_all.median()):.1f}")
+
+    # theme-wise preview with pubtypes & journals
+    for theme in themes:
+        tid = theme["theme_id"]; members = theme["members_idx"]
+        y = theme["year_stats"]
+
+        # keywords
+        t_texts = df.iloc[members]["title"].fillna("").tolist()
+        kws = top_keywords(t_texts, topn=8)
+
+        # representatives
+        cent = np.array(theme["centroid"], dtype="float32")
+        reps = nearest_to_centroid(vecs, members, cent, k=3)
+        rep_titles = [f"- {df.iloc[i]['title'][:140].strip()}" for i in reps]
+
+        # pub types summary
+        prim, sr, other = summarize_pubtypes(df.iloc[members]["pub_types"].tolist())
+
+        # top journals
+        top_j = (df.iloc[members]["journal"].fillna("")
+                .replace("", np.nan).dropna()
+                .value_counts().head(3).to_dict())
+
+        print(f"\nTheme {tid}  | size={theme['size']} | years {y['min']}–{y['max']} (med {y['median']})")
+        print("  keywords:", ", ".join(kws) if kws else "(n/a)")
+        print(f"  pub types: primary={prim}  SR/Review={sr}  other={other}")
+        if top_j:
+            tj = ", ".join([f"{k}×{v}" for k,v in top_j.items()])
+            print(f"  top journals: {tj}")
+        print("  reps:")
+        for rt in rep_titles:
+            print("   ", rt)
+
+
+    dt = time.perf_counter() - t0
+    print(f"\n✔ wrote {outdir/'themes.json'}  | total time {dt:.1f}s")
+    print("===============")
+
+if __name__ == "__main__":
+    import argparse
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--query", required=True, help="PubMed query")
+    ap.add_argument("--year-min", dest="year_min", type=int, default=None)
+    ap.add_argument("--year-max", dest="year_max", type=int, default=None)
+    ap.add_argument("--retmax", type=int, default=600)
+    ap.add_argument("--knn-k", type=int, default=20)
+    ap.add_argument("--alpha", type=float, default=0.6)
+    ap.add_argument("--beta", type=float, default=0.4)
+    ap.add_argument("--resolution", type=float, default=0.6)
+    ap.add_argument("--threshold", type=float, default=0.4, help="edge weight threshold if components fallback is used")
+    ap.add_argument("--emb-batch", dest="emb_batch", type=int, default=48, help="embedding batch size (lower to reduce VRAM)")
+    ap.add_argument("--outdir", default="runs/theme_build")
+    args = ap.parse_args()
+    build(args)
+
+
+
+###############################################################################
+### FILE: scripts/run_universe_build.py
+###############################################################################
+# scripts/run_universe_build.py
+from __future__ import annotations
+import argparse, pathlib, sys, json, time
+from typing import List, Any, Dict
+
+ROOT = pathlib.Path(__file__).resolve().parents[1]
+SRC = ROOT / "src"
+if str(ROOT) not in sys.path: sys.path.insert(0, str(ROOT))
+if str(SRC)  not in sys.path: sys.path.insert(0, str(SRC))
+
+from pipeline.universe import build_universe
+from utils.io import jdump
+
+def main(args):
+    queries = [q.strip() for q in args.queries.split("||") if q.strip()]
+    uni = build_universe(
+        queries=queries,
+        year_min=args.year_min,
+        year_max=args.year_max,
+        retmax=args.retmax,
+        hydrate=args.hydrate,
+        hops=args.hops,
+        per_seed_budget=args.per_seed_budget,
+        knn_k=args.knn_k,
+        alpha=args.alpha,
+        beta=args.beta,
+        resolution=args.resolution,
+        threshold=args.threshold,
+        emb_batch=args.emb_batch
+    )
+    outdir = pathlib.Path(args.outdir); outdir.mkdir(parents=True, exist_ok=True)
+    jdump(uni, outdir / "universe.json")
+    print(f"✔ wrote {outdir/'universe.json'}  | docs={uni['count']} themes={len(uni['themes'])} method={uni['cluster_method']}")
+    # tiny preview
+    print("Themes:", [t["theme_id"] for t in uni["themes"]])
+
+if __name__ == "__main__":
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--queries", required=True, help='Pipe multiple queries with "||"')
+    ap.add_argument("--year-min", dest="year_min", type=int, default=None)
+    ap.add_argument("--year-max", dest="year_max", type=int, default=None)
+    ap.add_argument("--retmax", type=int, default=500)
+    ap.add_argument("--hydrate", choices=["none","refs","citers","both"], default="none")
+    ap.add_argument("--hops", type=int, default=1)
+    ap.add_argument("--per-seed-budget", dest="per_seed_budget", type=int, default=150)
+    ap.add_argument("--knn-k", type=int, default=20)
+    ap.add_argument("--alpha", type=float, default=0.6)
+    ap.add_argument("--beta", type=float, default=0.4)
+    ap.add_argument("--resolution", type=float, default=0.6)
+    ap.add_argument("--threshold", type=float, default=0.4)
+    ap.add_argument("--emb-batch", dest="emb_batch", type=int, default=48)
+    ap.add_argument("--outdir", default="runs/universe")
+    args = ap.parse_args()
+    main(args)
+
+
+
+###############################################################################
+### FILE: src/cache/emb.py
+###############################################################################
+# src/cache/emb.py
+from __future__ import annotations
+import pathlib, numpy as np
+from typing import Dict, Iterable, List, Tuple
+
+ROOT = pathlib.Path(__file__).resolve().parents[2]
+BASE = ROOT / "data" / "cache" / "emb"
+BASE.mkdir(parents=True, exist_ok=True)
+
+class EmbCache:
+    """
+    Very simple file cache:
+      data/cache/emb/{model}/{id}.npy  (float32 vector)
+    """
+    def __init__(self, base: pathlib.Path = BASE):
+        self.base = base
+
+    def _model_dir(self, model: str) -> pathlib.Path:
+        d = self.base / model.replace("/", "_")
+        d.mkdir(parents=True, exist_ok=True)
+        return d
+
+    def get_many(self, model: str, ids: Iterable[str]) -> Dict[str, np.ndarray]:
+        d = self._model_dir(model)
+        out: Dict[str, np.ndarray] = {}
+        for pid in ids:
+            p = d / f"{str(pid)}.npy"
+            if p.exists():
+                try:
+                    out[str(pid)] = np.load(p)
+                except Exception:
+                    pass
+        return out
+
+    def put_many(self, model: str, rows: List[Tuple[str, np.ndarray]]) -> int:
+        d = self._model_dir(model)
+        n = 0
+        for pid, vec in rows:
+            p = d / f"{str(pid)}.npy"
+            try:
+                np.save(p, vec.astype("float32"))
+                n += 1
+            except Exception:
+                pass
+        return n
+
+
+
+###############################################################################
+### FILE: src/clients/entrez.py
+###############################################################################
+from __future__ import annotations
+import requests
+from typing import Dict, List, Any, Iterable, Optional
+from urllib.parse import urlencode
+
+# ⬇⬇⬇ change to absolute import (because 'src/' is on sys.path)
+from config import ENTREZ_EMAIL, ENTREZ_API_KEY, HTTP_TIMEOUT, USER_AGENT
+
+EUTILS = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils"
+HEADERS = {"User-Agent": USER_AGENT, "Accept": "application/json"}
+
+def esearch(query: str, db: str = "pubmed", retmax: int = 10000, mindate: Optional[int]=None, maxdate: Optional[int]=None, sort: str="date") -> List[str]:
+    params = {
+        "db": db,
+        "term": query,
+        "retmode": "json",
+        "retmax": retmax,
+        "sort": sort,
+        "email": ENTREZ_EMAIL
+    }
+    if ENTREZ_API_KEY:
+        params["api_key"] = ENTREZ_API_KEY
+    if mindate:
+        params["mindate"] = str(mindate)
+    if maxdate:
+        params["maxdate"] = str(maxdate)
+    r = requests.get(f"{EUTILS}/esearch.fcgi", headers=HEADERS, params=params, timeout=HTTP_TIMEOUT)
+    r.raise_for_status()
+    return r.json().get("esearchresult", {}).get("idlist", [])
+
+def esummary(pmids: Iterable[str]) -> Dict[str, Dict[str,Any]]:
+    pmids = list(pmids)
+    out: Dict[str,Dict[str,Any]] = {}
+    for i in range(0, len(pmids), 500):
+        chunk = pmids[i:i+500]
+        params = {
+            "db":"pubmed", "retmode":"json", "id": ",".join(chunk),
+            "email": ENTREZ_EMAIL
+        }
+        if ENTREZ_API_KEY: params["api_key"] = ENTREZ_API_KEY
+        r = requests.get(f"{EUTILS}/esummary.fcgi", headers=HEADERS, params=params, timeout=HTTP_TIMEOUT)
+        r.raise_for_status()
+        data = r.json().get("result", {})
+        for k,v in data.items():
+            if k == "uids": continue
+            out[k] = v
+    return out
+
+def efetch_abstracts(pmids: Iterable[str]) -> Dict[str, Dict[str,Any]]:
+    pmids = list(pmids)
+    out: Dict[str,Dict[str,Any]] = {}
+    for i in range(0, len(pmids), 200):
+        chunk = pmids[i:i+200]
+        params = {
+            "db":"pubmed", "retmode":"xml", "rettype":"abstract", "id": ",".join(chunk),
+            "email": ENTREZ_EMAIL
+        }
+        if ENTREZ_API_KEY: params["api_key"] = ENTREZ_API_KEY
+        r = requests.get(f"{EUTILS}/efetch.fcgi", headers={"User-Agent": USER_AGENT}, params=params, timeout=HTTP_TIMEOUT)
+        r.raise_for_status()
+        # Minimal XML parsing to extract Title, Abstract, PublicationTypes, Year, DOI (if present)
+        import xml.etree.ElementTree as ET
+        root = ET.fromstring(r.text)
+        for art in root.findall(".//PubmedArticle"):
+            pmid = art.findtext(".//PMID")
+            title = art.findtext(".//ArticleTitle") or ""
+            abst = " ".join([n.text or "" for n in art.findall(".//AbstractText")]) or ""
+            year = None
+            dp = art.findtext(".//PubDate/Year") or art.findtext(".//PubDate/MedlineDate")
+            journal = art.findtext(".//Journal/Title") or ""
+            try:
+                year = int(dp[:4]) if dp else None
+            except Exception:
+                year = None
+            pubtypes = [pt.text for pt in art.findall(".//PublicationTypeList/PublicationType") if pt.text]
+            doi = None
+            for idn in art.findall(".//ArticleIdList/ArticleId"):
+                if idn.attrib.get("IdType","").lower() == "doi":
+                    doi = (idn.text or "").lower()
+            out[pmid] = {"pmid": pmid, "title": title, "abstract": abst, "year": year, "pub_types": pubtypes, "doi": doi, "journal": journal}
+    return out
+
+
+
+###############################################################################
+### FILE: src/clients/icite.py
+###############################################################################
+# src/cache/icite.py
+from __future__ import annotations
+import sqlite3, pathlib, json
+from typing import List, Dict, Any, Iterable, Tuple, Union
+
+PROJECT_ROOT = pathlib.Path(__file__).resolve().parents[2]
+CACHE_DIR = PROJECT_ROOT / "data" / "cache"
+CACHE_DIR.mkdir(parents=True, exist_ok=True)
+DB_PATH = CACHE_DIR / "icite.sqlite3"
+
+class ICiteCache:
+    """
+    Cache for iCite /pubs responses.
+    Key: pmid (TEXT). We store the JSON blob and a 'legacy' flag (0/1).
+    """
+    def __init__(self, db_path: pathlib.Path = DB_PATH):
+        self.db_path = db_path
+        self._conn = sqlite3.connect(str(db_path))
+        self._conn.execute("""
+            CREATE TABLE IF NOT EXISTS pubs(
+                pmid TEXT PRIMARY KEY,
+                legacy INTEGER NOT NULL,
+                json TEXT NOT NULL
+            )
+        """)
+        self._conn.commit()
+
+    def get_many(self, pmids: Iterable[str], legacy: bool = True) -> Dict[str, Dict[str,Any]]:
+        pmids = [str(p) for p in pmids]
+        out: Dict[str, Dict[str,Any]] = {}
+        if not pmids: return out
+        qmarks = ",".join(["?"]*len(pmids))
+        cur = self._conn.execute(
+            f"SELECT pmid, json FROM pubs WHERE legacy=? AND pmid IN ({qmarks})",
+            [1 if legacy else 0] + pmids
+        )
+        for pmid, blob in cur.fetchall():
+            try:
+                out[pmid] = json.loads(blob)
+            except Exception:
+                pass
+        return out
+
+    def put_many(self, rows: Iterable[Dict[str,Any]], legacy: bool = True) -> int:
+        data = []
+        for rec in rows:
+            pmid = str(rec.get("pmid") or rec.get("_id") or "")
+            if not pmid: 
+                continue
+            data.append((pmid, 1 if legacy else 0, json.dumps(rec)))
+        if not data: return 0
+        self._conn.executemany("INSERT OR REPLACE INTO pubs(pmid,legacy,json) VALUES(?,?,?)", data)
+        self._conn.commit()
+        return len(data)
+
+    def close(self):
+        try:
+            self._conn.close()
+        except Exception:
+            pass
+
+
+
+###############################################################################
+### FILE: src/clients/lmstudio.py
+###############################################################################
+# src/clients/lmstudio.py
+from __future__ import annotations
+import os, subprocess, shutil
+import requests, numpy as np
+from typing import List, Optional
+
+from config import LMSTUDIO_BASE, LMSTUDIO_EMB_MODEL, HTTP_TIMEOUT, USER_AGENT
+
+HEADERS_JSON = {"Content-Type": "application/json", "User-Agent": USER_AGENT}
+
+# Prefer LM Studio Python SDK if available (pip install lmstudio)
+try:
+    import lmstudio as lms  # official SDK
+    _HAVE_LMSDK = True
+except Exception:
+    _HAVE_LMSDK = False
+
+_USE_CLI = os.getenv("LMSTUDIO_USE_CLI", "0") == "1"
+_LMS = shutil.which("lms")  # LM Studio CLI path, if present
+
+def _cli_unload_all() -> None:
+    if _LMS:
+        try:
+            subprocess.run([_LMS, "unload", "--all"], check=True,
+                           stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+        except Exception:
+            pass
+
+def _cli_load(model_key: str, ttl: int = 900) -> None:
+    if not _LMS:
+        raise RuntimeError("LM Studio CLI 'lms' not found. Either install SDK (`pip install lmstudio`) "
+                           "or make the 'lms' CLI available and set LMSTUDIO_USE_CLI=1.")
+    cmd = [_LMS, "load", model_key, "--ttl", str(ttl)]
+    subprocess.run(cmd, check=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+
+class LMEmbeddings:
+    """
+    Embedding client with on-demand model management:
+      - SDK path: load (with TTL), embed, explicit unload()
+      - REST path: optional CLI auto load/unload around the call
+    Returns L2-normalized float32 ndarray [N, D].
+    """
+    def __init__(self,
+                 base: str = LMSTUDIO_BASE,
+                 model: str = LMSTUDIO_EMB_MODEL,
+                 ttl_sec: int = 900):
+        self.base = base.rstrip("/")
+        self.model = model
+        self.ttl_sec = ttl_sec
+
+    def _encode_sdk(self, texts: List[str], batch_size: int = 64) -> np.ndarray:
+        mdl = lms.embedding_model(self.model, ttl=self.ttl_sec)  # auto-load w/ TTL
+        vecs: list[list[float]] = []
+        # SDK exposes per-text .embed(); keep batches small to tame VRAM spikes
+        for i in range(0, len(texts), batch_size):
+            for t in texts[i:i+batch_size]:
+                vecs.append(mdl.embed(t))
+        try:
+            mdl.unload()  # free VRAM immediately
+        except Exception:
+            pass
+        arr = np.array(vecs, dtype="float32")
+        arr /= (np.linalg.norm(arr, axis=1, keepdims=True) + 1e-12)
+        return arr
+
+    def _encode_rest(self, texts: List[str], batch_size: int = 128) -> np.ndarray:
+        # Optionally ensure only the embedding model is loaded
+        if _USE_CLI:
+            _cli_unload_all()
+            _cli_load(self.model, ttl=self.ttl_sec)
+
+        vecs: list[list[float]] = []
+        url = f"{self.base}/v1/embeddings"
+        for i in range(0, len(texts), batch_size):
+            body = {"model": self.model, "input": texts[i:i+batch_size]}
+            r = requests.post(url, headers=HEADERS_JSON, json=body, timeout=HTTP_TIMEOUT)
+            if r.status_code != 200:
+                msg = r.text
+                if "model_not_found" in msg or "Failed to load model" in msg:
+                    hint = ("Embeddings model isn't loaded. Install the lmstudio SDK (preferred) "
+                            "or set LMSTUDIO_USE_CLI=1 so we auto load/unload via CLI.")
+                    raise RuntimeError(f"LM Studio embeddings error: {msg}\n{hint}")
+                r.raise_for_status()
+            data = r.json()
+            vecs.extend(d["embedding"] for d in data["data"])
+
+        if _USE_CLI:
+            _cli_unload_all()  # free VRAM
+
+        arr = np.array(vecs, dtype="float32")
+        arr /= (np.linalg.norm(arr, axis=1, keepdims=True) + 1e-12)
+        return arr
+
+    def encode(self, texts: List[str], batch_size: int = 64) -> np.ndarray:
+        if _HAVE_LMSDK:
+            return self._encode_sdk(texts, batch_size=batch_size)
+        return self._encode_rest(texts, batch_size=batch_size)
+
+class LMChat:
+    def __init__(self, base: str = LMSTUDIO_BASE, model: str = LMSTUDIO_CHAT_MODEL):
+        self.base = base.rstrip("/")
+        self.model = model
+    def chat(self, system: str, user: str, temperature: float = 0.2, max_tokens: int = 384) -> str:
+        body = {
+            "model": self.model,
+            "messages": [{"role":"system","content":system},{"role":"user","content":user}],
+            "temperature": temperature,
+            "max_tokens": max_tokens,
+            "stream": False
+        }
+        r = requests.post(f"{self.base}/v1/chat/completions", headers=HEADERS_JSON, json=body, timeout=HTTP_TIMEOUT)
+        r.raise_for_status()
+        return r.json()["choices"][0]["message"]["content"]
+
+
+###############################################################################
+### FILE: src/config.py
+###############################################################################
+from __future__ import annotations
+import os
+
+LMSTUDIO_BASE = os.getenv("LMSTUDIO_BASE", "http://127.0.0.1:1234")
+LMSTUDIO_EMB_MODEL = os.getenv("LMSTUDIO_EMB_MODEL", "text-embedding-qwen3-embedding-0.6b")
+LMSTUDIO_CHAT_MODEL = os.getenv("LMSTUDIO_CHAT_MODEL", "gemma-3n-e2b-it")
+
+ENTREZ_EMAIL = os.getenv("ENTREZ_EMAIL", "you@example.com")
+ENTREZ_API_KEY = os.getenv("ENTREZ_API_KEY", "")
+
+ICITE_BASE = os.getenv("ICITE_BASE", "https://icite.od.nih.gov/api")
+HTTP_TIMEOUT = int(os.getenv("HTTP_TIMEOUT", "30"))
+USER_AGENT = os.getenv("USER_AGENT", "litgap-poc/0.1 (+https://example.org)")
+
+KNN_K = int(os.getenv("KNN_K", "20"))
+HYBRID_ALPHA = float(os.getenv("HYBRID_ALPHA", "0.6"))
+HYBRID_BETA  = float(os.getenv("HYBRID_BETA", "0.4"))
+
+
+# Coverage thresholds
+COV_LEVELS = {
+    "NONE": 0.2,
+    "LOW": 0.5,
+    "SUBSTANTIAL": 0.8,
+    "NEAR_FULL": 0.95,
+    "FULL": 1.01,   # anything >=0.95 treated as full
+}
+
+
+
+###############################################################################
+### FILE: src/pipeline/coverage.py
+###############################################################################
+# src/pipeline/coverage.py
+from __future__ import annotations
+from typing import Dict, Any, List, Tuple, Set
+import numpy as np
+import pandas as pd
+
+from cache.icite import ICiteCache
+from clients.icite import get_pubs, extract_refs_and_citers
+from pipeline.evidence import split_by_kind
+from config import COV_LEVELS
+
+def sr_included_primaries(sr_pmids: List[str],
+                          primary_pool: Set[str]) -> Dict[str, Set[str]]:
+    """
+    Approximate SR 'included studies' as its referenced PMIDs intersected with known primary pool.
+    """
+    ic = ICiteCache()
+    have = ic.get_many(sr_pmids, legacy=True)
+    need = [p for p in sr_pmids if p not in have]
+    if need:
+        fetched = get_pubs(need, fields=["pmid","references"], legacy=True)
+        ic.put_many(fetched, legacy=True)
+        for rec in fetched:
+            have[str(rec.get("pmid") or rec.get("_id") or "")] = rec
+    out: Dict[str,Set[str]] = {}
+    for s in sr_pmids:
+        refs,_ = extract_refs_and_citers(have.get(s, {}))
+        out[s] = set(str(x) for x in refs) & primary_pool
+    return out
+
+def coverage_for_theme(theme: Dict[str,Any], docs_df: pd.DataFrame) -> Dict[str,Any]:
+    """
+    Compute coverage metrics for one theme:
+      - E: primaries in theme
+      - S: SR/MA in theme
+      - For each SR: CoveredPrimaries = included ∩ E
+      - CoverageRatio = |∪covered| / |E|
+      - NewPrimaryCount since max SR year
+    """
+    members = theme["members_pmids"]
+    sub = docs_df[docs_df["pmid"].astype(str).isin(members)].copy()
+    prim, sr, _ = split_by_kind(sub.to_dict(orient="records"))
+    E = set(prim)
+    S = list(sr)
+    if not E:
+        return {"theme_id": theme["theme_id"], "E_size": 0, "S_count": len(S),
+                "coverage_ratio": 0.0, "covered": [], "sr_map": {}, "new_primary_count": 0,
+                "last_sr_year": None, "coverage_level": "NONE"}
+    # SR → included primaries (approx by references)
+    sr_map = sr_included_primaries(S, E) if S else {}
+    covered_union: Set[str] = set()
+    for s in S:
+        covered_union |= sr_map.get(s, set())
+    cov_ratio = (len(covered_union) / len(E)) if E else 0.0
+    # recency: SR "last search" proxy = max(SR year)
+    years = pd.to_numeric(sub.set_index("pmid").loc[S]["year"], errors="coerce") if S else pd.Series([], dtype=float)
+    last_sr_year = int(years.max()) if not years.empty and years.notna().any() else None
+    # new primary count
+    if last_sr_year is None:
+        new_prim = len(E)  # treat as all new (no SR exists)
+    else:
+        p_years = pd.to_numeric(sub.set_index("pmid").loc[list(E)]["year"], errors="coerce")
+        new_prim = int((p_years > last_sr_year).sum()) if p_years.notna().any() else 0
+    # coverage level
+    level = "NONE"
+    for name, thr in COV_LEVELS.items():
+        if cov_ratio < thr:
+            level = name
+            break
+    return {
+        "theme_id": theme["theme_id"],
+        "E_size": len(E),
+        "S_count": len(S),
+        "coverage_ratio": cov_ratio,
+        "covered": sorted(list(covered_union)),
+        "sr_map": {k: sorted(list(v)) for k,v in sr_map.items()},
+        "new_primary_count": new_prim,
+        "last_sr_year": last_sr_year,
+        "coverage_level": level,
+        "E": sorted(list(E)),
+        "S": sorted(list(S)),
+    }
+
+
+
+###############################################################################
+### FILE: src/pipeline/evidence.py
+###############################################################################
+# src/pipeline/evidence.py
+from __future__ import annotations
+import re
+from typing import List, Dict, Any, Tuple
+
+PRIM_HINTS = {"Randomized Controlled Trial","Clinical Trial","Trial","Cohort","Case-Control","Observational Study","Prospective Studies"}
+SR_HINTS   = {"Systematic Review","Meta-Analysis","Review"}
+
+_re_rct = re.compile(r"\b(randomi[sz]ed|rct)\b", re.I)
+_re_trial = re.compile(r"\b(trial|phase\s*[IiVv]+)\b", re.I)
+_re_cohort = re.compile(r"\bcohort\b", re.I)
+_re_case_control = re.compile(r"\bcase[- ]control\b", re.I)
+_re_meta = re.compile(r"\bmeta-?analysis\b", re.I)
+_re_syst = re.compile(r"\bsystematic review\b", re.I)
+_re_review = re.compile(r"\breview\b", re.I)
+
+def paper_kind(title: str, pub_types: List[str]) -> str:
+    s = set(pub_types or [])
+    t = title or ""
+    # Strong publication type first
+    if s & SR_HINTS: return "sr"
+    if s & PRIM_HINTS: return "primary"
+    # Fallbacks from title
+    if _re_meta.search(t) or _re_syst.search(t): return "sr"
+    if _re_rct.search(t) or _re_trial.search(t) or _re_cohort.search(t) or _re_case_control.search(t):
+        return "primary"
+    # default
+    return "other"
+
+def split_by_kind(docs: List[Dict[str,Any]]) -> Tuple[List[str], List[str], List[str]]:
+    """
+    Return (primary_pmids, sr_pmids, other_pmids)
+    """
+    prim, sr, oth = [], [], []
+    for d in docs:
+        k = paper_kind(d.get("title",""), d.get("pub_types",[]))
+        pid = str(d.get("pmid"))
+        if k=="primary": prim.append(pid)
+        elif k=="sr": sr.append(pid)
+        else: oth.append(pid)
+    return prim, sr, oth
+
+
+
+###############################################################################
+### FILE: src/pipeline/gap.py
+###############################################################################
+# src/pipeline/gap.py
+from __future__ import annotations
+from typing import Dict, Any, List
+import numpy as np
+import pandas as pd
+import re
+from sklearn.feature_extraction.text import ENGLISH_STOP_WORDS
+
+STOP = ENGLISH_STOP_WORDS
+TOK = re.compile(r"[A-Za-z0-9]+")
+
+def top_terms(titles: List[str], k: int = 8) -> List[str]:
+    tf = {}
+    for t in titles:
+        for w in TOK.findall((t or "").lower()):
+            if len(w) < 3 or w in STOP: continue
+            tf[w] = tf.get(w, 0) + 1
+    return [w for w,_ in sorted(tf.items(), key=lambda x: x[1], reverse=True)[:k]]
+
+def simple_questions(theme_title_terms: List[str]) -> List[str]:
+    # produce a couple of templated question sketches from term list
+    if not theme_title_terms: return []
+    t = theme_title_terms[:4]
+    out = []
+    if len(t) >= 2:
+        out.append(f"In {t[0]} patients, does {t[1]} improve outcomes vs standard care?")
+    if len(t) >= 3:
+        out.append(f"Does {t[0]} {t[1]} reduce {t[2]} compared with usual practice?")
+    if len(t) >= 4:
+        out.append(f"What is the effect of {t[0]} {t[1]} on {t[2]} in {t[3]} settings?")
+    return out
+
+def gap_score(coverage_ratio: float, new_primary_count: int, E_size: int, last_sr_year: int | None, now_year: int) -> float:
+    """
+    Deterministic ranking: higher when coverage is low, new primaries exist, and E has mass.
+    """
+    cov_term = 1.0 - coverage_ratio
+    recency = 0.0 if last_sr_year is None else max(0.0, min(1.0, (now_year - last_sr_year) / 6.0))  # 6y horizon
+    mass = np.tanh(E_size / 30.0)  # saturate after ~30
+    newp = np.tanh(new_primary_count / 10.0)
+    return 0.5*cov_term + 0.2*recency + 0.2*newp + 0.1*mass
+
+def rank_gaps(universe: Dict[str,Any], coverage_rows: List[Dict[str,Any]], now_year: int) -> List[Dict[str,Any]]:
+    df = pd.DataFrame(universe["docs"])
+    theme_by_id = {t["theme_id"]: t for t in universe["themes"]}
+    rows = []
+    for row in coverage_rows:
+        tid = row["theme_id"]; t = theme_by_id[tid]
+        members_idx = t["members_idx"]
+        titles = [df.iloc[i]["title"] for i in members_idx]
+        terms = top_terms(titles, k=8)
+        qs = simple_questions(terms)
+        score = gap_score(row["coverage_ratio"], row["new_primary_count"], row["E_size"], row["last_sr_year"], now_year)
+        rows.append({
+            "theme_id": tid,
+            "gap_score": float(score),
+            "coverage_ratio": row["coverage_ratio"],
+            "coverage_level": row["coverage_level"],
+            "E_size": row["E_size"],
+            "new_primary_count": row["new_primary_count"],
+            "last_sr_year": row["last_sr_year"],
+            "terms": terms,
+            "questions": qs,
+            "E": row.get("E",[]),
+            "S": row.get("S",[]),
+        })
+    rows.sort(key=lambda x: x["gap_score"], reverse=True)
+    return rows
+
+
+
+###############################################################################
+### FILE: src/pipeline/ripple.py
+###############################################################################
+# src/pipeline/ripple.py
+from __future__ import annotations
+from typing import List, Dict, Any, Set, Tuple
+import numpy as np, pandas as pd
+
+from cache.icite import ICiteCache
+from cache.emb import EmbCache
+from clients.icite import get_pubs, extract_refs_and_citers
+from clients.entrez import efetch_abstracts
+from clients.lmstudio import LMEmbeddings
+from themes.hybrid_graph import cosine_sim_matrix
+from config import LMSTUDIO_EMB_MODEL
+
+def ripple_expand_from_primaries(seed_pmids: List[str],
+                                 allowed_since_year: int | None,
+                                 max_expand: int = 300,
+                                 prefer: str = "citers") -> Dict[str,Any]:
+    """
+    Expand around seed primary studies, preferring recent citers (or refs), with a strict cap.
+    Returns fetched docs {pmid->meta} and the ordered candidate list.
+    """
+    ic = ICiteCache()
+    have = ic.get_many(seed_pmids, legacy=True)
+    need = [p for p in seed_pmids if p not in have]
+    if need:
+        fetched = get_pubs(need, fields=["pmid","references","cited_by","year"], legacy=True)
+        ic.put_many(fetched, legacy=True)
+        for rec in fetched:
+            have[str(rec.get("pmid") or rec.get("_id") or "")] = rec
+
+    cand: List[int] = []
+    for s in seed_pmids:
+        refs,citers = extract_refs_and_citers(have.get(s, {}))
+        pool = citers if prefer=="citers" else refs
+        cand.extend(pool)
+    # unique and filter by year if we can
+    cand = list(dict.fromkeys(cand))
+    if allowed_since_year is not None:
+        # fetch years
+        have2 = ic.get_many([str(x) for x in cand], legacy=True)
+        need2 = [str(x) for x in cand if str(x) not in have2]
+        if need2:
+            fetched2 = get_pubs(need2, fields=["pmid","year"], legacy=True)
+            ic.put_many(fetched2, legacy=True)
+            for rec in fetched2:
+                have2[str(rec.get("pmid") or rec.get("_id") or "")] = rec
+        cand = [c for c in cand if (have2.get(str(c),{}).get("year") or 0) >= allowed_since_year]
+    cand = cand[:max_expand]
+
+    # fetch metadata for candidates
+    meta = efetch_abstracts([str(x) for x in cand])
+    # embed (cache)
+    cache = EmbCache()
+    pid = [str(x) for x in meta.keys()]
+    texts = [(meta[p]["title"] or "") + "\n" + (meta[p]["abstract"] or "") for p in pid]
+    cached = cache.get_many(LMSTUDIO_EMB_MODEL, pid)
+    miss_idx, miss_texts, miss_pmids = [], [], []
+    for i,p in enumerate(pid):
+        if p not in cached:
+            miss_idx.append(i); miss_texts.append(texts[i]); miss_pmids.append(p)
+    if miss_texts:
+        emb = LMEmbeddings()
+        new_vecs = emb.encode(miss_texts, batch_size=32)
+        cache.put_many(LMSTUDIO_EMB_MODEL, [(miss_pmids[j], new_vecs[j]) for j in range(len(miss_pmids))])
+
+    return {"meta": meta, "candidates": [str(x) for x in cand]}
+
+
+
+###############################################################################
+### FILE: src/pipeline/universe.py
+###############################################################################
+# src/pipeline/universe.py
+from __future__ import annotations
+import time, pathlib, sys
+from typing import List, Dict, Any, Literal, Set
+import numpy as np, pandas as pd, networkx as nx
+
+# import roots
+ROOT = pathlib.Path(__file__).resolve().parents[2]
+SRC = ROOT / "src"
+if str(ROOT) not in sys.path: sys.path.insert(0, str(ROOT))
+if str(SRC)  not in sys.path: sys.path.insert(0, str(SRC))
+
+from clients.entrez import esearch, efetch_abstracts
+from clients.icite import get_pubs, extract_refs_and_citers
+from cache.icite import ICiteCache
+from clients.lmstudio import LMEmbeddings
+from themes.hybrid_graph import cosine_sim_matrix, build_knn, hybrid_weights
+from themes.themes import soft_membership
+from config import KNN_K, HYBRID_ALPHA, HYBRID_BETA, LMSTUDIO_EMB_MODEL
+from cache.emb import EmbCache
+
+def hydrate_pmids(seed_pmids: List[str],
+                  mode: Literal["none","refs","citers","both"]="none",
+                  hops: int = 1,
+                  per_seed_budget: int = 200) -> List[str]:
+    """
+    Optional node expansion using iCite refs/citers with hard budgets.
+    Returns the union list (seed + expansion), de-duplicated, as strings.
+    """
+    if mode == "none" or hops <= 0:
+        return [str(x) for x in seed_pmids]
+    cache = ICiteCache()
+    frontier: Set[str] = set(str(x) for x in seed_pmids)
+    universe: Set[str] = set(frontier)
+    for _ in range(hops):
+        need = list(frontier)
+        have = cache.get_many(need, legacy=True)
+        missing = [p for p in need if p not in have]
+        if missing:
+            fetched = get_pubs(missing, fields=["pmid","references","cited_by"], legacy=True)
+            cache.put_many(fetched, legacy=True)
+            for rec in fetched:
+                have[str(rec.get("pmid") or rec.get("_id") or "")] = rec
+        new: Set[str] = set()
+        for p in need:
+            rec = have.get(p, {})
+            refs, citers = extract_refs_and_citers(rec)
+            pool: List[int] = []
+            if mode in ("refs","both"):
+                pool.extend(refs[:per_seed_budget//(2 if mode=="both" else 1)])
+            if mode in ("citers","both"):
+                pool.extend(citers[:per_seed_budget//(2 if mode=="both" else 1)])
+            for q in pool:
+                q = str(q)
+                if q not in universe:
+                    new.add(q)
+        frontier = new
+        universe |= new
+        if not frontier: break
+    return list(universe)
+
+def build_universe(queries: List[str],
+                   year_min: int | None,
+                   year_max: int | None,
+                   retmax: int = 500,
+                   hydrate: Literal["none","refs","citers","both"]="none",
+                   hops: int = 1,
+                   per_seed_budget: int = 150,
+                   knn_k: int = KNN_K,
+                   alpha: float = HYBRID_ALPHA,
+                   beta: float  = HYBRID_BETA,
+                   resolution: float = 0.8,
+                   threshold: float = 0.4,
+                   emb_batch: int = 48) -> Dict[str,Any]:
+    """
+    Multi-query -> (optional) hydration -> efetch -> cached embeddings -> hybrid kNN -> clustering.
+    Returns full universe dict {docs, themes, cluster_method, params...}.
+    """
+    t0 = time.perf_counter()
+    # 1) union PMIDs from all queries
+    pmid_set: Set[str] = set()
+    for q in queries:
+        ids = esearch(q, retmax=retmax, mindate=year_min, maxdate=year_max, sort="date")
+        pmid_set.update(str(x) for x in ids)
+    pmids = list(pmid_set)
+    # 2) hydrate optionally
+    pmids_h = hydrate_pmids(pmids, mode=hydrate, hops=hops, per_seed_budget=per_seed_budget)
+    # 3) efetch metadata
+    meta = efetch_abstracts(pmids_h)
+    df = pd.DataFrame.from_records(list(meta.values()))
+    df = df.dropna(subset=["title"]).reset_index(drop=True)
+    # 4) embeddings (cached)
+    cache = EmbCache()
+    pid = [str(x) for x in df["pmid"].tolist()]
+    texts = (df["title"].fillna("") + "\n" + df["abstract"].fillna("")).tolist()
+    cached = cache.get_many(LMSTUDIO_EMB_MODEL, pid)
+    miss_idx, miss_texts, miss_pmids = [], [], []
+    for i, p in enumerate(pid):
+        if p not in cached:
+            miss_idx.append(i); miss_texts.append(texts[i]); miss_pmids.append(p)
+    if miss_texts:
+        emb = LMEmbeddings()
+        new_vecs = emb.encode(miss_texts, batch_size=emb_batch)
+        cache.put_many(LMSTUDIO_EMB_MODEL, [(miss_pmids[j], new_vecs[j]) for j in range(len(miss_pmids))])
+    else:
+        new_vecs = np.empty((0,0), dtype="float32")
+    # assemble vecs
+    if cached:
+        dim = next(iter(cached.values())).size
+    else:
+        dim = new_vecs.shape[1]
+    vecs = np.zeros((len(pid), dim), dtype="float32")
+    for i,p in enumerate(pid):
+        if p in cached:
+            vecs[i] = cached[p]
+    for pos, j in enumerate(miss_idx):
+        vecs[j] = new_vecs[pos]
+    vecs /= (np.linalg.norm(vecs, axis=1, keepdims=True) + 1e-12)
+    # 5) hybrid kNN graph
+    cos = cosine_sim_matrix(vecs)
+    knn_idx, knn_cos = build_knn(cos, k=knn_k)
+    # bibliographic coupling on kNN pairs
+    icache = ICiteCache()
+    have = icache.get_many(pid, legacy=True)
+    need = [p for p in pid if p not in have]
+    if need:
+        fetched = get_pubs(need, fields=["pmid","references","cited_by"], legacy=True)
+        icache.put_many(fetched, legacy=True)
+        for rec in fetched:
+            have[str(rec.get("pmid") or rec.get("_id") or "")] = rec
+    ref_sets: Dict[str,set[int]] = {}
+    for p in pid:
+        refs,_ = extract_refs_and_citers(have.get(p, {}))
+        ref_sets[p] = set(refs)
+    bc_knn = np.zeros_like(knn_cos, dtype="float32")
+    for i in range(len(pid)):
+        Ri = ref_sets.get(pid[i], set())
+        if not Ri: continue
+        for t, j in enumerate(knn_idx[i]):
+            Rj = ref_sets.get(pid[j], set())
+            if not Rj: continue
+            inter = len(Ri & Rj)
+            if inter:
+                uni = len(Ri | Rj) or 1
+                bc_knn[i,t] = inter/uni
+    hyb = hybrid_weights(knn_cos, bc_knn, alpha=alpha, beta=beta)
+    # 6) cluster
+    G = nx.Graph()
+    for i in range(len(pid)):
+        for t, j in enumerate(knn_idx[i]):
+            w = float(hyb[i,t])
+            if w<=0: continue
+            if G.has_edge(i,j):
+                if G[i][j]["weight"] < w:
+                    G[i][j]["weight"] = w
+            else:
+                G.add_edge(i,j,weight=w)
+    labels=None; method=None
+    try:
+        import igraph as ig, leidenalg as la
+        mapping = {n:i for i,n in enumerate(G.nodes())}
+        edges = [(mapping[u],mapping[v]) for u,v in G.edges()]
+        weights = [G[u][v].get("weight",1.0) for u,v in G.edges()]
+        g = ig.Graph(n=len(mapping), edges=edges)
+        g.es["weight"] = weights
+        part = la.find_partition(g, la.RBConfigurationVertexPartition, weights="weight", resolution_parameter=resolution)
+        labels = np.zeros(len(mapping), dtype=int)
+        for cid, members in enumerate(part):
+            for v in members:
+                labels[v] = cid
+        method="leiden"
+    except Exception:
+        try:
+            import importlib.util, hdbscan  # type: ignore
+            labels = hdbscan.HDBSCAN(min_cluster_size=max(10, len(pid)//50), metric="euclidean").fit_predict(vecs)
+            method="hdbscan"
+        except Exception:
+            TH = float(threshold)
+            H = nx.Graph((u,v,d) for u,v,d in G.edges(data=True) if d.get("weight",0.0)>=TH)
+            labels = -1*np.ones(len(pid), dtype=int); cid=0
+            for comp in nx.connected_components(H):
+                for i in comp: labels[i]=cid
+                cid+=1
+            method=f"components@{TH}"
+    uniq, W = soft_membership(vecs, labels, knn_idx, hyb, topm=2, lam=0.5)
+    # 7) package
+    themes=[]
+    for t in uniq:
+        members = np.where(labels==t)[0].tolist()
+        if not members: continue
+        cent = vecs[members].mean(axis=0)
+        cent = cent/(np.linalg.norm(cent)+1e-12)
+        yrs = pd.to_numeric(pd.Series([meta[str(df.iloc[i]['pmid'])]['year'] if str(df.iloc[i]['pmid']) in meta else df.iloc[i]['year'] for i in members]), errors="coerce")
+        theme = {
+            "theme_id": int(t),
+            "size": len(members),
+            "members_idx": members,
+            "members_pmids": [str(df.iloc[i]["pmid"]) for i in members],
+            "centroid": cent.tolist(),
+            "year_stats": {
+                "min": int(yrs.min()) if yrs.notna().any() else None,
+                "max": int(yrs.max()) if yrs.notna().any() else None,
+                "median": float(yrs.median()) if yrs.notna().any() else None,
+            },
+        }
+        themes.append(theme)
+    out = {
+        "queries": queries,
+        "params": {"year_min":year_min,"year_max":year_max,"retmax":retmax,"hydrate":hydrate,"hops":hops,
+                   "per_seed_budget":per_seed_budget,"knn_k":knn_k,"alpha":alpha,"beta":beta,"resolution":resolution},
+        "count": len(pid),
+        "cluster_method": method,
+        "themes": themes,
+        "docs": df.to_dict(orient="records"),
+    }
+    return out
+
+
+
+###############################################################################
+### FILE: src/themes/hybrid_graph.py
+###############################################################################
+from __future__ import annotations
+import numpy as np
+from typing import Tuple
+
+def cosine_sim_matrix(X: np.ndarray, Y: np.ndarray | None = None) -> np.ndarray:
+    if Y is None: Y = X
+    Xn = X / (np.linalg.norm(X, axis=1, keepdims=True) + 1e-12)
+    Yn = Y / (np.linalg.norm(Y, axis=1, keepdims=True) + 1e-12)
+    return Xn @ Yn.T
+
+def build_knn(sims: np.ndarray, k: int = 20) -> Tuple[np.ndarray, np.ndarray]:
+    n = sims.shape[0]
+    k = min(k, n-1) if n > 1 else 1
+    idx = np.argpartition(-sims, kth=k-1, axis=1)[:, :k]
+    vals = np.take_along_axis(sims, idx, axis=1)
+    return idx, vals
+
+def hybrid_weights(cosine_knn_sims: np.ndarray, coupling_knn_sims: np.ndarray | None, alpha: float, beta: float) -> np.ndarray:
+    if coupling_knn_sims is None:
+        return cosine_knn_sims
+    return alpha * cosine_knn_sims + beta * coupling_knn_sims
+
+
+
+###############################################################################
+### FILE: src/themes/themes.py
+###############################################################################
+from __future__ import annotations
+import numpy as np
+
+def soft_membership(
+    doc_vecs: np.ndarray,
+    labels: np.ndarray,
+    kNN_idx: np.ndarray,
+    kNN_sims: np.ndarray,
+    topm: int = 2,
+    lam: float = 0.5
+):
+    # Centroids
+    uniq = sorted(set(int(x) for x in labels if x >= 0))
+    centroids = {}
+    for t in uniq:
+        M = doc_vecs[labels==t]
+        c = M.mean(axis=0)
+        centroids[t] = c / (np.linalg.norm(c)+1e-12)
+
+    # cosine to centroids
+    cos_to_t = np.zeros((doc_vecs.shape[0], len(uniq)), dtype="float32")
+    for j,t in enumerate(uniq):
+        c = centroids[t]
+        cos_to_t[:, j] = (doc_vecs @ c) / (np.linalg.norm(doc_vecs,axis=1)+1e-12)
+
+    # neighbor similarity per theme (avg sim to neighbors with that label)
+    avg_nei = np.zeros_like(cos_to_t)
+    for i in range(doc_vecs.shape[0]):
+        nei = kNN_idx[i]; sims = kNN_sims[i]
+        for j,t in enumerate(uniq):
+            mask = (labels[nei] == t)
+            avg_nei[i,j] = sims[mask].mean() if mask.any() else 0.0
+
+    raw = lam * cos_to_t + (1-lam) * avg_nei
+    raw = raw - raw.max(axis=1, keepdims=True)
+    e = np.exp(raw)
+    W = e / (e.sum(axis=1, keepdims=True) + 1e-12)
+
+    # keep only top-m
+    top_idx = np.argsort(-W, axis=1)[:, :topm]
+    W_sparse = np.zeros_like(W)
+    rows = np.arange(W.shape[0])[:,None]
+    W_sparse[rows, top_idx] = W[rows, top_idx]
+    return uniq, W_sparse
+
+
+
+###############################################################################
+### FILE: src/utils/io.py
+###############################################################################
+from __future__ import annotations
+import pathlib, orjson
+from typing import Any
+
+def jdump(obj: Any, path: pathlib.Path) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with open(path, "wb") as f:
+        f.write(orjson.dumps(obj, option=orjson.OPT_INDENT_2))
+
+
+
