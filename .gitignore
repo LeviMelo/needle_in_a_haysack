@@ -25,6 +25,10 @@ coverage.xml
 htmlcov/
 .ipynb_checkpoints/
 
+# NumPy arrays
+*.npy
+*.npz
+
 # Editors / OS
 .vscode/
 .idea/
