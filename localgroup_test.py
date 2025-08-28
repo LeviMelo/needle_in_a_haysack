@@ -126,6 +126,11 @@ ECACHE = JsonlCache(os.path.join(CACHE_DIR, "embeddings.jsonl"), "key")
 
 # ---------------------------- Helpers ---------------------------- #
 
+def title_of(pmid: int, graph, meta):
+    return (graph.nodes.get(pmid, {}).get("title")
+            or meta.get(pmid, {}).get("title")
+            or "")
+
 def safe_int(x) -> Optional[int]:
     try:
         return int(str(x))
@@ -264,7 +269,7 @@ def is_sr(rec: Dict[str, Any]) -> bool:
 
 def is_primary(rec: Dict[str, Any]) -> bool:
     pts = set(rec.get("pub_types", []))
-    # If it's SR/MA, do NOT treat as primary even if "Comparative Study" is present.
+    # SR/MA must not be labeled primary even if "Comparative Study" appears.
     if pts & SRMA_TAGS:
         return False
     return bool(pts & PRIMARY_TAGS)
@@ -446,21 +451,20 @@ def compute_conductance(graph: LocalGraph, S: Set[int]) -> float:
     denom = min(volS, volOut) if min(volS, volOut) > 0 else volS if volS > 0 else 1
     return cut / float(denom) if denom > 0 else 1.0
 
-def sweep_cut(graph: LocalGraph, p_scores: Dict[int, float]) -> Set[int]:
-    # order by p/deg
+def sweep_cut(graph: LocalGraph, p_scores: Dict[int, float]) -> Tuple[Set[int], float]:
     items = [(v, p_scores.get(v,0.0)/graph.degree(v)) for v in p_scores.keys()]
     items.sort(key=lambda x: x[1], reverse=True)
     best_phi = 1.0
     best_k = 0
     S: Set[int] = set()
-    # incremental sweep
     for k, (v, _) in enumerate(items, start=1):
         S.add(v)
         phi = compute_conductance(graph, S)
         if phi < best_phi:
             best_phi = phi
             best_k = k
-    return set([items[i][0] for i in range(best_k)])
+    S_best = set([items[i][0] for i in range(best_k)])
+    return S_best, best_phi
 
 # ---------------------------- Full weights (for Leiden & metrics) ---------------------------- #
 
@@ -564,6 +568,60 @@ def leiden_on_S(graph: LocalGraph, S: Set[int], meta: Dict[int, Dict[str, Any]],
     # part.membership is a list aligned to vertices
     return Slist, part.membership, g
 
+def augment_sr_closure(graph, S: Set[int], k_min_refs: int = 2, max_new_sr: int = 60) -> Tuple[Set[int], List[int]]:
+    """
+    Add SRs outside S that reference at least k_min_refs primaries already inside S.
+    Returns the new S and the list of SR PMIDs added.
+    """
+    Sset = set(S)
+    primaries_in_S = {p for p in S if graph.nodes[p]["is_primary"]}
+    if not primaries_in_S:
+        return Sset, []
+
+    candidates = []
+    # Consider SRs we've already touched in cache; fall back to neighbors of S
+    pool = set(graph.nodes.keys())
+    for v in list(Sset):
+        pool |= graph.adj.get(v, set())
+
+    for s in pool:
+        n = graph.nodes.get(s)
+        if not n or not n["is_sr"] or s in Sset:
+            continue
+        hit = len(n["refs"] & primaries_in_S)
+        if hit >= k_min_refs:
+            candidates.append((hit, s))
+
+    candidates.sort(reverse=True)  # more coverage first
+    added = []
+    for _, s in candidates[:max_new_sr]:
+        Sset.add(s)
+        graph.ensure_adj(s)
+        added.append(s)
+    return Sset, added
+
+def augment_primary_closure(graph, S: Set[int], max_new_prim: int = 120) -> Tuple[Set[int], List[int]]:
+    """
+    Add primaries (outside S) that are referenced by SRs in S (first-come-first-serve up to cap).
+    """
+    Sset = set(S)
+    srs_in_S = [s for s in S if graph.nodes[s]["is_sr"]]
+    added = []
+    for s in srs_in_S:
+        for r in graph.nodes[s]["refs"]:
+            if r in Sset:
+                continue
+            nr = graph.nodes.get(r)
+            if not nr:
+                graph.ensure_nodes([r])
+                nr = graph.nodes.get(r)
+            if nr and nr["is_primary"]:
+                Sset.add(r); added.append(r)
+                graph.ensure_adj(r)
+                if len(added) >= max_new_prim:
+                    return Sset, added
+    return Sset, added
+
 # ---------------------------- Gaps ranking ---------------------------- #
 
 def rank_gap_sr_for_primary(p: int, SRs: List[int], graph: LocalGraph) -> List[Dict[str, Any]]:
@@ -595,6 +653,11 @@ def main():
     ap.add_argument("--lm-model", type=str, required=True, help="Embedding model name")
     ap.add_argument("--max-nodes", type=int, default=3000, help="Max nodes to explore in diffusion")
     ap.add_argument("--graphml", action="store_true", help="Write GraphML of S*")
+    ap.add_argument("--augment-k", type=int, default=2, help="Add SRs that cite at least K primaries already in S*")
+    ap.add_argument("--augment-max-sr", type=int, default=60, help="Max SRs to add during SR-closure augmentation")
+    ap.add_argument("--augment-max-prim", type=int, default=120, help="Max primaries to add during SR->primary augmentation")
+    ap.add_argument("--dump-preview", action="store_true", help="Print human-readable previews of SRs/Primaries/Edges")
+
     args = ap.parse_args()
 
     seed = args.seed
@@ -610,11 +673,45 @@ def main():
     logging.info("Running local PPR push (CIT backbone)…")
     p_scores = local_ppr_push(lg, [seed], alpha=args.alpha, eps=args.eps, max_nodes=args.max_nodes)
     logging.info(f"Discovered nodes: {len(p_scores)}")
+    
+    logging.info("Sweep cut (conductance) to pick S*…")
+    S_star, best_phi = sweep_cut(lg, p_scores)
+    logging.info(f"Selected community S*: n={len(S_star)} | phi={best_phi:.4f}")
 
     # Sweep cut to pick S*
     logging.info("Sweep cut (conductance) to pick S*…")
-    S_star = sweep_cut(lg, p_scores)
-    logging.info(f"Selected community S*: n={len(S_star)}")
+    S_star, best_phi = sweep_cut(lg, p_scores)
+    logging.info(f"Selected community S*: n={len(S_star)} | phi={best_phi:.4f}")
+
+    # Sanity guard (catches the tuple vs set bug immediately if it reappears)
+    assert isinstance(S_star, set), f"S_star type error: got {type(S_star)}"
+
+    # Quick composition preview
+    n_sr0 = sum(1 for x in S_star if lg.nodes[x]["is_sr"])
+    n_pr0 = sum(1 for x in S_star if lg.nodes[x]["is_primary"])
+    logging.info(f"S* composition: SR={n_sr0} | Primary={n_pr0}")
+
+    
+    # ---- Augment S* to include SRs that cover S* primaries, then pull their primaries
+    if args.augment_k > 0:
+        S_aug, added_sr = augment_sr_closure(lg, S_star, k_min_refs=args.augment_k, max_new_sr=args.augment_max_sr)
+        logging.info(f"SR-closure augmentation: +{len(added_sr)} SRs (k_min={args.augment_k})")
+        S_aug2, added_prim = augment_primary_closure(lg, S_aug, max_new_prim=args.augment_max_prim)
+        logging.info(f"Primary augmentation from added SRs: +{len(added_prim)} primaries")
+
+        # Replace S* with augmented set
+        S_star = S_aug2
+        n_srA = sum(1 for x in S_star if lg.nodes[x]["is_sr"])
+        n_prA = sum(1 for x in S_star if lg.nodes[x]["is_primary"])
+        logging.info(f"S* (augmented) size={len(S_star)} | SR={n_srA} | Primary={n_prA}")
+
+
+    # Top 12 by p/deg for audit
+    items_sorted = sorted(p_scores.items(), key=lambda kv: kv[1]/lg.degree(kv[0]), reverse=True)[:12]
+    logging.info("Top by p/deg (preview):")
+    for v, score in items_sorted:
+        typ = "SR" if lg.nodes[v]["is_sr"] else ("PRIMARY" if lg.nodes[v]["is_primary"] else "OTHER")
+        logging.info(f"  {v} [{typ}] p/deg={score/lg.degree(v):.4g} title={lg.nodes[v]['title'][:100]}")
 
     # Metadata map for embeddings
     meta_pmids = sorted(list(S_star))
@@ -696,6 +793,49 @@ def main():
         w.writeheader()
         for r in rows:
             w.writerow(r)
+    
+    # === Audit helpers (cards & previews) ===
+    def _card(pmid: int, lg):
+        n = lg.nodes.get(pmid, {})
+        return {
+            "pmid": pmid,
+            "title": n.get("title", ""),
+            "year": n.get("year"),
+            "pub_types": (n.get("pub_types", []) or [])[:6],
+            "is_sr": bool(n.get("is_sr")),
+            "is_primary": bool(n.get("is_primary")),
+            "deg_backbone": len(lg.adj.get(pmid, set())),
+            "num_refs": len(n.get("refs", set())),
+            "num_citers": len(n.get("citers", set())),
+        }
+
+    def _top_p_over_deg_preview(S_star, p_scores, lg, k=20):
+        # p/deg ranking restricted to S* for auditability
+        data = []
+        for v in S_star:
+            deg = max(1, lg.degree(v))
+            score = p_scores.get(v, 0.0) / deg
+            data.append((score, v))
+        data.sort(reverse=True)
+        out = []
+        for score, v in data[:k]:
+            n = lg.nodes.get(v, {})
+            typ = "SR" if n.get("is_sr") else ("PRIMARY" if n.get("is_primary") else "OTHER")
+            out.append({
+                "pmid": v,
+                "type": typ,
+                "p_over_deg": round(float(score), 6),
+                "title": (n.get("title") or "")[:140],
+                "year": n.get("year")
+            })
+        return out
+    
+    # Build readable SR/Primary cards from S*
+    sr_cards = [_card(x, lg) for x in sorted(S_star) if lg.nodes[x].get("is_sr")]
+    primary_cards = [_card(x, lg) for x in sorted(S_star) if lg.nodes[x].get("is_primary")]
+
+    # A small preview of the most "central" nodes in S* by p/deg
+    discovered_preview = _top_p_over_deg_preview(S_star, p_scores, lg, k=20)
 
     # Compact JSON
     compact = {
@@ -718,6 +858,11 @@ def main():
         "leiden": {
             "n_communities": int(max(membership)+1 if membership else 1),
             "membership_preview": [{"pmid": vlist[i], "comm": int(membership[i])} for i in range(min(len(vlist), 50))]
+        },
+        "community_cards": {
+        "srs": sr_cards[:80],               # safe cap for JSON size
+        "primaries": primary_cards[:200],   # safe cap for JSON size
+        "discovered_top_by_p_over_deg": discovered_preview
         },
         "edges_summary": {
             "n_edges": len(rows),
