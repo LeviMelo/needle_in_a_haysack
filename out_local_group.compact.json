@@ -1,0 +1,4375 @@
+{
+  "seed": 33591115,
+  "timestamp": "2025-08-28T21:39:35Z",
+  "params": {
+    "target_nodes": 500,
+    "topk_new": 100
+  },
+  "summary": {
+    "n_nodes": 544,
+    "n_edges": 742,
+    "n_sr": 187,
+    "n_primary": 357
+  },
+  "cards": {
+    "srs": [
+      {
+        "pmid": 14584013,
+        "title": "Preoperative fasting for adults to prevent perioperative complications.",
+        "year": 2003,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 18254064,
+        "title": "Systemic prokinetic pharmacologic treatment for postoperative adynamic ileus following abdominal surgery in adults.",
+        "year": 2008,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 18515968,
+        "title": "Perioperative nutrition in elective gastrointestinal surgery--potential for improvement?",
+        "year": 2008,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 77
+      },
+      {
+        "pmid": 20591343,
+        "title": "Pathophysiology and clinical implications of peroperative fluid management in elective surgery.",
+        "year": 2010,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 2
+      },
+      {
+        "pmid": 20931620,
+        "title": "Immunonutrition in gastrointestinal surgery.",
+        "year": 2011,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 20977587,
+        "title": "Hospital discharge criteria following colorectal surgery: a systematic review.",
+        "year": 2012,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 21236454,
+        "title": "Enhanced recovery pathways optimize health outcomes and resource utilization: a meta-analysis of randomized controlled trials in colorectal surgery.",
+        "year": 2011,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 21328298,
+        "title": "Fast track surgery versus conventional recovery strategies for colorectal surgery.",
+        "year": 2011,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 21780051,
+        "title": "Perioperative management and \"Fast-Track\" therapy in vascular medicine.",
+        "year": 2011,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 21929667,
+        "title": "A systematic review of interventions to facilitate ambulatory laparoscopic cholecystectomy.",
+        "year": 2011,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 22581289,
+        "title": "Preoperative carbohydrate loading for elective surgery: a systematic review and meta-analysis.",
+        "year": 2012,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 7
+      },
+      {
+        "pmid": 23152265,
+        "title": "Pre-operative nutrition support in patients undergoing gastrointestinal surgery.",
+        "year": 2012,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 23200124,
+        "title": "A meta-analysis of randomised controlled trials on preoperative oral carbohydrate treatment in elective surgery.",
+        "year": 2013,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 51
+      },
+      {
+        "pmid": 23786567,
+        "title": "Facilitating early recovery of bowel motility after colorectal surgery: a systematic review.",
+        "year": 2014,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 24253135,
+        "title": "Enhanced recovery for esophagectomy: a systematic review and evidence-based guidelines.",
+        "year": 2014,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 3
+      },
+      {
+        "pmid": 24337792,
+        "title": "Fast-track surgery in gastrectomy for gastric cancer: a systematic review and meta-analysis.",
+        "year": 2014,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 24368573,
+        "title": "Enhanced recovery program in colorectal surgery: a meta-analysis of randomized controlled trials.",
+        "year": 2014,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 24417824,
+        "title": "Role of preoperative carbohydrate loading: a systematic review.",
+        "year": 2014,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 7
+      },
+      {
+        "pmid": 25121931,
+        "title": "Preoperative carbohydrate treatment for enhancing recovery after elective surgery.",
+        "year": 2014,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 9
+      },
+      {
+        "pmid": 25654619,
+        "title": "Perioperative Nutritional Management in Congenital Perineal and Vestibular Fistulas: A Systematic Review.",
+        "year": 2015,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 25861075,
+        "title": "Fasting abbreviation among patients submitted to oncologic surgery: systematic review.",
+        "year": 2015,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 2
+      },
+      {
+        "pmid": 26086619,
+        "title": "Paravertebral Block for Inguinal Herniorrhaphy: A Systematic Review and Meta-Analysis of Randomized Controlled Trials.",
+        "year": 2015,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 26212597,
+        "title": "Predictors for Reporting of Dietary Assessment Methods in Food-based Randomized Controlled Trials over a Ten-year Period.",
+        "year": 2016,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 101
+      },
+      {
+        "pmid": 26356689,
+        "title": "Enhanced Recovery After Surgery: Which Components, If Any, Impact on The Systemic Inflammatory Response Following Colorectal Surgery?: A Systematic Review.",
+        "year": 2015,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 26968093,
+        "title": "Acupuncture for substance use disorders: A systematic review and meta-analysis.",
+        "year": 2016,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 26970912,
+        "title": "Enhanced Recovery after Urological Surgery: A Contemporary Systematic Review of Outcomes, Key Elements, and Research Needs.",
+        "year": 2016,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 27020765,
+        "title": "The effects of enteral immunonutrition in upper gastrointestinal surgery: A systematic review and meta-analysis.",
+        "year": 2016,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 27406637,
+        "title": "Plea for routinely presenting prediction intervals in meta-analysis.",
+        "year": 2016,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 27737447,
+        "title": "Optimal Perioperative Care in Major Head and Neck Cancer Surgery With Free Flap Reconstruction: A Consensus Review and Recommendations From the Enhanced Recovery After Surgery Society.",
+        "year": 2017,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 27755384,
+        "title": "Quality of meta-analyses for randomized trials in the field of hypertension: a systematic review.",
+        "year": 2016,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 27773599,
+        "title": "Fast track for open hepatectomy: A systemic review and meta-analysis.",
+        "year": 2016,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 2
+      },
+      {
+        "pmid": 27908918,
+        "title": "Alpha blockers for treatment of ureteric stones: systematic review and meta-analysis.",
+        "year": 2016,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 28094814,
+        "title": "Meta-analysis reveals associations between genetic variation in the 5' and 3' regions of Neuregulin-1 and schizophrenia.",
+        "year": 2017,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 28222625,
+        "title": "Shortened preoperative fasting for prevention of complications associated with laparoscopic cholecystectomy: a meta-analysis.",
+        "year": 2017,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 4
+      },
+      {
+        "pmid": 28286250,
+        "title": "Change in muscle strength and muscle mass in older hospitalized patients: A systematic review and meta-analysis.",
+        "year": 2017,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 28445352,
+        "title": "Consensus Review of Optimal Perioperative Care in Breast Reconstruction: Enhanced Recovery after Surgery (ERAS) Society Recommendations.",
+        "year": 2017,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 3
+      },
+      {
+        "pmid": 28524930,
+        "title": "Nutrition support in hospitalised adults at nutritional risk.",
+        "year": 2017,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 127
+      },
+      {
+        "pmid": 28778547,
+        "title": "Nutrition management in enhanced recovery after abdominal pancreatic surgery.",
+        "year": 2017,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 28786982,
+        "title": "Meta-analysis supports GWAS-implicated link between GRM3 and schizophrenia risk.",
+        "year": 2017,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 29096421,
+        "title": "Glucocorticosteroids for people with alcoholic hepatitis.",
+        "year": 2017,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 29282641,
+        "title": "The Efficacy of Cognitive Intervention in Mild Cognitive Impairment (MCI): a Meta-Analysis of Outcomes on Neuropsychological Measures.",
+        "year": 2017,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 29338698,
+        "title": "Enteral immunonutrition versus enteral nutrition for gastric cancer patients undergoing a total gastrectomy: a systematic review and meta-analysis.",
+        "year": 2018,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 29726345,
+        "title": "Mortality and morbidity in acutely ill adults treated with liberal versus conservative oxygen therapy (IOTA): a systematic review and meta-analysis.",
+        "year": 2018,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 29776399,
+        "title": "Simulation-based power calculations for planning a two-stage individual participant data meta-analysis.",
+        "year": 2018,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 29803011,
+        "title": "The effect of oral hydration on the risk or aspiration and hemodynamic stability before the induction of anesthesia: A systematic review and meta-analysis.",
+        "year": 2018,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 30039517,
+        "title": "Outpatient preoperative oral nutritional support for undernourished surgical patients: A systematic review.",
+        "year": 2019,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 30561481,
+        "title": "Opioids for Chronic Noncancer Pain: A Systematic Review and Meta-analysis.",
+        "year": 2018,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 30585363,
+        "title": "Internet interventions for mental health in university students: A systematic review and meta-analysis.",
+        "year": 2019,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 30589825,
+        "title": "Enhanced Recovery after Surgery Pathway for Microsurgical Breast Reconstruction: A Systematic Review and Meta-Analysis.",
+        "year": 2019,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 30649067,
+        "title": "Perioperative Dextrose Infusion and Postoperative Nausea and Vomiting: A Meta-analysis of Randomized Trials.",
+        "year": 2019,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 30734996,
+        "title": "The efficacy of baking soda dentifrice in controlling plaque and gingivitis: A systematic review.",
+        "year": 2019,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 30964545,
+        "title": "Glucocorticosteroids for people with alcoholic hepatitis.",
+        "year": 2019,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 31008923,
+        "title": "General anesthesia vs spinal anesthesia for patients undergoing total-hip arthroplasty: A meta-analysis.",
+        "year": 2019,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 31054241,
+        "title": "Guidelines for Perioperative Care in Cardiac Surgery: Enhanced Recovery After Surgery Society Recommendations.",
+        "year": 2019,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 31062270,
+        "title": "Effect of Perioperative Nutritional Supplementation on Postoperative Complications-Systematic Review and Meta-Analysis.",
+        "year": 2019,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 2
+      },
+      {
+        "pmid": 31112338,
+        "title": "Are carbohydrate drinks more effective than preoperative fasting: A systematic review of randomised controlled trials.",
+        "year": 2019,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 10
+      },
+      {
+        "pmid": 31514241,
+        "title": "Systematic review of enhanced recovery protocols for elective caesarean section versus conventional care.",
+        "year": 2019,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 31520677,
+        "title": "Risk factors for posttraumatic stress disorder: An umbrella review of systematic reviews and meta-analyses.",
+        "year": 2019,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 31747030,
+        "title": "Association of Nutritional Support With Clinical Outcomes Among Medical Inpatients Who Are Malnourished or at Nutritional Risk: An Updated Systematic Review and Meta-analysis.",
+        "year": 2019,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 31759339,
+        "title": "Individual participant data meta-analysis of intervention studies with time-to-event outcomes: A review of the methodology and an applied example.",
+        "year": 2020,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 31829446,
+        "title": "Perioperative restrictive versus goal-directed fluid therapy for adults undergoing major non-cardiac surgery.",
+        "year": 2019,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 31984578,
+        "title": "Interreader Agreement of Liver Imaging Reporting and Data System on MRI: A Systematic Review and Meta-Analysis.",
+        "year": 2020,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 32124020,
+        "title": "Early recovery after surgery for radical cystectomy: comprehensive assessment and meta-analysis of existing protocols.",
+        "year": 2020,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 32138747,
+        "title": "Step width variability as a discriminator of age-related gait changes.",
+        "year": 2020,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 32310996,
+        "title": "Effects of intravenous dextrose on preventing postoperative nausea and vomiting: A systematic review and meta-analysis with trial sequential analysis.",
+        "year": 2020,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 32312354,
+        "title": "Effect of walnut consumption on markers of blood glucose control: a systematic review and meta-analysis.",
+        "year": 2020,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 32573977,
+        "title": "Impact of oral preoperative and perioperative immunonutrition on postoperative infection and mortality in patients undergoing cancer surgery: systematic review and meta-analysis with trial sequential analysis.",
+        "year": 2020,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 32734920,
+        "title": "The association of HTR2A polymorphisms with obsessive-compulsive disorder and its subtypes: A meta-analysis.",
+        "year": 2020,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 32873454,
+        "title": "Guidelines for Perioperative Care in Cytoreductive Surgery (CRS) with or without hyperthermic IntraPEritoneal chemotherapy (HIPEC): Enhanced recovery after surgery (ERAS®) Society Recommendations - Part I: Preoperative and intraoperative management.",
+        "year": 2020,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 2
+      },
+      {
+        "pmid": 32900611,
+        "title": "Systematic review and meta-analysis of factors which reduce the length of stay associated with elective laparoscopic cholecystectomy.",
+        "year": 2021,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 4
+      },
+      {
+        "pmid": 32932707,
+        "title": "Immunonutrition in Patients with Pancreatic Cancer Undergoing Surgical Intervention: A Systematic Review and Meta-Analysis of Randomized Controlled Trials.",
+        "year": 2020,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 33053694,
+        "title": "The Effect of Preoperative Carbohydrate Loading on Clinical and Biochemical Outcomes after Cardiac Surgery: A Systematic Review and Meta-Analysis of Randomized Trials.",
+        "year": 2020,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 2
+      },
+      {
+        "pmid": 33118163,
+        "title": "Perineural and intravenous dexamethasone and dexmedetomidine: network meta-analysis of adjunctive effects on supraclavicular brachial plexus block.",
+        "year": 2021,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 33180373,
+        "title": "Evaluation of various estimators for standardized mean difference in meta-analysis.",
+        "year": 2021,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 33320283,
+        "title": "The Japan Society for Surgical Infection: guidelines for the prevention, detection, and management of gastroenterological surgical site infection, 2018.",
+        "year": 2021,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 8
+      },
+      {
+        "pmid": 33362816,
+        "title": "Plant Salinity Tolerance Conferred by Arbuscular Mycorrhizal Fungi and Associated Mechanisms: A Meta-Analysis.",
+        "year": 2020,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 33629128,
+        "title": "Effects of preoperative oral carbohydrate on postoperative discomfort in patients undergoing elective surgery: a meta-analysis of randomized controlled trials.",
+        "year": 2021,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 17
+      },
+      {
+        "pmid": 33635329,
+        "title": "Evaluation of Exercise Interventions and Outcomes After Hip Arthroplasty: A Systematic Review and Meta-analysis.",
+        "year": 2021,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 33691620,
+        "title": "Pathway for enhanced recovery after spinal surgery-a systematic review of evidence for use of individual components.",
+        "year": 2021,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 33795783,
+        "title": "Comparison of treatment to improve gastrointestinal functions after colorectal surgery within enhanced recovery programmes: a systematic review and meta-analysis.",
+        "year": 2021,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 33859192,
+        "title": "Mortality outcomes with hydroxychloroquine and chloroquine in COVID-19 from an international collaborative meta-analysis of randomized trials.",
+        "year": 2021,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 33939307,
+        "title": "Study specific prediction intervals for random-effects meta-analysis: A tutorial: Prediction intervals in meta-analysis.",
+        "year": 2021,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 34255008,
+        "title": "Use of Medications for Treatment of Opioid Use Disorder Among US Medicaid Enrollees in 11 States, 2014-2018.",
+        "year": 2021,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 34294466,
+        "title": "Perioperative exercise training for patients with gastrointestinal cancer undergoing surgery: A systematic review and meta-analysis.",
+        "year": 2021,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 34497047,
+        "title": "Medical cannabis or cannabinoids for chronic non-cancer and cancer related pain: a systematic review and meta-analysis of randomised clinical trials.",
+        "year": 2021,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 34524264,
+        "title": "Early Psychological Interventions for Somatic Symptom Disorder and Functional Somatic Syndromes: A Systematic Review and Meta-Analysis.",
+        "year": 2022,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 34553667,
+        "title": "Missing puzzle pieces of time-restricted-eating (TRE) as a long-term weight-loss strategy in overweight and obese people? A systematic review and meta-analysis of randomized controlled trials.",
+        "year": 2023,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 34656883,
+        "title": "Hospital related hyperglycemia as a predictor of mortality in non-diabetes patients: A systematic review.",
+        "year": 2021,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 34756632,
+        "title": "Selective serotonin reuptake inhibitors and serotonin-norepinephrine reuptake inhibitors as adjuncts for postoperative pain management: systematic review and meta-analysis of randomised controlled trials.",
+        "year": 2022,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 34757490,
+        "title": "A Meta-Analytic Review of the Effect of Antiretroviral Therapy on Neurocognitive Outcomes in Adults Living with HIV-1 in Low-and Middle-Income Countries.",
+        "year": 2022,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 34800996,
+        "title": "Association between convalescent plasma treatment and mortality in COVID-19: a collaborative systematic review and meta-analysis of randomized clinical trials.",
+        "year": 2021,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 34849532,
+        "title": "Impact of Replacement of Individual Dietary SFAs on Circulating Lipids and Other Biomarkers of Cardiometabolic Health: A Systematic Review and Meta-Analysis of Randomized Controlled Trials in Humans.",
+        "year": 2022,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 34931696,
+        "title": "Dietary advice with or without oral nutritional supplements for disease-related malnutrition in adults.",
+        "year": 2021,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 34932271,
+        "title": "Reevaluation of statistically significant meta-analyses in advanced cancer patients using the Hartung-Knapp method and prediction intervals-A methodological study.",
+        "year": 2022,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 34999325,
+        "title": "Preoperative carbohydrate loading before elective abdominal surgery: A systematic review and network meta-analysis of phase II/III randomized controlled trials.",
+        "year": 2022,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 11
+      },
+      {
+        "pmid": 35129465,
+        "title": "The Problem of Appetite Loss After Major Abdominal Surgery: A Systematic Review.",
+        "year": 2022,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 35168004,
+        "title": "The effects of elective abdominal surgery on protein turnover: A meta-analysis of stable isotope techniques to investigate postoperative catabolism.",
+        "year": 2022,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 35352476,
+        "title": "Effect of enteral immunonutrition compared with enteral nutrition on surgical wound infection, immune and inflammatory factors, serum proteins, and cellular immunity in subjects with gastric cancer undergoing a total gastrectomy: A meta-analysis.",
+        "year": 2022,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 35380602,
+        "title": "Effects of Exogenous Ketone Supplementation on Blood Glucose: A Systematic Review and Meta-analysis.",
+        "year": 2022,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 35596042,
+        "title": "Clinical and radiographic comparison of Biodentine and Formocresol: an updated meta-analysis with trial sequential analysis.",
+        "year": 2022,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 35623827,
+        "title": "Impact of oral or enteral nutritional support on clinical outcomes of patients subjected to cardiac surgery: A systematic review.",
+        "year": 2022,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 35717988,
+        "title": "Opioid versus opioid-free analgesia after surgical discharge: a systematic review and meta-analysis of randomised trials.",
+        "year": 2022,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 35754152,
+        "title": "Jointly pooling aggregated effect sizes and their standard errors from studies with continuous clinical outcomes.",
+        "year": 2022,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 36310325,
+        "title": "Guidelines for Perioperative Care for Liver Surgery: Enhanced Recovery After Surgery (ERAS) Society Recommendations 2022.",
+        "year": 2023,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 36351742,
+        "title": "Analgesic benefits of single-shot versus continuous adductor canal block for total knee arthroplasty: a systemic review and meta-analysis of randomized trials.",
+        "year": 2023,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 36357268,
+        "title": "Serratus Plane Block in Breast Cancer Surgery: A Systematic Review and Meta-Analysis.",
+        "year": 2023,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 36472671,
+        "title": "Preoperative carbohydrate loading before colorectal surgery: a systematic review and meta-analysis of randomized controlled trials.",
+        "year": 2022,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 17
+      },
+      {
+        "pmid": 36505254,
+        "title": "Effects of preoperative carbohydrate loading on recovery after elective surgery: A systematic review and Bayesian network meta-analysis of randomized controlled trials.",
+        "year": 2022,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 57
+      },
+      {
+        "pmid": 36514000,
+        "title": "Performance of several types of beta-binomial models in comparison to standard approaches for meta-analyses with very few studies.",
+        "year": 2022,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 36587461,
+        "title": "Efficacy and safety of transcranial magnetic stimulation for treating major depressive disorder: An umbrella review and re-analysis of published meta-analyses of randomised controlled trials.",
+        "year": 2023,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 36635252,
+        "title": "Systematic review of avian hatching failure and implications for conservation.",
+        "year": 2023,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 36754917,
+        "title": "Interventions with Digital Tools for Mental Health Promotion among 11-18 Year Olds: A Systematic Review and Meta-Analysis.",
+        "year": 2023,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 36797320,
+        "title": "No evidence for the benefit of PPIs in the treatment of acute pancreatitis: a systematic review and meta-analysis.",
+        "year": 2023,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 36829158,
+        "title": "Health worker education during the COVID-19 pandemic: global disruption, responses and lessons for the future-a systematic review and meta-analysis.",
+        "year": 2023,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 37062467,
+        "title": "Enhanced recovery after surgery (ERAS) for craniotomies in the treatment of brain tumors: A systematic review.",
+        "year": 2023,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 37158227,
+        "title": "Effectiveness of interventions for school-aged-children and adolescents with fetal alcohol spectrum disorder: a systematic review and meta-analysis.",
+        "year": 2024,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 37212631,
+        "title": "Nutrition as prevention for improved cancer health outcomes: a systematic literature review.",
+        "year": 2023,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 2
+      },
+      {
+        "pmid": 37226372,
+        "title": "Acupuncture for the prevention of chemotherapy-induced nausea and vomiting in cancer patients: A systematic review and meta-analysis.",
+        "year": 2023,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 37348748,
+        "title": "Enhanced recovery after surgery in patients undergoing craniotomy: A meta-analysis.",
+        "year": 2023,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 2
+      },
+      {
+        "pmid": 37365685,
+        "title": "A systematic review with meta-analysis on prophylactic negative pressure wound therapy versus standard dressing for obese women after caesarean section.",
+        "year": 2023,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 37430002,
+        "title": "Does adding exercise or physical activity to pharmacological osteoporosis therapy in patients with increased fracture risk improve bone mineral density and lower fracture risk? A systematic review and meta-analysis.",
+        "year": 2023,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 37435902,
+        "title": "Do pooled estimates from orthodontic meta-analyses change depending on the meta-analysis approach? A meta-epidemiological study.",
+        "year": 2023,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 37468916,
+        "title": "Probiotic supplementation during antibiotic treatment is unjustified in maintaining the gut microbiome diversity: a systematic review and meta-analysis.",
+        "year": 2023,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 37559444,
+        "title": "Postoperative ileus after digestive surgery: Network meta-analysis of pharmacological intervention.",
+        "year": 2024,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 37648266,
+        "title": "Balancing risks and benefits of cannabis use: umbrella review of meta-analyses of randomised controlled trials and observational studies.",
+        "year": 2023,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 37683100,
+        "title": "Effectiveness of Exercise Interventions for Preventing Neck Pain: A Systematic Review With Meta-analysis of Randomized Controlled Trials.",
+        "year": 2023,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 38006755,
+        "title": "Comparative efficacy of exercise modalities on sleep quality in populations with sleep disorders: A systematic review and network meta-analysis.",
+        "year": 2024,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 38031003,
+        "title": "PD-1/PD-L1 inhibitors plus carboplatin and paclitaxel compared with carboplatin and paclitaxel in primary advanced or recurrent endometrial cancer: a systematic review and meta-analysis of randomized clinical trials.",
+        "year": 2023,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 38039526,
+        "title": "Effect of the enhanced recovery protocol in patients with brain tumors undergoing elective craniotomies: a systematic review and meta-analysis.",
+        "year": 2023,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 38151428,
+        "title": "Comparative analysis of surgical and prosthetic rehabilitation in maxillectomy: A systematic review and meta-analysis on quality-of-life scores and objective speech and masticatory measurements.",
+        "year": 2025,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 38199405,
+        "title": "A systematic review and meta-analysis of the effectiveness of co-designed, in-person, mental health interventions for reducing anxiety and depression symptoms.",
+        "year": 2024,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 38199928,
+        "title": "The analgesic effectiveness of perioperative lidocaine infusions for acute and chronic persistent postsurgical pain in patients undergoing breast cancer surgery: a systematic review and meta-analysis.",
+        "year": 2024,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 38306943,
+        "title": "Outcome Heterogeneity in Prehabilitation Trials-Are We Comparing Apples and Oranges?",
+        "year": 2024,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 2
+      },
+      {
+        "pmid": 38381514,
+        "title": "Effects of eHealth Interventions on 24-Hour Movement Behaviors Among Preschoolers: Systematic Review and Meta-Analysis.",
+        "year": 2024,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 38383390,
+        "title": "Efficacy and safety of Zolbetuximab plus chemotherapy for advanced CLDN18.2-positive gastric or gastro-oesophageal adenocarcinoma: a meta-analysis of randomized clinical trials.",
+        "year": 2024,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 38418762,
+        "title": "Local anesthesia versus general anesthesia for surgical drainage of chronic subdural hematoma: a systematic review and meta-analysis.",
+        "year": 2024,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 38588454,
+        "title": "Preoperative nutrition therapy in people undergoing gastrointestinal surgery.",
+        "year": 2024,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 38651841,
+        "title": "Enhanced Recovery After Surgery for Craniotomies: A Systematic Review and Meta-analysis.",
+        "year": 2025,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 3
+      },
+      {
+        "pmid": 38676554,
+        "title": "Trends in preoperative carbohydrate load practice: A systematic review.",
+        "year": 2024,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 15
+      },
+      {
+        "pmid": 38701299,
+        "title": "Ultrasound-guided subcostal approach of transversus abdominis plane block compared with wound infiltration for postoperative analgesia following laparoscopic cholecystectomy: A systematic review and meta-analysis.",
+        "year": 2024,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 38730079,
+        "title": "Early nutrition is safe and does not increase complications after upper gastrointestinal bleeding-a systematic review and meta-analysis of randomized controlled trials.",
+        "year": 2024,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 38769999,
+        "title": "Do proton pump inhibitors affect the effectiveness of cyclin-dependent kinase 4/6 inhibitors in advanced HR positive, HER2 negative breast cancer? A meta-analysis.",
+        "year": 2024,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 38775716,
+        "title": "Efficacy and safety of irreversible electroporation in unresectable perihilar cholangiocarcinoma: a systematic review and meta-analysis.",
+        "year": 2024,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 38796481,
+        "title": "Systematic review and meta-analysis: proton pump inhibitors slightly decrease the severity of chronic cough.",
+        "year": 2024,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 38825703,
+        "title": "Trifluridine-tipiracil plus bevacizumab versus trifluridine-tipiracil monotherapy for chemorefractory metastatic colorectal cancer: a systematic review and meta-analysis.",
+        "year": 2024,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 38888626,
+        "title": "Treatment-related adverse events in patients with advanced breast cancer receiving adjuvant AKT inhibitors: a meta-analysis of randomized controlled trials.",
+        "year": 2024,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 38913175,
+        "title": "Impact of adjuvant chemotherapy on survival after pathological complete response in rectal cancer: a meta-analysis of 31,558 patients.",
+        "year": 2024,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 38914837,
+        "title": "Effectiveness of Prehabilitation Modalities on Postoperative Outcomes Following Colorectal Cancer Surgery: A Systematic Review of Randomised Controlled Trials.",
+        "year": 2024,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 3
+      },
+      {
+        "pmid": 38935010,
+        "title": "The Prevalence and Risk Factors for Postoperative Thirst: A Systematic Review and Meta-analysis.",
+        "year": 2024,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 38980237,
+        "title": "Effects of Preoperative Oral Carbohydrates on Recovery After Laparoscopic Cholecystectomy: A Meta-analysis of Randomized Controlled Trials.",
+        "year": 2025,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 10
+      },
+      {
+        "pmid": 39093721,
+        "title": "Beneficial and harmful effects of tricyclic antidepressants for adults with major depressive disorder: a systematic review with meta-analysis and trial sequential analysis.",
+        "year": 2024,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 2
+      },
+      {
+        "pmid": 39129451,
+        "title": "Pain management after laparoscopic cholecystectomy: A systematic review and procedure-specific postoperative pain management (PROSPECT) recommendations.",
+        "year": 2024,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 39364789,
+        "title": "Effectiveness of wearable technology-based physical activity interventions for adults with type 2 diabetes mellitus: A systematic review and meta-regression.",
+        "year": 2024,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 39440379,
+        "title": "The risks of adverse events with venlafaxine for adults with major depressive disorder: a systematic review of randomised clinical trials with meta-analysis and Trial Sequential Analysis.",
+        "year": 2024,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 39481458,
+        "title": "The effect of intra-aortic balloon pump on survival and neurological outcome in patients treated with extracorporeal cardiopulmonary resuscitation: A meta-analysis and systematic review.",
+        "year": 2025,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 39500131,
+        "title": "Clinical effectiveness and safety of preoperative oral carbohydrate loading in patients with diabetes: A systematic review.",
+        "year": 2024,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 2
+      },
+      {
+        "pmid": 39501660,
+        "title": "The overestimation of the effect sizes of psychotherapies for depression in waitlist controlled trials: a meta-analytic comparison with usual care controlled trials.",
+        "year": 2024,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 39526664,
+        "title": "Association of baseline neutrophil-to-lymphocyte ratio and prognosis in melanoma patients treated with PD-1/PD-L1 blockade: a systematic review and meta-analysis.",
+        "year": 2025,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 39542906,
+        "title": "Racial/ethnic differences in survival and treatment response with PD-1/PD-L1 inhibitors in resectable non-small cell lung cancer: a meta-analysis of randomized controlled trials.",
+        "year": 2025,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 39553891,
+        "title": "Effects of yoga on stress in stressed adults: a systematic review and meta-analysis.",
+        "year": 2024,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 39690131,
+        "title": "Acute Sarcopenia: Systematic Review and Meta-Analysis on Its Incidence and Muscle Parameter Shifts During Hospitalisation.",
+        "year": 2025,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 39708458,
+        "title": "Effects of enteral immunonutrition in laparoscopic versus open resections in colorectal cancer surgery: A meta-analysis of randomised controlled trials.",
+        "year": 2025,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 39715144,
+        "title": "The efficacy and safety of robot-assisted surgery in cancer patients: a systematic review of randomized controlled trials.",
+        "year": 2025,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 39799856,
+        "title": "Enhanced Recovery After Surgery for patients undergoing radical cystectomy: Surgeons' perspectives and recommendations ten years after its implementation.",
+        "year": 2025,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 39806448,
+        "title": "Comparative effectiveness of physical activity interventions on cognitive functions in children and adolescents with Neurodevelopmental Disorders: a systematic review and network meta-analysis of randomized controlled trials.",
+        "year": 2025,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 39842663,
+        "title": "Different regimens of preoperative carbohydrate loading on insulin resistance: A network meta-analysis.",
+        "year": 2025,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 21
+      },
+      {
+        "pmid": 39844067,
+        "title": "The risks of adverse events with mirtazapine for adults with major depressive disorder: a systematic review with meta-analysis and trial sequential analysis.",
+        "year": 2025,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 39892620,
+        "title": "Preoperative Oral Carbohydrate for Lower Extremity Arthroplasty: A Systematic Review and Meta-Analysis.",
+        "year": 2025,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 39949865,
+        "title": "Improving cognitive impairment through chronic consumption of natural compounds/extracts: a systematic review and meta-analysis of randomized controlled trials.",
+        "year": 2024,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 39952454,
+        "title": "The Power of Prehabilitation, the Reporting of Power Calculations in Randomized Clinical Trials Evaluating Prehabilitation in Cancer Surgery: A Systematic Review and Meta-research Study.",
+        "year": 2025,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 2
+      },
+      {
+        "pmid": 39957508,
+        "title": "Psychological interventions for preventing relapse in individuals with partial remission of depression: a systematic review and individual participant data meta-analysis.",
+        "year": 2025,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 39970619,
+        "title": "Esketamine reduces the risk of postpartum depression in women undergoing cesarean section: A systematic review and meta-analysis.",
+        "year": 2025,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 40010834,
+        "title": "Efficacy and safety of balneotherapy in rheumatology: a systematic review and meta-analysis.",
+        "year": 2025,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 40063290,
+        "title": "Effect of the enhanced recovery after surgery protocol in patients undergoing elective craniotomies: a systematic review and meta-analysis.",
+        "year": 2025,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 2
+      },
+      {
+        "pmid": 40074621,
+        "title": "The analgesic effects of novel fascial plane blocks compared with intrathecal morphine after Caesarean delivery: a systematic review and meta-analysis.",
+        "year": 2025,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 40102852,
+        "title": "Prevalence of subclinical hypothyroidism in polycystic ovary syndrome and its impact on insulin resistance: a systematic review and meta-analysis.",
+        "year": 2025,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 40142306,
+        "title": "Enhanced Recovery After Cardiac Surgery for Minimally Invasive Valve Surgery: A Systematic Review of Key Elements and Advancements.",
+        "year": 2025,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 40153084,
+        "title": "Conflict resolution of the beams: CT vs. MRI in recurrent hernia detection: a systematic review and meta-analysis of mesh visualization and other outcomes.",
+        "year": 2025,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 40154089,
+        "title": "Associations between light at night and mental health: A systematic review and meta-analysis.",
+        "year": 2025,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 40165971,
+        "title": "Prognostic and predictive value of pre-treatment blood-based inflammatory biomarkers in patients with urothelial carcinoma treated with immune checkpoint inhibitors: a systematic review and meta-analysis.",
+        "year": 2025,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 40207441,
+        "title": "Validity and accuracy of artificial intelligence-based dietary intake assessment methods: a systematic review.",
+        "year": 2025,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 40226719,
+        "title": "Yoga for Depressive Disorder: A Systematic Review and Meta-Analysis.",
+        "year": 2024,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 40324313,
+        "title": "The impact of multimorbidity on suicidal behaviour: A systematic review and meta-analysis.",
+        "year": 2025,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 40326158,
+        "title": "Efficacy and safety of pharmacological treatments in patients with premature ejaculation: an umbrella review of meta-analyses of randomized controlled trials.",
+        "year": 2025,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 40425483,
+        "title": "Do Meta-Analyses of Total Hip Arthroplasty Produce Reliable Results? A Systematic Review and Meta-Epidemiological Study of Statistical Methods.",
+        "year": 2025,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      },
+      {
+        "pmid": 40450020,
+        "title": "Preoperative carbohydrate loading reduces length of stay after major elective, non-cardiac surgery when compared to fasting: a systematic review and meta-analysis.",
+        "year": 2025,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 35
+      },
+      {
+        "pmid": 40500487,
+        "title": "Impact of Prehabilitation in Major Gastrointestinal Oncological Surgery: a Systematic Review.",
+        "year": 2025,
+        "is_sr": true,
+        "is_primary": false,
+        "deg": 1
+      }
+    ],
+    "primaries": [
+      {
+        "pmid": 117442,
+        "title": "Pre-operative intravenous feeding--a controlled trial.",
+        "year": 1979,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 1377838,
+        "title": "Enteral nutrition with supplemental arginine, RNA, and omega-3 fatty acids in patients after operation: immunologic, metabolic, and clinical outcome.",
+        "year": 1992,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 1456568,
+        "title": "Physiologic effects of oral supplemental feeding in malnourished patients with chronic obstructive pulmonary disease. A randomized control study.",
+        "year": 1992,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 1906987,
+        "title": "Perioperative total parenteral nutrition in surgical patients.",
+        "year": 1991,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 1910100,
+        "title": "Effects of immediate postoperative enteral nutrition on body composition, muscle function, and wound healing.",
+        "year": 1991,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 2
+      },
+      {
+        "pmid": 1970070,
+        "title": "Dietary supplementation in elderly patients with fractured neck of the femur.",
+        "year": 1990,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 2112339,
+        "title": "Very early nutrition supplementation in burned patients.",
+        "year": 1990,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 2119446,
+        "title": "Nutritional support after liver transplantation: a randomized prospective study.",
+        "year": 1990,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 2368979,
+        "title": "The immune response to short-term nutritional intervention in advanced chronic obstructive pulmonary disease.",
+        "year": 1990,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 3027267,
+        "title": "A randomized study of oral nutritional support versus ad lib nutritional intake during chemotherapy for advanced colorectal and non-small-cell lung cancer.",
+        "year": 1987,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 3057956,
+        "title": "The effect of supplementary oral nutrition in poorly nourished patients with chronic obstructive pulmonary disease.",
+        "year": 1988,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 3088751,
+        "title": "A comparison of parenteral nutrition and early postoperative enteral feeding on the nitrogen balance after major surgery.",
+        "year": 1986,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 3095557,
+        "title": "Benefits of immediate jejunostomy feeding after major abdominal trauma--a prospective, randomized study.",
+        "year": 1986,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 3099588,
+        "title": "Early total parenteral nutrition in acute pancreatitis: lack of beneficial effects.",
+        "year": 1987,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 3101530,
+        "title": "Immediate postoperative jejunostomy feeding. Clinical and metabolic results in a prospective trial.",
+        "year": 1987,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 3124598,
+        "title": "Study protocol: a randomized clinical trial of total parenteral nutrition in malnourished surgical patients.",
+        "year": 1988,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 3140744,
+        "title": "Immune and metabolic effects of arginine in the surgical patient.",
+        "year": 1988,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 3148039,
+        "title": "Improvement of nutritional measures during preoperative parenteral nutrition in patients selected by the prognostic nutritional index: a randomized controlled trial.",
+        "year": 1988,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 3282825,
+        "title": "Dietary supplementation and respiratory muscle performance in patients with COPD.",
+        "year": 1988,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 3767008,
+        "title": "Preoperative oral fluids: is a five-hour fast justified prior to elective surgery?",
+        "year": 1986,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 3926036,
+        "title": "Fine bore jejunostomy feeding following major abdominal surgery: a controlled randomized clinical trial.",
+        "year": 1985,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 6119492,
+        "title": "Preoperative parenteral feeding in patients with gastrointestinal carcinoma.",
+        "year": 1982,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 6416514,
+        "title": "Benefits of supplementary tube feeding after fractured neck of femur: a randomised controlled trial.",
+        "year": 1983,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 6441773,
+        "title": "Enteral hyperalimentation in malnourished surgical patients.",
+        "year": 1984,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 6774170,
+        "title": "Immediate postoperative enteral nutrition with a nonelemental diet.",
+        "year": 1980,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 6787341,
+        "title": "Perioperative total parenteral nutrition in patients with gastrointestinal cancer.",
+        "year": 1981,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 7536138,
+        "title": "Early postoperative enteral nutrition with arginine-omega-3 fatty acids and ribonucleic acid-supplemented diet versus placebo in cancer patients: an immunologic evaluation of Impact.",
+        "year": 1995,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 7551381,
+        "title": "Physiologic effects of nutritional support and anabolic steroids in patients with chronic obstructive pulmonary disease. A placebo-controlled randomized trial.",
+        "year": 1995,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 7726669,
+        "title": "Enteral nutrition during multimodality therapy in upper gastrointestinal cancer patients.",
+        "year": 1995,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 7736880,
+        "title": "Role of laparoscopy in colorectal surgery. A prospective evaluation of 200 cases.",
+        "year": 1995,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 7786990,
+        "title": "Operating characteristics of a rank correlation test for publication bias.",
+        "year": 1994,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 7944656,
+        "title": "A prospective randomized trial of total parenteral nutrition after major pancreatic resection for malignancy.",
+        "year": 1994,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 7969324,
+        "title": "Perioperative nutritional support in patients undergoing hepatectomy for hepatocellular carcinoma.",
+        "year": 1994,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 8200238,
+        "title": "Must early postoperative oral intake be limited to laparoscopy?",
+        "year": 1994,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 8410128,
+        "title": "Effect of dietary counseling on food intake, body weight, response rate, survival, and quality of life in cancer patients undergoing chemotherapy: a prospective, randomized study.",
+        "year": 1993,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 8431336,
+        "title": "Preoperative drinking does not affect gastric contents.",
+        "year": 1993,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 8439216,
+        "title": "The effect of postoperative intravenous feeding (TPN) on outcome following major surgery evaluated in a randomized study.",
+        "year": 1993,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 8496997,
+        "title": "Early enteral feeding does not attenuate metabolic response after blunt trauma.",
+        "year": 1993,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 8526579,
+        "title": "Preoperative gastric emptying. Effects of anxiety and oral carbohydrate administration.",
+        "year": 1995,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 2
+      },
+      {
+        "pmid": 8604913,
+        "title": "Early enteral feeding in postsurgical cancer patients. Fish oil structured lipid-based polymeric formula versus a standard polymeric formula.",
+        "year": 1996,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 8611872,
+        "title": "Randomised trial of safety and efficacy of immediate postoperative enteral feeding in patients undergoing gastrointestinal resection.",
+        "year": 1996,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 2
+      },
+      {
+        "pmid": 8639722,
+        "title": "Immune and nutritional effects of early enteral nutrition after major abdominal operations.",
+        "year": 1996,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 8676539,
+        "title": "Energy-enriched hospital food to improve energy intake in elderly patients.",
+        "year": 1996,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 8748357,
+        "title": "Early enteral nutrition support in patients undergoing liver transplantation.",
+        "year": 1995,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 8798225,
+        "title": "Enteral feeding in esophageal surgery.",
+        "year": 1996,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 8811376,
+        "title": "Is early postoperative feeding feasible in elective colon and rectal surgery?",
+        "year": 1996,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 8831539,
+        "title": "Laparoscopic resection for diverticular disease.",
+        "year": 1996,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 8838831,
+        "title": "Enteral versus parenteral nutrition: effects on gastrointestinal function and metabolism.",
+        "year": 1996,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 8875537,
+        "title": "Clinical outcome and immunology of postoperative arginine, omega-3 fatty acids, and nucleotide-enriched enteral feeding: a randomized prospective comparison with standard enteral and low calorie/low fat i.v. solutions.",
+        "year": 1996,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 8878142,
+        "title": "A comparison between oral and nasogastric nutritional supplements in malnourished patients.",
+        "year": 1996,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 8924741,
+        "title": "Benefits of early postoperative enteral feeding in cancer patients.",
+        "year": 1995,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 8936492,
+        "title": "The effect of preoperative carbohydrate loading on hormonal changes, hepatic glycogen, and glucoregulatory enzymes during abdominal surgery.",
+        "year": 1996,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 8951516,
+        "title": "Early postoperative feeding after elective colorectal surgery is not a benefit unique to laparoscopy-assisted procedures.",
+        "year": 1996,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 8956766,
+        "title": "Gut function and immune and inflammatory responses in patients perioperatively fed with supplemented enteral formulas.",
+        "year": 1996,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 9038665,
+        "title": "Influence of postoperative enteral nutrition on postsurgical infections.",
+        "year": 1996,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 2
+      },
+      {
+        "pmid": 9061125,
+        "title": "Nutritional support and functional status in undernourished geriatric patients during hospitalization and 6-month follow-up.",
+        "year": 1996,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 9135531,
+        "title": "Two phase randomised controlled clinical trial of postoperative oral dietary supplements in surgical patients.",
+        "year": 1997,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 2
+      },
+      {
+        "pmid": 9161395,
+        "title": "Early postoperative feeding after elective colorectal surgery.",
+        "year": 1997,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 9225337,
+        "title": "Early enteral nutrition in gastrointestinal surgery: a pilot study.",
+        "year": 1997,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 9295822,
+        "title": "Early postoperative enteral immunonutrition: clinical outcome and cost-comparison analysis in surgical patients.",
+        "year": 1997,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 9309995,
+        "title": "Impact of nutritional support on functional status during an acute exacerbation of chronic obstructive pulmonary disease.",
+        "year": 1997,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 9324147,
+        "title": "Early postoperative enteral feeding improves whole body protein kinetics in upper gastrointestinal cancer patients.",
+        "year": 1997,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 2
+      },
+      {
+        "pmid": 9339943,
+        "title": "Immediate postoperative enteral feeding results in impaired respiratory mechanics and decreased mobility.",
+        "year": 1997,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 2
+      },
+      {
+        "pmid": 9351723,
+        "title": "A prospective, randomized trial of early enteral feeding after resection of upper gastrointestinal malignancy.",
+        "year": 1997,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 2
+      },
+      {
+        "pmid": 9366716,
+        "title": "Effect of route of delivery and formulation of postoperative nutritional support in patients undergoing major operations for malignant neoplasms.",
+        "year": 1997,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 9428539,
+        "title": "Artificial nutrition after major abdominal surgery: impact of route of administration and composition of the diet.",
+        "year": 1998,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 9441769,
+        "title": "A prospective controlled trial of early postoperative oral intake following major abdominal gynecologic surgery.",
+        "year": 1997,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 9488531,
+        "title": "Total parenteral nutrition with glutamine dipeptide after major abdominal surgery: a randomized, double-blind, controlled study.",
+        "year": 1998,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 9494004,
+        "title": "Early feeding after elective open colorectal resections: a prospective randomized trial.",
+        "year": 1998,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 2
+      },
+      {
+        "pmid": 9704959,
+        "title": "Early postoperative enteral feeding in patients with nontraumatic intestinal perforation and peritonitis.",
+        "year": 1998,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 9834924,
+        "title": "Immunonutrition in gastric cancer surgical patients.",
+        "year": 1998,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 10072611,
+        "title": "Effect of early postoperative enteral feeding on the healing of colonic anastomoses in rats. Comparison of three different enteral diets.",
+        "year": 1999,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 10192730,
+        "title": "Complications associated with enteral nutrition using catheter jejunostomy after esophagectomy.",
+        "year": 1999,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 10193541,
+        "title": "Effects of early enteral nutrition on intestinal permeability and the development of multiple organ failure after multiple injury.",
+        "year": 1999,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 10199318,
+        "title": "Perioperative immunonutrition in patients undergoing cancer surgery: results of a randomized double-blind phase 3 trial.",
+        "year": 1999,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 10205319,
+        "title": "Preoperative oral carbohydrate administration reduces postoperative insulin resistance.",
+        "year": 1998,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 2
+      },
+      {
+        "pmid": 10369282,
+        "title": "Reduced postoperative infections with an immune-enhancing nutritional supplement.",
+        "year": 1999,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 10405677,
+        "title": "Economic implications of an early postoperative enteral feeding protocol.",
+        "year": 1999,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 10449977,
+        "title": "Complications of pancreatic surgery and the role of perioperative nutrition.",
+        "year": 1999,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 10459075,
+        "title": "Preoperative oral carbohydrates and postoperative insulin resistance.",
+        "year": 1999,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 3
+      },
+      {
+        "pmid": 10487587,
+        "title": "Factors affecting early postoperative feeding following elective open colon resection.",
+        "year": 1999,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 10574478,
+        "title": "A prospective, randomized clinical trial on perioperative feeding with an arginine-, omega-3 fatty acid-, and RNA-enriched enteral diet: effect on host response and nutritional status.",
+        "year": 1999,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 10579275,
+        "title": "Prospective, randomized, controlled trial to determine the effect of early enhanced enteral nutrition on clinical outcome in mechanically ventilated patients suffering head injury.",
+        "year": 1999,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 10593328,
+        "title": "Outcome and cost-effectiveness of perioperative enteral immunonutrition in patients undergoing elective upper gastrointestinal tract surgery: a prospective randomized study.",
+        "year": 1999,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 10638466,
+        "title": "Perioperative total parenteral nutrition in malnourished, gastrointestinal cancer patients: a randomized, clinical trial.",
+        "year": 2000,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 10719404,
+        "title": "Pecans lower low-density lipoprotein cholesterol in people with normal lipid levels.",
+        "year": 2000,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 10798755,
+        "title": "A prospective randomized study of preoperative nutritional supplementation in patients awaiting elective orthotopic liver transplantation.",
+        "year": 2000,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 10807893,
+        "title": "A randomised controlled trial evaluating the use of enteral nutritional supplements postoperatively in malnourished surgical patients.",
+        "year": 2000,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 10850938,
+        "title": "Early versus delayed feeding with an immune-enhancing diet in patients with severe head injuries.",
+        "year": 2000,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 10919939,
+        "title": "Comparison of high- and low-glycemic-index breakfast cereals with monounsaturated fat in the long-term dietary management of type 2 diabetes.",
+        "year": 2000,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 10978851,
+        "title": "Oral dietary supplements in pre- and postoperative surgical patients: a prospective and randomized clinical trial.",
+        "year": 2000,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 2
+      },
+      {
+        "pmid": 10990103,
+        "title": "Parenteral with enteral nutrition in the critically ill.",
+        "year": 2000,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 11044164,
+        "title": "Randomized controlled trial of the effect of early enteral nutrition on markers of the inflammatory response in predicted severe acute pancreatitis.",
+        "year": 2000,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 11075988,
+        "title": "Artificial nutrition after pancreaticoduodenectomy.",
+        "year": 2000,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 11098961,
+        "title": "Hypocaloric total parenteral nutrition: effectiveness in prevention of hyperglycemia and infectious complications--a randomized clinical trial.",
+        "year": 2000,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 11104595,
+        "title": "Perioperative enteral nutrition and quality of life of severely malnourished head and neck cancer patients: a randomized clinical trial.",
+        "year": 2000,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 11108899,
+        "title": "No effect of dietary trans isomers of alpha-linolenic acid on platelet aggregation and haemostatic factors in european healthy men. The TRANSLinE study.",
+        "year": 2000,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 11157331,
+        "title": "Effect of perioperative nutrition, with and without arginine supplementation, on nutritional status, immune function, postoperative morbidity, and survival in severely malnourished head and neck cancer patients.",
+        "year": 2001,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 11223731,
+        "title": "Dietary support to underweight patients with end-stage pulmonary disease assessed for lung transplantation.",
+        "year": 2001,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 2
+      },
+      {
+        "pmid": 11240334,
+        "title": "Jejunal feeding, even when instituted late, improves outcomes in patients with severe pancreatitis and peritonitis.",
+        "year": 2001,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 11254464,
+        "title": "Preoperative oral carbohydrate treatment attenuates immediate postoperative insulin resistance.",
+        "year": 2001,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 4
+      },
+      {
+        "pmid": 11317662,
+        "title": "Substituting dietary saturated for monounsaturated fat impairs insulin sensitivity in healthy men and women: The KANWU Study.",
+        "year": 2001,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 11463999,
+        "title": "A study of intensified dietary support in underweight candidates for lung transplantation.",
+        "year": 2001,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 2
+      },
+      {
+        "pmid": 11682427,
+        "title": "A carbohydrate-rich drink reduces preoperative discomfort in elective surgery patients.",
+        "year": 2001,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 2
+      },
+      {
+        "pmid": 11688936,
+        "title": "Protein energy supplements in unwell elderly patients--a randomized controlled trial.",
+        "year": 2001,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 11730397,
+        "title": "Resistance training to counteract the catabolism of a low-protein diet in patients with chronic renal insufficiency. A randomized, controlled trial.",
+        "year": 2001,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 11736967,
+        "title": "Randomized clinical trial of patient-controlled versus fixed regimen feeding after elective abdominal surgery.",
+        "year": 2001,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 11766084,
+        "title": "Beneficial effects of immediate enteral nutrition after esophageal cancer surgery.",
+        "year": 2001,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 11819790,
+        "title": "Modulation of postoperative immune and inflammatory response by immune-enhancing enteral diet in gastrointestinal cancer patients.",
+        "year": 2001,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 11822956,
+        "title": "Nutritional approach in malnourished surgical patients: a prospective randomized study.",
+        "year": 2002,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 2
+      },
+      {
+        "pmid": 12005458,
+        "title": "Early versus late enteral feeding of mechanically ventilated patients: results of a clinical trial.",
+        "year": 2002,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 12055582,
+        "title": "A randomized controlled trial of preoperative oral supplementation with a specialized diet in patients with gastrointestinal cancer.",
+        "year": 2002,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 12181715,
+        "title": "Enteral nutrition in surgical patients.",
+        "year": 2002,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 2
+      },
+      {
+        "pmid": 12414028,
+        "title": "Intravenous hydration versus naso-jejunal enteral feeding after esophagectomy: a randomised study.",
+        "year": 2002,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 2
+      },
+      {
+        "pmid": 12419788,
+        "title": "Baseline dietary fiber intake and colorectal adenoma recurrence in the wheat bran fiber randomized trial.",
+        "year": 2002,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 12464864,
+        "title": "Preoperative oral arginine and n-3 fatty acid supplementation improves the immunometabolic host response and outcome after colorectal resection for cancer.",
+        "year": 2002,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 12581463,
+        "title": "Achievement of dietary fatty acid intakes in long-term controlled intervention studies: approach and methodology.",
+        "year": 2003,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 12588694,
+        "title": "Methods to increase fruit and vegetable intake with and without a decrease in fat intake: compliance and effects on body weight in the nutrition and breast health study.",
+        "year": 2002,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 12600851,
+        "title": "Long-term effect of varying the source or amount of dietary carbohydrate on postprandial plasma glucose, insulin, triacylglycerol, and free fatty acid concentrations in subjects with impaired glucose tolerance.",
+        "year": 2003,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 12631049,
+        "title": "Effects of preoperative oral carbohydrates and peptides on postoperative endocrine response, mobilization, nutrition and muscle function in abdominal surgery.",
+        "year": 2003,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 13
+      },
+      {
+        "pmid": 12684358,
+        "title": "Effect of weight loss and lifestyle changes on vascular inflammatory markers in obese women: a randomized trial.",
+        "year": 2003,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 12709466,
+        "title": "Effects of comprehensive lifestyle modification on blood pressure control: main results of the PREMIER clinical trial.",
+        "year": null,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 12830025,
+        "title": "Three measures show high compliance in a soy intervention among premenopausal women.",
+        "year": 2003,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 14585408,
+        "title": "Benefits of early feeding and early hospital discharge in elderly patients undergoing open colon resection.",
+        "year": 2003,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 14594786,
+        "title": "Spread supplemented with moderate doses of vitamin E and carotenoids reduces lipid peroxidation in healthy, nonsmoking adults.",
+        "year": 2003,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 14648727,
+        "title": "Randomized clinical trial of multimodal optimization and standard perioperative surgical care.",
+        "year": 2003,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 14707154,
+        "title": "Effect of dietary sodium intake on blood lipids: results from the DASH-sodium trial.",
+        "year": 2004,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 14734433,
+        "title": "Multicentre, cluster-randomized clinical trial of algorithms for critical-care enteral and parenteral therapy (ACCEPT).",
+        "year": 2004,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 14747670,
+        "title": "Plasma triacylglycerol and HDL cholesterol concentrations confirm self-reported changes in carbohydrate and fat intakes in women in a diet intervention trial.",
+        "year": 2004,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 14757395,
+        "title": "Does additional feeding support provided by health care assistants improve nutritional status and outcome in acutely ill older in-patients?--a randomised control trial.",
+        "year": 2004,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 14760661,
+        "title": "Randomized clinical trial comparing an oral carbohydrate beverage with placebo before laparoscopic cholecystectomy.",
+        "year": 2004,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 3
+      },
+      {
+        "pmid": 14981223,
+        "title": "Improvement of metabolism among obese breast cancer survivors in differing weight loss regimens.",
+        "year": 2004,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 15007396,
+        "title": "Long-term effects of a high-protein, low-carbohydrate diet on weight control and cardiovascular risk markers in obese hyperinsulinemic subjects.",
+        "year": 2004,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 15015147,
+        "title": "Proteasome production in human muscle during nutritional inhibition of myofibrillar protein degradation.",
+        "year": 2004,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 15020177,
+        "title": "Behavioral variables and education are predictors of dietary change in the Women's Health Trial: Feasibility Study in Minority Populations.",
+        "year": 2004,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 15081561,
+        "title": "The effect of red palm olein and refined palm olein on lipids and haemostatic factors in hyperfibrinogenaemic subjects.",
+        "year": 2004,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 15106797,
+        "title": "Effect of dietary fiber intake on blood pressure: a randomized, double-blind, placebo-controlled trial.",
+        "year": 2004,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 15144242,
+        "title": "Early oral feeding after colorectal resection: a randomized controlled study.",
+        "year": 2004,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 15153259,
+        "title": "The Medi-RIVAGE study (Mediterranean Diet, Cardiovascular Risks and Gene Polymorphisms): rationale, recruitment, design, dietary intervention and baseline characteristics of participants.",
+        "year": 2004,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 15197199,
+        "title": "Effects of a high-fiber, low-fat diet intervention on serum concentrations of reproductive steroid hormones in women with a history of breast cancer.",
+        "year": 2004,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 15204314,
+        "title": "Levels of 5-hydroxymethyl-2'-deoxyuridine in DNA from women participating in an intervention trial of low-fat and low-energy diets.",
+        "year": 2004,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 15213038,
+        "title": "Weight loss and calcium intake influence calcium absorption in overweight postmenopausal women.",
+        "year": 2004,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 15220952,
+        "title": "Increased alpha-linolenic acid intake lowers C-reactive protein, but has no effect on markers of atherosclerosis.",
+        "year": 2004,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 15249792,
+        "title": "Effect of the dietary approaches to stop hypertension diet and reduced sodium intake on blood pressure control.",
+        "year": 2004,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 15249794,
+        "title": "Comprehensive lifestyle modification and blood pressure control: a review of the PREMIER trial.",
+        "year": 2004,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 15277150,
+        "title": "Independent and additive effects of energy restriction and exercise on glucose and insulin concentrations in sedentary overweight men.",
+        "year": 2004,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 15277154,
+        "title": "No difference in body weight decrease between a low-glycemic-index and a high-glycemic-index diet but reduced LDL cholesterol after 10-wk ad libitum intake of the low-glycemic-index diet.",
+        "year": 2004,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 15284372,
+        "title": "Meal replacements are as effective as structured weight-loss diets for treating obesity in adults with features of metabolic syndrome.",
+        "year": 2004,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 15286958,
+        "title": "Randomized clinical trial of the effects of preoperative and postoperative oral nutritional supplements on clinical course and cost of care.",
+        "year": 2004,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 2
+      },
+      {
+        "pmid": 15297090,
+        "title": "Effect of nutritional support on clinical outcome in patients at nutritional risk.",
+        "year": 2004,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 15297112,
+        "title": "Preoperative oral carbohydrate treatment attenuates endogenous glucose release 3 days after surgery.",
+        "year": 2004,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 2
+      },
+      {
+        "pmid": 15303109,
+        "title": "Effect of normal-fat diets, either medium or high in protein, on body weight in overweight subjects: a randomised 1-year trial.",
+        "year": 2004,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 15357694,
+        "title": "Nutritional changes among premenopausal women undertaking a soya based dietary intervention study in Hawaii.",
+        "year": 2004,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 15383514,
+        "title": "Effect of a mediterranean-style diet on endothelial dysfunction and markers of vascular inflammation in the metabolic syndrome: a randomized trial.",
+        "year": 2004,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 15449264,
+        "title": "Randomized clinical trial of the effects of immediate enteral nutrition on metabolic responses to major colorectal surgery in an enhanced recovery protocol.",
+        "year": 2004,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 15483780,
+        "title": "Adequate protein dietary restriction in diabetic and nondiabetic patients with chronic renal failure.",
+        "year": 2004,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 15514280,
+        "title": "A 2-year soy intervention in premenopausal women does not change mammographic densities.",
+        "year": 2004,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 15522134,
+        "title": "Background diet influences the anti-inflammatory effect of alpha-linolenic acid in dyslipidaemic subjects.",
+        "year": 2004,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 15530590,
+        "title": "A combined breast health/weight loss intervention for Black women.",
+        "year": 2005,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 15532842,
+        "title": "Accelerated rehabilitation with early postoperative oral feeding following gastrectomy.",
+        "year": 2004,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 15533901,
+        "title": "Effects of a 2-year randomized soy intervention on sex hormone levels in premenopausal women.",
+        "year": 2004,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 15562184,
+        "title": "Including walnuts in a low-fat/modified-fat diet improves HDL cholesterol-to-total cholesterol ratios in patients with type 2 diabetes.",
+        "year": 2004,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 15563434,
+        "title": "Can a food frequency questionnaire be used to capture dietary intake data in a 4 week clinical intervention trial?",
+        "year": 2004,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 15598683,
+        "title": "The role of energy expenditure in the differential weight loss in obese women on low-fat and low-carbohydrate diets.",
+        "year": 2005,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 15623461,
+        "title": "Effects of low-fat and/or high-fruit-and-vegetable diets on plasma levels of 8-isoprostane-F2alpha in the Nutrition and Breast Health study.",
+        "year": 2004,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 15642074,
+        "title": "Effects of agar (kanten) diet on obese patients with impaired glucose tolerance and type 2 diabetes.",
+        "year": 2005,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 15681099,
+        "title": "The administration of an oral carbohydrate-containing fluid prior to major elective upper-gastrointestinal surgery preserves skeletal muscle mass postoperatively--a randomised clinical trial.",
+        "year": 2005,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 18
+      },
+      {
+        "pmid": 15681102,
+        "title": "Effect of early postoperative enteral immunonutrition on wound healing in patients undergoing surgery for gastric cancer.",
+        "year": 2005,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 15684319,
+        "title": "Dietary counseling improves patient outcomes: a prospective, randomized, controlled trial in colorectal cancer patients undergoing radiotherapy.",
+        "year": 2005,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 15738450,
+        "title": "Incidence of type 2 diabetes in the randomized multiple risk factor intervention trial.",
+        "year": 2005,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 15739210,
+        "title": "Randomized clinical trial of the effects of oral preoperative carbohydrates on postoperative nausea and vomiting after laparoscopic cholecystectomy.",
+        "year": 2005,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 19
+      },
+      {
+        "pmid": 15788122,
+        "title": "Additional protein intake limits weight regain after weight loss in humans.",
+        "year": 2005,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 15800921,
+        "title": "Sequential, randomized trial of a low-fat, high-fiber diet and soy supplementation: effects on circulating IGF-I and its binding proteins in premenopausal women.",
+        "year": 2005,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 15869128,
+        "title": "The economic impact of early enteral feeding in gastrointestinal surgery: a prospective survey of 51 consecutive patients.",
+        "year": 2005,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 15877875,
+        "title": "Aleurone flour increases red-cell folate and lowers plasma homocyst(e)ine substantially in man.",
+        "year": 2005,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 15883418,
+        "title": "Effects of an ad libitum low-glycemic load diet on cardiovascular disease risk factors in obese young adults.",
+        "year": 2005,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 15883439,
+        "title": "A controlled 2-mo dietary fat reduction and soy food supplementation study in postmenopausal women.",
+        "year": 2005,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 15894901,
+        "title": "Effects of a lifestyle programme on ambulatory blood pressure and drug dosage in treated hypertensive patients: a randomized controlled trial.",
+        "year": 2005,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 15897479,
+        "title": "Insulin sensitivity determines the effectiveness of dietary macronutrient composition on weight loss in obese women.",
+        "year": 2005,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 15900307,
+        "title": "Effects of soy supplementation on blood lipids and arterial function in hypercholesterolaemic subjects.",
+        "year": 2005,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 15920748,
+        "title": "Impact of nutrition on outcome: a prospective randomized controlled trial in patients with head and neck cancer undergoing radiotherapy.",
+        "year": 2005,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 15925286,
+        "title": "Influence of preoperative administration of omega-3 fatty acid-enriched supplement on inflammatory and immune responses in patients undergoing major surgery for cancer.",
+        "year": 2005,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 15930487,
+        "title": "Weight loss and lipid changes with low-energy diets: comparator study of milk-based versus soy-based liquid meal replacement interventions.",
+        "year": 2005,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 15931612,
+        "title": "Beef and soy-based food supplements differentially affect serum lipoprotein-lipid profiles because of changes in carbohydrate intake and novel nutrient intake ratios in older men who resistive-train.",
+        "year": 2005,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 15939062,
+        "title": "Influence of alpha-linolenic acid and fish-oil on markers of cardiovascular risk in subjects with an atherogenic lipoprotein phenotype.",
+        "year": 2005,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 15941879,
+        "title": "Effect of an energy-restricted, high-protein, low-fat diet relative to a conventional high-carbohydrate, low-fat diet on weight loss, body composition, nutritional status, and markers of cardiovascular health in obese women.",
+        "year": 2005,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 15951932,
+        "title": "Patient-controlled dietary schedule improves clinical outcome after gastrectomy for gastric cancer.",
+        "year": 2005,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 15979768,
+        "title": "Effect of \"preoperative\" oral carbohydrate treatment on insulin action--a randomised cross-over unblinded study in healthy subjects.",
+        "year": 2005,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 2
+      },
+      {
+        "pmid": 15981045,
+        "title": "Early enteral feeding by nasoenteric tubes in patients with perforation peritonitis.",
+        "year": 2005,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 15983525,
+        "title": "Structured dietary advice incorporating walnuts achieves optimal fat and energy balance in patients with type 2 diabetes mellitus.",
+        "year": 2005,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 16015257,
+        "title": "A low-protein diet exacerbates postprandial chylomicron concentration in moderately dyslipidaemic subjects in comparison to a lean red meat protein-enriched diet.",
+        "year": 2005,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 16020940,
+        "title": "Nutritional intervention study with argan oil in man: effects on lipids and apolipoproteins.",
+        "year": 2005,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 16029006,
+        "title": "In vivo investigation of changes in biomarkers of oxidative stress induced by plant food rich diets.",
+        "year": 2005,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 16076991,
+        "title": "Effects of calcium and dairy on body composition and weight loss in African-American adults.",
+        "year": 2005,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 16087974,
+        "title": "Increasing dietary palmitic acid decreases fat oxidation and daily energy expenditure.",
+        "year": 2005,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 16129086,
+        "title": "Perceived hunger is lower and weight loss is greater in overweight premenopausal women consuming a low-carbohydrate/high-protein vs high-carbohydrate/low-fat diet.",
+        "year": 2005,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 16164885,
+        "title": "The effects of a low-fat, plant-based dietary intervention on body weight, metabolism, and insulin sensitivity.",
+        "year": 2005,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 16176606,
+        "title": "Insulin-like growth factor-1 and binding protein-3 in a 2-year soya intervention among premenopausal women.",
+        "year": 2005,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 16387895,
+        "title": "A carbohydrate-rich beverage prior to surgery prevents surgery-induced immunodepression: a randomized, controlled, clinical trial.",
+        "year": 2006,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 16421661,
+        "title": "Preoperative oral immune-enhancing nutritional supplementation corrects TH1/TH2 imbalance in patients undergoing elective surgery for colorectal cancer.",
+        "year": 2006,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 16688841,
+        "title": "Perioperative artificial nutrition in malnourished gastrointestinal cancer patients.",
+        "year": 2006,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 16688845,
+        "title": "Early removing gastrointestinal decompression and early oral feeding improve patients' rehabilitation after colorectostomy.",
+        "year": 2006,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 2
+      },
+      {
+        "pmid": 16777271,
+        "title": "Early postoperative jejunostomy feeding with an immune modulating diet in patients undergoing resectional surgery for upper gastrointestinal cancer: a prospective, randomized, controlled, double-blind study.",
+        "year": 2006,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 16818923,
+        "title": "Effects of a Mediterranean-style diet on cardiovascular risk factors: a randomized trial.",
+        "year": 2006,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 16822627,
+        "title": "Nutrition education in postmenopausal women: changes in dietary and cardiovascular indices.",
+        "year": 2006,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 16830214,
+        "title": "Preoperative enteral immunonutrition improves postoperative outcome in patients with gastrointestinal cancer.",
+        "year": 2006,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 16873779,
+        "title": "A low-fat vegan diet improves glycemic control and cardiovascular risk factors in a randomized clinical trial in individuals with type 2 diabetes.",
+        "year": 2006,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 16919107,
+        "title": "Pre-operative oral carbohydrate loading in colorectal surgery: a randomized controlled trial.",
+        "year": 2006,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 29
+      },
+      {
+        "pmid": 17031005,
+        "title": "Dietary fiber intake: assessing the degree of agreement between food frequency questionnaires and 4-day food records.",
+        "year": 2006,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 17056939,
+        "title": "Preoperative oral carbohydrate administration to ASA III-IV patients undergoing elective cardiac surgery.",
+        "year": 2006,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 2
+      },
+      {
+        "pmid": 17158408,
+        "title": "Effects of altering the ratio of dietary n-6 to n-3 fatty acids on insulin sensitivity, lipoprotein size, and postprandial lipemia in men and postmenopausal women aged 45-70 y: the OPTILIP Study.",
+        "year": 2006,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 17179478,
+        "title": "Dietary fat reduction and breast cancer outcome: interim efficacy results from the Women's Intervention Nutrition Study.",
+        "year": 2006,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 17261227,
+        "title": "Validation of a food-frequency questionnaire for measurement of nutrient intake in a dietary intervention study.",
+        "year": 2007,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 17327309,
+        "title": "Does dairy calcium intake enhance weight loss among overweight diabetic patients?",
+        "year": 2007,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 17349088,
+        "title": "Impact of foods enriched with n-3 long-chain polyunsaturated fatty acids on erythrocyte n-3 levels and cardiovascular risk factors.",
+        "year": 2007,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 17443854,
+        "title": "Randomized clinical trial of the impact of early enteral feeding on postoperative ileus and recovery.",
+        "year": 2007,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 2
+      },
+      {
+        "pmid": 17454835,
+        "title": "Insulin resistance after cardiopulmonary bypass in the elderly patient.",
+        "year": 2007,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 2
+      },
+      {
+        "pmid": 17487212,
+        "title": "The effects of a high-fruit and -vegetable, high-fiber, low-fat dietary intervention on serum concentrations of insulin, glucose, IGF-I and IGFBP-3.",
+        "year": 2008,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 17563030,
+        "title": "Effect of a traditional Mediterranean diet on lipoprotein oxidation: a randomized controlled trial.",
+        "year": 2007,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 17592648,
+        "title": "Nutrient adequacy during weight loss interventions: a randomized study in women comparing the dietary intake in a meal replacement group with a traditional food group.",
+        "year": 2007,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 17632760,
+        "title": "Preoperative immunonutrition suppresses perioperative inflammatory response in patients with major abdominal surgery-a randomized controlled pilot study.",
+        "year": 2007,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 17719703,
+        "title": "Immediate oral feeding in patients with mild acute pancreatitis is safe and may accelerate recovery--a randomized clinical study.",
+        "year": 2007,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 17902094,
+        "title": "Randomized clinical trial of the effect of preoperative oral carbohydrate treatment on postoperative whole-body protein and glucose kinetics.",
+        "year": 2007,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 18096368,
+        "title": "Effects of preoperative carbohydrate loading on glucose metabolism and gastric contents in patients undergoing moderate surgery: a randomized, controlled trial.",
+        "year": 2008,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 2
+      },
+      {
+        "pmid": 18267998,
+        "title": "Efficacy of meal replacements versus a standard food-based diet for weight loss in type 2 diabetes: a controlled clinical trial.",
+        "year": 2008,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 18399256,
+        "title": "[Treatment of mild malnutrition and reduction of morbidity in major abdominal surgery: randomized trial on 153 patients].",
+        "year": 2008,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 18438106,
+        "title": "Allowing normal food at will after major upper gastrointestinal surgery does not increase morbidity: a randomized multicenter trial.",
+        "year": 2008,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 18439712,
+        "title": "A low-energy-dense diet adding fruit reduces weight and energy intake in women.",
+        "year": 2008,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 18453877,
+        "title": "Early oral intake after intra-abdominal gynecological oncology surgery.",
+        "year": 2008,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 2
+      },
+      {
+        "pmid": 18477073,
+        "title": "Pre-operative oral carbohydrate treatment before coronary artery bypass surgery.",
+        "year": 2008,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 2
+      },
+      {
+        "pmid": 18491071,
+        "title": "Beneficial effects of long-chain n-3 fatty acids included in an energy-restricted diet on insulin resistance in overweight and obese European young adults.",
+        "year": 2008,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 18759956,
+        "title": "Specific insulin sensitivity and leptin responses to a nutritional treatment of obesity via a combination of energy restriction and fatty fish intake.",
+        "year": 2008,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 18834717,
+        "title": "D2 dopamine receptor Taq1A polymorphism, body weight, and dietary intake in type 2 diabetes.",
+        "year": 2009,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 18924048,
+        "title": "[Liberalisation of preoperative fasting guidelines: effects on patient comfort and clinical practicability during elective laparoscopic surgery of the lower abdomen].",
+        "year": 2008,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 18926128,
+        "title": "Changes in nutrient intake and dietary quality among participants with type 2 diabetes following a low-fat vegan diet or a conventional diabetes diet for 22 weeks.",
+        "year": 2008,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 18936571,
+        "title": "Relationship of perioperative hyperglycemia and postoperative infections in patients who undergo general and vascular surgery.",
+        "year": 2008,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 18971605,
+        "title": "A comparison of the effectiveness of the early enteral and natural nutrition after pancreatoduodenectomy.",
+        "year": 2008,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 18996857,
+        "title": "Comparison of 3 ad libitum diets for weight-loss maintenance, risk of cardiovascular disease, and diabetes: a 6-mo randomized, controlled trial.",
+        "year": 2008,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 19075284,
+        "title": "Dietary pattern influences breast cancer prognosis in women without hot flashes: the women's healthy eating and living trial.",
+        "year": 2009,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 19092350,
+        "title": "Anticatabolic effects of avoiding preoperative fasting by intravenous hypocaloric nutrition: a randomized clinical trial.",
+        "year": 2008,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 2
+      },
+      {
+        "pmid": 19145732,
+        "title": "Clinical trial: oral feeding with a soft diet compared with clear liquid diet as initial meal in mild acute pancreatitis.",
+        "year": 2008,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 19152452,
+        "title": "Effect of preoperative immunonutrition and other nutrition models on cellular immune parameters.",
+        "year": 2009,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 19176733,
+        "title": "Green tea catechin plus caffeine supplementation to a high-protein diet has no additional effect on body weight maintenance after weight loss.",
+        "year": 2009,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 19198647,
+        "title": "Metabolic and behavioral compensations in response to caloric restriction: implications for the maintenance of weight loss.",
+        "year": 2009,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 19226352,
+        "title": "Changes in biochemical indices of bone metabolism in post-menopausal women following a dietary intervention with fortified dairy products.",
+        "year": 2009,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 19328264,
+        "title": "Implementing a low-fat eating plan in the Women's Intervention Nutrition Study.",
+        "year": 2009,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 19330379,
+        "title": "Early oral versus \"traditional\" postoperative feeding in gynecologic oncology patients undergoing intestinal resection: a randomized controlled trial.",
+        "year": 2009,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 19332156,
+        "title": "Early oral feeding in patients undergoing elective colonic anastomosis.",
+        "year": 2009,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 19363695,
+        "title": "Preoperative fasting of 2 hours minimizes insulin resistance and organic response to trauma after video-cholecystectomy: a randomized, controlled, clinical trial.",
+        "year": 2009,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 13
+      },
+      {
+        "pmid": 19366978,
+        "title": "Comparative study of the effects of a 1-year dietary intervention of a low-carbohydrate diet versus a low-fat diet on weight and glycemic control in type 2 diabetes.",
+        "year": 2009,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 19399583,
+        "title": "Preoperative oral supplementation with carbohydrate and branched-chain amino acid-enriched nutrient improves insulin resistance in patients undergoing a hepatectomy: a randomized clinical trial using an artificial pancreas.",
+        "year": 2010,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 19448380,
+        "title": "A carbohydrate-rich drink shortly before surgery affected IGF-I bioavailability after a total hip replacement. A double-blind placebo controlled study on 29 patients.",
+        "year": 2009,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 2
+      },
+      {
+        "pmid": 19500889,
+        "title": "Gastric emptying of three liquid oral preoperative metabolic preconditioning regimens measured by magnetic resonance imaging in healthy adult volunteers: a randomised double-blind, crossover study.",
+        "year": 2009,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 19519910,
+        "title": "Comparison of enteral nutrition with combined enteral and parenteral nutrition in post-pancreaticoduodenectomy patients: a pilot study.",
+        "year": 2009,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 19535182,
+        "title": "Fast-track in open intestinal surgery: prospective randomized study (Clinical Trials Gov Identifier no. NCT00123456).",
+        "year": 2009,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 19594087,
+        "title": "Effects of oral preoperative carbohydrate on early postoperative outcome after thyroidectomy.",
+        "year": 2009,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 2
+      },
+      {
+        "pmid": 19747623,
+        "title": "The effect of selenium supplementation on DTH skin responses in healthy North American men.",
+        "year": 2009,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 19786383,
+        "title": "A good response to oil with medium- and long-chain fatty acids in body fat and blood lipid profiles of male hypertriglyceridemic subjects.",
+        "year": 2009,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 20101593,
+        "title": "Randomized clinical trial to compare the effects of preoperative oral carbohydrate versus placebo on insulin resistance after colorectal surgery.",
+        "year": 2010,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 3
+      },
+      {
+        "pmid": 20177856,
+        "title": "The impact and safety of preoperative oral or intravenous carbohydrate administration versus fasting in colorectal surgery--a randomized controlled trial.",
+        "year": 2010,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 14
+      },
+      {
+        "pmid": 20177860,
+        "title": "Effect of preoperative feeding on gastric emptying following spinal anesthesia: a randomized controlled trial.",
+        "year": 2010,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 20205227,
+        "title": "Randomized controlled trial of preoperative oral carbohydrate treatment in major abdominal surgery.",
+        "year": 2010,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 15
+      },
+      {
+        "pmid": 20602497,
+        "title": "Randomized clinical trial of laxatives and oral nutritional supplements within an enhanced recovery after surgery protocol following liver resection.",
+        "year": 2010,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 20622656,
+        "title": "Cellular mechanisms underlying the protective effects of preoperative feeding: a randomized study investigating muscle and liver glycogen content, mitochondrial function, gene and protein expression.",
+        "year": 2010,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 3
+      },
+      {
+        "pmid": 20852905,
+        "title": "Oral supplementation with carbohydrate- and branched-chain amino acid-enriched nutrients improves postoperative quality of life in patients undergoing hepatic resection.",
+        "year": 2011,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 20971535,
+        "title": "A randomized crossover study of the effects of glutamine and lipid on the gastric emptying time of a preoperative carbohydrate drink.",
+        "year": 2011,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 21069355,
+        "title": "A simplified rehabilitation program for patients undergoing elective colonic surgery--randomized controlled clinical trial.",
+        "year": 2011,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 21126861,
+        "title": "A randomized cross-over study of the metabolic and hormonal responses following two preoperative conditioning drinks.",
+        "year": 2011,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 21146844,
+        "title": "Effect of early oral feeding after gastric cancer surgery: a result of randomized clinical trial.",
+        "year": 2011,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 21242424,
+        "title": "Adherence to the enhanced recovery after surgery protocol and outcomes after colorectal cancer surgery.",
+        "year": 2011,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 21255977,
+        "title": "Gastric emptying, glucose metabolism and gut hormones: evaluation of a common preoperative carbohydrate beverage.",
+        "year": 2011,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 21336439,
+        "title": "Early postoperative oral feeding impacts positively in patients undergoing colonic resection: results of a pilot study.",
+        "year": 2010,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 21407248,
+        "title": "Cost-effectiveness of a 3-month intervention with oral nutritional supplements in disease-related malnutrition: a randomised controlled pilot study.",
+        "year": 2011,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 21519733,
+        "title": "Safety of oral glutamine in the abbreviation of preoperative fasting: a double-blind, controlled, randomized clinical trial.",
+        "year": 2011,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 21601319,
+        "title": "Prospective multicentre randomised controlled trial of early enteral nutrition for patients undergoing major upper gastrointestinal surgical resection.",
+        "year": 2011,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 21668975,
+        "title": "Effects of preoperative feeding with a whey protein plus carbohydrate drink on the acute phase response and insulin resistance. A randomized trial.",
+        "year": 2011,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 2
+      },
+      {
+        "pmid": 21699587,
+        "title": "An unblinded randomised controlled trial of preoperative oral supplements in colorectal cancer patients.",
+        "year": 2011,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 21714640,
+        "title": "Early versus late parenteral nutrition in critically ill adults.",
+        "year": 2011,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 21820770,
+        "title": "Perioperative nutrition in malnourished surgical cancer patients - a prospective, randomized, controlled clinical trial.",
+        "year": 2011,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 21844173,
+        "title": "Trial of a mobile phone method for recording dietary intake in adults with type 2 diabetes: evaluation and implications for future applications.",
+        "year": 2011,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 21890323,
+        "title": "Oral preoperative antioxidants in pancreatic surgery: a double-blind, randomized, clinical trial.",
+        "year": 2012,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 21985126,
+        "title": "Effectiveness of fast-track rehabilitation vs conventional care in laparoscopic colorectal resection for elderly patients: a randomized trial.",
+        "year": 2012,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 22041970,
+        "title": "Safety and efficacy of oral rehydration therapy until 2 h before surgery: a multicenter randomized controlled trial.",
+        "year": 2012,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 22189721,
+        "title": "A randomized controlled trial evaluating early versus traditional oral feeding after colorectal surgery.",
+        "year": 2011,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 22235107,
+        "title": "Evaluation of the effects of a preoperative 2-hour fast with maltodextrine and glutamine on insulin resistance, acute-phase response, nitrogen balance, and serum glutathione after laparoscopic cholecystectomy: a controlled randomized trial.",
+        "year": 2012,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 3
+      },
+      {
+        "pmid": 22237467,
+        "title": "Randomized clinical trial of omega-3 fatty acid-supplemented enteral nutrition versus standard enteral nutrition in patients undergoing oesophagogastric cancer surgery.",
+        "year": 2012,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 22307571,
+        "title": "Initial trophic vs full enteral feeding in patients with acute lung injury: the EDEN randomized trial.",
+        "year": 2012,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 22444237,
+        "title": "Perioperative perturbations in carnitine metabolism are attenuated by preoperative carbohydrate treatment: Another mechanism by which preoperative feeding may attenuate development of postoperative insulin resistance.",
+        "year": 2012,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 22450530,
+        "title": "Total hip arthroplasty and perioperative oral carbohydrate treatment: a randomised, double-blind, controlled trial.",
+        "year": 2012,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 22683955,
+        "title": "Influence of preoperative oral feeding on stress response after resection for colon cancer.",
+        "year": 2012,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 22695241,
+        "title": "Parenteral nutrition does not improve postoperative recovery from radical cystectomy: results of a prospective randomised trial.",
+        "year": 2013,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 22729296,
+        "title": "Clinical and metabolic results of fasting abbreviation with carbohydrates in coronary artery bypass graft surgery.",
+        "year": 2012,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 22747890,
+        "title": "Oral nutrition or water loading before hip replacement surgery; a randomized clinical trial.",
+        "year": 2012,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 2
+      },
+      {
+        "pmid": 22788925,
+        "title": "Clinical application of immune-enhanced enteral nutrition in patients with advanced gastric cancer after total gastrectomy.",
+        "year": 2012,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 23218813,
+        "title": "Optimisation of energy provision with supplemental parenteral nutrition in critically ill patients: a randomised controlled clinical trial.",
+        "year": 2013,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 23348639,
+        "title": "Ingestion of glutamine and maltodextrin two hours preoperatively improves insulin sensitivity after surgery: a randomized, double blind, controlled trial.",
+        "year": 2012,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 23398636,
+        "title": "A randomized controlled trial comparing a standard postoperative diet with low-volume high-calorie oral supplements following colorectal surgery.",
+        "year": 2013,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 23406311,
+        "title": "A randomized placebo controlled trial of preoperative carbohydrate drinks and early postoperative nutritional supplement drinks in colorectal surgery.",
+        "year": 2013,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 2
+      },
+      {
+        "pmid": 23547623,
+        "title": "Oral carbohydrate supplementation reduces preoperative discomfort in laparoscopic cholecystectomy.",
+        "year": 2013,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 8
+      },
+      {
+        "pmid": 23612677,
+        "title": "Parenteral nutrition and preOp preparation in prevention of post-operative insulin resistance in gastrointestinal carcinoma.",
+        "year": 2013,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 2
+      },
+      {
+        "pmid": 23757474,
+        "title": "Preoperative carbohydrate loading in patients undergoing coronary artery bypass or spinal surgery.",
+        "year": 2013,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 2
+      },
+      {
+        "pmid": 23759267,
+        "title": "Shrinking preoperative fast time with maltodextrin and protein hydrolysate in gastrointestinal resections due to cancer.",
+        "year": 2013,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 24007934,
+        "title": "Insulin sensitivity and beta-cell function after carbohydrate oral loading in hip replacement surgery: a double-blind, randomised controlled clinical trial.",
+        "year": 2014,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 24252674,
+        "title": "[Effects of preoperative oral carbohydrate on postoperative insulin resistance in radical gastrectomy patients].",
+        "year": 2013,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 24257458,
+        "title": "Accuracy and precision of commonly used methods for quantifying surgery-induced insulin resistance: Prospective observational study.",
+        "year": 2014,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 24472587,
+        "title": "Does preoperative oral carbohydrate reduce hospital stay? A randomized trial.",
+        "year": 2014,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 24548571,
+        "title": "The Hartung-Knapp-Sidik-Jonkman method for random effects meta-analysis is straightforward and considerably outperforms the standard DerSimonian-Laird method.",
+        "year": 2014,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 102
+      },
+      {
+        "pmid": 24634929,
+        "title": "Preoperative oral feeding reduces stress response after laparoscopic cholecystectomy.",
+        "year": 2013,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 25062570,
+        "title": "Improvement of nutritional care after colon surgery: the impact of early oral nutrition in the postanesthesia care unit.",
+        "year": 2014,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 25364300,
+        "title": "A randomized trial of preoperative oral carbohydrates in abdominal surgery.",
+        "year": 2014,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 8
+      },
+      {
+        "pmid": 25609319,
+        "title": "Effects of preoperative carbohydrates drinks on immediate postoperative outcome after day care laparoscopic cholecystectomy.",
+        "year": 2015,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 26268133,
+        "title": "ORGANIC INFLAMMATORY RESPONSE TO REDUCED PREOPERATIVE FASTING TIME, WITH A CARBOHYDRATE AND PROTEIN ENRICHED SOLUTION; A RANDOMIZED TRIAL.",
+        "year": 2015,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 2
+      },
+      {
+        "pmid": 26495916,
+        "title": "Randomized Clinical Trial To Compare The Effects Of Preoperative Oral Carbohydrate Loading Versus Placebo On Insulin Resistance And Cortisol Level After Laparoscopic Cholecystectomy.",
+        "year": 2015,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 9
+      },
+      {
+        "pmid": 27811457,
+        "title": "Effect of routine preoperative fasting on residual gastric volume and acid in patients undergoing myomectomy.",
+        "year": 2016,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 28073036,
+        "title": "Does preoperative oral carbohydrate treatment reduce the postoperative surgical stress response in lumbar disc surgery?",
+        "year": 2017,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 3
+      },
+      {
+        "pmid": 28437263,
+        "title": "Evaluation of preoperative oral carbohydrate administration on insulin resistance in off-pump coronary artery bypass patients: A randomised trial.",
+        "year": 2017,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 28541810,
+        "title": "Effects of a Carbohydrate-, Glutamine-, and Antioxidant-Enriched Oral Nutrition Supplement on Major Surgery-Induced Insulin Resistance: A Randomized Pilot Study.",
+        "year": 2018,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 28582271,
+        "title": "Preoperative Oral Carbohydrate Load Versus Placebo in Major Elective Abdominal Surgery (PROCY): A Randomized, Placebo-controlled, Multicenter, Phase III Trial.",
+        "year": 2018,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 9
+      },
+      {
+        "pmid": 29157765,
+        "title": "The Effect of Preoperative Oral Carbohydrate Solution Intake on Patient Comfort: A Randomized Controlled Study.",
+        "year": 2017,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 3
+      },
+      {
+        "pmid": 29273446,
+        "title": "Stress hyperglycemia in general surgery: Why should we care?",
+        "year": 2018,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 2
+      },
+      {
+        "pmid": 29306619,
+        "title": "Comparative Study Between Conventional Fasting Versus Overnight Infusion of Lipid or Carbohydrate on Insulin and Free Fatty Acids in Obese Patients Undergoing Elective On-pump Coronary Artery Bypass Grafting. A Prospective Randomized Trial.",
+        "year": 2018,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 29454501,
+        "title": "Postoperative inflammation and insulin resistance in relation to body composition, adiposity and carbohydrate treatment: A randomised controlled study.",
+        "year": 2019,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 2
+      },
+      {
+        "pmid": 29915986,
+        "title": "The impact of preoperative carbohydrate loading on intraoperative body temperature: a randomized controlled clinical trial.",
+        "year": 2018,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 9
+      },
+      {
+        "pmid": 29915988,
+        "title": "Effects of Preoperative Oral Carbohydrates on Quality of Recovery in Laparoscopic Cholecystectomy: A Randomized, Double Blind, Placebo-Controlled Trial.",
+        "year": 2018,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 6
+      },
+      {
+        "pmid": 30055788,
+        "title": "Effect of perioperative oral nutritional supplementation in malnourished patients who undergo gastrectomy: A prospective randomized trial.",
+        "year": 2018,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 30401602,
+        "title": "The Effect of Preoperative Oral Carbohydrate Administration on Insulin Resistance and Comfort Level in Patients Undergoing Surgery.",
+        "year": 2019,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 6
+      },
+      {
+        "pmid": 30497695,
+        "title": "A randomized controlled study of preoperative oral carbohydrate loading versus fasting in patients undergoing elective craniotomy.",
+        "year": 2019,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 9
+      },
+      {
+        "pmid": 30644785,
+        "title": "Preoperative Carbohydrate Loading in Gynecological Patients Undergoing Combined Spinal and Epidural Anesthesia.",
+        "year": 2020,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 30916121,
+        "title": "Benefits of Fasting Abbreviation with Carbohydrates and Omega-3 Infusion During CABG: a Double-Blind Controlled Randomized Trial.",
+        "year": 2019,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 31021880,
+        "title": "Effect of pre-operative oral carbohydrate loading on recovery after day-case cholecystectomy: A randomised controlled trial.",
+        "year": 2019,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 31096498,
+        "title": "Effects of preoperative oral carbohydrates on patients undergoing ESD surgery under general anesthesia: A randomized control study.",
+        "year": 2019,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 3
+      },
+      {
+        "pmid": 31309323,
+        "title": "A randomised controlled study of preoperative oral carbohydrate loading versus fasting in patients undergoing colorectal surgery.",
+        "year": 2019,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 11
+      },
+      {
+        "pmid": 31356274,
+        "title": "Simple Versus Complex Preoperative Carbohydrate Drink to Preserve Perioperative Insulin Sensitivity in Laparoscopic Colectomy: A Randomized Controlled Trial.",
+        "year": 2020,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 2
+      },
+      {
+        "pmid": 31826369,
+        "title": "A randomized controlled trial of preoperative carbohydrate drinks on postoperative walking capacity in elective colorectal surgery.",
+        "year": 2019,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 31968595,
+        "title": "Impact of Enhanced Recovery after Surgery with Preoperative Whey Protein-Infused Carbohydrate Loading and Postoperative Early Oral Feeding among Surgical Gynecologic Cancer Patients: An Open-Labelled Randomized Controlled Trial.",
+        "year": 2020,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 32155622,
+        "title": "Preoperative Oral Carbohydrate Reduces Postoperative Insulin Resistance by Activating AMP-Activated Protein Kinase after Colorectal Surgery.",
+        "year": 2020,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 2
+      },
+      {
+        "pmid": 32856619,
+        "title": "Effects of a Preoperative Carbohydrate-Rich Drink Before Ambulatory Surgery: A Randomized Controlled, Double-Blinded Study.",
+        "year": 2020,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 33218878,
+        "title": "The Effect of Preoperative Oral Versus Parenteral Dextrose Supplementation on Pain, Nausea, and Quality of Recovery After Laparoscopic Cholecystectomy.",
+        "year": 2021,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 33239219,
+        "title": "Effect of Preoperative Oral Carbohydrate Administration on Patients Undergoing Cesarean Section with Epidural Anesthesia: A Pilot Study.",
+        "year": 2021,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 2
+      },
+      {
+        "pmid": 33310170,
+        "title": "Preoperative Oral Carbohydrate Loading in Laparoscopic Gynecologic Surgery: A Randomized Controlled Trial.",
+        "year": 2021,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 2
+      },
+      {
+        "pmid": 33591115,
+        "title": "Gastric Ultrasound Assessing Gastric Emptying of Preoperative Carbohydrate Drinks: A Randomized Controlled Noninferiority Study.",
+        "year": 2021,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 33752148,
+        "title": "Effects of preoperative oral single-dose and double-dose carbohydrates on insulin resistance in patients undergoing gastrectomy:a prospective randomized controlled trial.",
+        "year": 2021,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 34016554,
+        "title": "The influence of preoperative carbohydrate loading on postoperative outcomes in bariatric surgery patients: a randomized, controlled trial.",
+        "year": 2021,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 34020596,
+        "title": "Preoperative carbohydrate loading and intraoperative goal-directed fluid therapy for elderly patients undergoing open gastrointestinal surgery: a prospective randomized controlled trial.",
+        "year": 2021,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 34620123,
+        "title": "The impact of oral carbohydrate-rich supplement taken two hours before caesarean delivery on maternal and neonatal perioperative outcomes -- a randomized clinical trial.",
+        "year": 2021,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 34995804,
+        "title": "Preoperative carbohydrate loading with individualized supplemental insulin in diabetic patients undergoing gastrointestinal surgery: A randomized trial.",
+        "year": 2022,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 2
+      },
+      {
+        "pmid": 35288009,
+        "title": "Preoperative oral carbohydrates in elderly patients undergoing free flap surgery for oral cancer: randomized controlled trial.",
+        "year": 2022,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 2
+      },
+      {
+        "pmid": 35718790,
+        "title": "Efficacy of the Oral Administration of Maltodextrin Fructose Before Major Abdominal Surgery: A Prospective, Multicenter Clinical Study.",
+        "year": 2022,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 3
+      },
+      {
+        "pmid": 35772219,
+        "title": "Intermittent energy restriction ameliorates adipose tissue-associated inflammation in adults with obesity: A randomised controlled trial.",
+        "year": 2022,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 35811226,
+        "title": "Effect of Preoperative Oral Carbohydrate on Patients Undergoing Gynecological Laparoscopic Surgery With Different Fasting Times: A Randomized Control Study.",
+        "year": 2022,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 35949825,
+        "title": "Impact of preoperative carbohydrate loading on gastric volume in patients with type 2 diabetes.",
+        "year": 2022,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 3
+      },
+      {
+        "pmid": 36042436,
+        "title": "The effect of pre-operative carbohydrate loading in femur fracture: a randomized controlled trial.",
+        "year": 2022,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 36732123,
+        "title": "Effects of Preoperative Oral Carbohydrate Electrolyte Drinks on Preoperative Hypokalemia Incidence in Patients Scheduled for Laparoscopic Colorectal Resection: A Three-Arm Randomized Clinical Trial.",
+        "year": 2023,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 36782111,
+        "title": "Effects of preoperative oral enzyme-hydrolyzed rice flour solution on gastric emptying and insulin resistance in patients undergoing laparoscopic cholecystectomy: a prospective randomized controlled trial.",
+        "year": 2023,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 2
+      },
+      {
+        "pmid": 36940663,
+        "title": "Effects of Preoperative Oral Carbohydrate Loading on Neutrophil/Lymphocyte Ratio and Postoperative Complications following Colorectal Cancer Surgery: A Randomized Controlled Study.",
+        "year": 2023,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 2
+      },
+      {
+        "pmid": 39142436,
+        "title": "Effect of preoperative oral carbohydrate loading on postoperative insulin resistance, patient-perceived well-being, and surgical outcomes in elective colorectal surgery: a randomized controlled trial.",
+        "year": 2024,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      },
+      {
+        "pmid": 39293701,
+        "title": "Effect of Preoperative Carbohydrate Loading on Postoperative Recovery of Individuals Who Have Type 2 Diabetes After Total Knee Arthroplasty: A Randomized Controlled Trial.",
+        "year": 2025,
+        "is_sr": false,
+        "is_primary": true,
+        "deg": 1
+      }
+    ]
+  },
+  "files": {
+    "edges_csv": "out_local_group.edges.csv"
+  }
+}

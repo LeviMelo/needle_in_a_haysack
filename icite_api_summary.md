@@ -203,7 +203,240 @@ Download the **NIH-OCC snapshot** (CSV/JSON) and the **citations-only CSV** from
 * Pair it with **PubMed E-utilities** for abstracts/MeSH and **NIH RePORTER** for grants—this three-piece stack covers most biomedical evidence-mapping pipelines. ([Biblioteca Nacional de Medicina][9], [api.reporter.nih.gov][10])
 * For **large graphs** or repeated pulls, consume **Figshare snapshots** rather than hammering the API. ([nih.figshare.com][16])
 
-If you want, I can sketch a minimal Python client tailored to your workflow (PMID discovery via E-utilities → iCite enrichment → graph build), with retry/caching and CSV/Parquet outputs.
+# Example
+
+## https://icite.od.nih.gov/api/pubs/32162448
+```json
+{
+  "data": [
+    {
+      "_id": "32162448",
+      "animal": 0,
+      "authors": [
+        {
+          "lastName": "Zhang",
+          "fullName": "Zhang, Yan-Ling",
+          "firstName": "Yan-Ling"
+        },
+        {
+          "lastName": "Li",
+          "fullName": "Li, Hui",
+          "firstName": "Hui"
+        },
+        {
+          "lastName": "Zeng",
+          "fullName": "Zeng, Hua",
+          "firstName": "Hua"
+        },
+        {
+          "lastName": "Li",
+          "fullName": "Li, Qiao",
+          "firstName": "Qiao"
+        },
+        {
+          "lastName": "Qiu",
+          "fullName": "Qiu, Li-Ping",
+          "firstName": "Li-Ping"
+        },
+        {
+          "lastName": "Dai",
+          "fullName": "Dai, Ru-Ping",
+          "firstName": "Ru-Ping"
+        }
+      ],
+      "doi": "10.1111/pan.13853",
+      "human": 1,
+      "pmid": 32162448,
+      "title": "Ultrasonographic evaluation of gastric emptying after ingesting carbohydrate-rich drink in young children: A randomized crossover study.",
+      "apt": 0.75,
+      "citedByClinicalArticle": true,
+      "citedByPmidsByYear": [
+        {
+          "32997821": 2020
+        },
+        {
+          "35874585": 2022
+        },
+        {
+          "40535648": 2025
+        },
+        {
+          "36891367": 2023
+        },
+        {
+          "39773771": 2025
+        },
+        {
+          "40104681": 2025
+        },
+        {
+          "37601499": 2023
+        },
+        {
+          "38993713": 2024
+        },
+        {
+          "38615661": 2024
+        },
+        {
+          "34857683": 2022
+        },
+        {
+          "36629465": 2023
+        },
+        {
+          "39949966": 2024
+        },
+        {
+          "34403386": 2021
+        },
+        {
+          "37477770": 2023
+        },
+        {
+          "39651668": 2025
+        },
+        {
+          "35166373": 2022
+        },
+        {
+          "38350987": 2024
+        }
+      ],
+      "year": 2020,
+      "journal": "Paediatr Anaesth",
+      "is_research_article": true,
+      "citation_count": 17,
+      "field_citation_rate": 2.70128652829193,
+      "expected_citations_per_year": 1.55624071151373,
+      "citations_per_year": 3.4,
+      "relative_citation_ratio": 2.18475199552701,
+      "nih_percentile": 77.1,
+      "molecular_cellular": 0,
+      "x_coord": 0,
+      "y_coord": 1,
+      "is_clinical": true,
+      "cited_by_clin": [32997821, 38615661, 35166373],
+      "cited_by": [32997821, 35874585, 40535648, 36891367, 39773771, 40104681, 37601499, 38993713, 38615661, 34857683, 36629465, 39949966, 34403386, 37477770, 39651668, 35166373, 38350987],
+      "references": [30500064, 27595380, 25940831, 28045707, 17304411, 23302981, 29265174, 20108579, 22277664, 29700894, 21676893, 21596885, 22729296, 15900642, 24497851, 22235107, 20177856, 25501720, 27106968, 24189352, 29077816, 17902094, 21999211, 26514824, 15739210, 30115264, 25495405, 11682427, 28675597, 25260696, 29077812],
+      "provisional": false
+    }
+  ]
+}
+```
+
+# Closing Notes on iCite (Nuances & Caveats)
+
+## 1. Publication Type Logic (Primary Research vs Clinical)
+
+* **Primary Research (`is_research_article`):**
+  iCite applies **whitelist/blacklist rules** on PubMed Publication Types:
+
+  * Qualifying: *Journal Article, Clinical Trial (all phases), RCT, Observational Study, Meta-Analysis, Case Report, Dataset, Preprint, etc.*
+  * Disqualifying: *Review, Editorial, Guideline, Practice Guideline, Comment, Erratum, Retraction, etc.*
+    Result: A **Systematic Review with “Meta-Analysis” tag** → `is_research_article=true`. A **Narrative Review** → `false`.
+
+* **Clinical Article (`isClinicalArticle`):**
+  Separate rule set: flagged *true* if PubMed types include *Clinical Trial (any phase), Clinical Study, Observational Study, Guideline, Practice Guideline*.
+  Thus: a *Guideline* is **clinical** but not **primary research**.
+
+* **Cited-by clinical vs. being clinical:**
+  Distinction is crucial: `isClinicalArticle=false` + `citedByClinicalArticle=true` is common (e.g., a meta-analysis not itself a trial but cited in many trials/guidelines). This is exactly the scenario that **APT** predicts.
+
+---
+
+## 2. Relative Citation Ratio (RCR) and Benchmarks
+
+* **Field definition:** RCR fields are *not* journal categories but **co-citation neighborhoods**; this better adapts to multidisciplinary articles but requires citers to exist. With **no citers**, `fcr/ecr/rcr=null`.
+* **NIH-funded benchmark:**
+
+  * Originally (2016): NIH **R01-funded** corpus.
+  * Current production: **all NIH-funded publications** (per OPA docs).
+  * Implication: RCR values are tied to NIH’s funding portfolio, not global science.
+* **Regression model:** Each year, NIH fits ACR \~ FCR across NIH-funded papers → `ecr = α + β·fcr`. By design, **median NIH-funded article has RCR≈1.0**. This calibration is invisible to the user but underpins comparability.
+* **Provisional rules:**
+
+  * No RCR in the current fiscal year unless ≥5 citations.
+  * Previous two years flagged `rcrIsProvisional=true`.
+  * Fiscal year cutoff: October.
+
+---
+
+## 3. Approximate Potential to Translate (APT)
+
+* **Definition:** ML-predicted probability the paper will be cited by a *clinical trial or guideline*.
+* **Reporting:** Discrete bins {0.05, 0.25, 0.50, 0.75, 0.95}.
+* **Features:** Paper’s **HAMC profile**, early citing network properties.
+* **Interpretation:** \~x% of papers with APT=x will eventually be cited by clinical articles. It is a **population-level probability**, not an individual guarantee.
+* **Common confusion:** APT is **not suppressed by RCR’s provisional rules**. A brand-new article with no clinical signals → APT=0.05.
+* **Key nuance:** APT can be high (0.95) while `isClinicalArticle=false`. Why? Because the model predicts it will be *used by* clinical trials/guidelines, not that it *is* one.
+
+---
+
+## 4. Human/Animal/Molecular Fractions (HAMC)
+
+* Derived from PubMed **MeSH** indexing.
+* Fractions sum to 1.0 across `human`, `animal`, `molCell`.
+* Mapped into Cartesian coordinates (`xCoord`, `yCoord`) for visualization in the **Triangle of Biomedicine**.
+* Useful for portfolio analyses (bench → bedside positioning) but beware of MeSH indexing lags/errors.
+
+---
+
+## 5. Citations Module — Edges and Completeness
+
+* Sources: Medline, PMC, Crossref, Entrez, + ML parsing of open-access full texts → merged into **NIH-OCC**.
+* **Biases:**
+
+  * Closed-access journals with no open references = gaps.
+  * Citations reported are **PubMed-to-PubMed links**; non-PubMed nodes (books, arXiv-only preprints, some conference papers) aren’t represented.
+* **Fields:** `citedByPmids` (citers), `citedPmids` (references), `citedByPmidsByYear` (timeline).
+* **Bulk data:** NIH publishes full OCC snapshots on Figshare (recommended for graph-scale work).
+
+---
+
+## 6. Coverage Constraints
+
+* **Time window:** 1980–present. Pre-1980 classics won’t appear as nodes or citers.
+* **RCR availability:** Same 1980+ window; expect nulls for earlier PMIDs.
+* **Granularity:** NIH-OCC citations are article-level, not section- or sentence-level. No citation context or sentiment.
+
+---
+
+## 7. Practical API Nuances
+
+* **API limits:** `pmids` ≤1000, `limit` ≤1000 per call. Use `offset` for paging.
+* **Web UI caps:** up to 10k PMIDs in search, uploads up to 50k.
+* **Rate limits:** undocumented; assume conservative policies (batch, cache, prefer bulk).
+* **Legacy fields:** by default, API returns legacy names (`relative_citation_ratio`). Use `legacy=false` for compact modern names (`rcr`, `acr`, `fcr`).
+* **CSV option:** `format=csv` is often easier for pipelines.
+
+---
+
+## 8. Data Quality Considerations
+
+* **Indexing lag:** PubMed may assign Publication Types months later; iCite inherits this. Flags like `isClinicalArticle` may be unstable for very recent items.
+* **Provisional RCR volatility:** Especially in fast-moving fields (COVID, cancer), early citations distort co-citation neighborhoods.
+* **APT floor effects:** Many new papers sit at APT=0.05 until enough citing structure emerges.
+* **Missing edges:** Because non-PubMed nodes are excluded, edges out of PubMed (to books, conference proceedings, some datasets) vanish. This slightly shrinks “true” degree.
+
+---
+
+## 9. Integration Patterns (best practices)
+
+* **Discovery**: Always use PubMed E-utilities (search/abstracts/MeSH) → feed PMIDs into iCite.
+* **Funding**: NIH RePORTER for grant ↔ PMID joins.
+* **DOIs/metadata**: Crossref to backfill non-PubMed data.
+* **Graphs**: Build networks with OCC bulk CSVs rather than API-hitting at scale.
+
+---
+
+## 10. Conceptual Warnings
+
+* **RCR ≠ impact factor.** RCR is article-level, co-citation normalized, NIH-benchmarked; Impact Factor is journal-level, 2-year window.
+* **APT ≠ clinical benefit.** It only signals *likelihood of clinical citation*, not trial outcomes or practice change.
+* **Clinical vs. translational:** `isClinicalArticle` (what it *is*) vs. `citedByClinicalArticle` (how it’s *used* clinically). These must be read distinctly.
+* **1980 cutoff bias:** Watch for truncated reference chains in long-lived literatures (e.g., cardiology, genetics).
+
 
 [1]: https://icite.od.nih.gov/?utm_source=chatgpt.com "iCite | Home"
 [2]: https://journals.plos.org/plosbiology/article?id=10.1371%2Fjournal.pbio.3000385&utm_source=chatgpt.com "The NIH Open Citation Collection: A public access, broad ..."
